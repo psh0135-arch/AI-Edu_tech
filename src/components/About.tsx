@@ -97,7 +97,7 @@ export default function About() {
             {/* Profile Card */}
             <div className="glass-card rounded-2xl p-6 border border-purple-500/25 bg-gradient-to-br from-purple-900/20 to-purple-950/30">
               <img
-                src="/profile.jpg"
+                src={`${import.meta.env.BASE_URL}profile.jpg`}
                 alt="강사 프로필"
                 className="w-20 h-20 rounded-2xl object-cover object-top mb-4 shadow-lg shadow-purple-900/50 border border-purple-500/30"
               />
@@ -210,7 +210,7 @@ export default function About() {
               {/* Leader Magazine Cover */}
               <div className="flex-1 mt-5 pt-5 border-t border-white/5 min-h-0">
                 <img
-                  src="/leader.jpg"
+                  src={`${import.meta.env.BASE_URL}leader.jpg`}
                   alt="Leader 매거진"
                   className="w-full h-full rounded-xl object-cover object-top shadow-xl shadow-purple-900/30 border border-purple-500/20"
                 />
