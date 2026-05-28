@@ -85,7 +85,7 @@ export default function About() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
           {/* Left — Leader Image (모바일: 맨 아래 / 데스크탑: 왼쪽) */}
           <motion.div
@@ -93,7 +93,7 @@ export default function About() {
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeUp}
             custom={2}
-            className="lg:col-span-2 order-3 lg:order-1"
+            className="order-3 lg:order-1"
           >
             <img
               src={`${import.meta.env.BASE_URL}leader.jpg`}
@@ -104,7 +104,7 @@ export default function About() {
           </motion.div>
 
           {/* Right — Profile + Credentials + Career (모바일: 위 / 데스크탑: 오른쪽) */}
-          <div className="lg:col-span-3 space-y-4 order-1 lg:order-2">
+          <div className="space-y-4 order-1 lg:order-2">
 
             {/* Profile Card */}
             <motion.div
