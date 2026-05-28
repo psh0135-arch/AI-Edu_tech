@@ -78,10 +78,10 @@ export default function Hero() {
           </a>
           <a
             href="#curriculum"
-            className="flex items-center gap-2 px-8 py-4 glass border border-purple-500/30 text-white font-semibold rounded-2xl hover:border-purple-400/60 hover:bg-white/5 transition-all duration-200"
+            className="flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold bg-gradient-to-r from-purple-600/30 to-cyan-600/30 border border-purple-400/50 hover:from-purple-600/50 hover:to-cyan-600/50 hover:border-purple-400/80 hover:scale-105 transition-all duration-200"
           >
-            커리큘럼 보기
-            <BookOpen className="w-4 h-4" />
+            <span className="gradient-text font-semibold">커리큘럼 보기</span>
+            <BookOpen className="w-4 h-4 text-cyan-400" />
           </a>
         </motion.div>
 
@@ -120,18 +120,19 @@ export default function Hero() {
             { label: 'Runway', x: '-45%', y: '40%', delay: 0.6 },
             { label: 'Canva AI', x: '42%', y: '35%', delay: 0.9 },
           ].map(badge => (
-            <motion.div
+            // 위치 transform과 float 애니메이션 transform을 분리해 충돌 방지
+            <div
               key={badge.label}
-              className="absolute glass border border-cyan-500/20 text-cyan-300 text-xs px-3 py-1.5 rounded-full animate-float"
-              style={{
-                left: '50%',
-                top: '50%',
-                transform: `translate(${badge.x}, ${badge.y})`,
-                animationDelay: `${badge.delay}s`,
-              }}
+              className="absolute pointer-events-none"
+              style={{ left: '50%', top: '50%', transform: `translate(${badge.x}, ${badge.y})` }}
             >
-              ✦ {badge.label}
-            </motion.div>
+              <div
+                className="glass border border-cyan-500/20 text-cyan-300 text-xs px-3 py-1.5 rounded-full animate-float whitespace-nowrap"
+                style={{ animationDelay: `${badge.delay}s` }}
+              >
+                ✦ {badge.label}
+              </div>
+            </div>
           ))}
         </motion.div>
       </div>
