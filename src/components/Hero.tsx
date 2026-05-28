@@ -107,31 +107,26 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Floating Tool Badges */}
+        {/* AI Tool Badges — Stats 아래 전용 공간, 텍스트 가림 없음 */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="hidden lg:block"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="mt-10 flex flex-wrap justify-center gap-3"
         >
           {[
-            { label: 'ChatGPT', x: '-40%', y: '-80%', delay: 0 },
-            { label: 'Claude AI', x: '45%', y: '-70%', delay: 0.3 },
-            { label: 'Runway', x: '-45%', y: '40%', delay: 0.6 },
-            { label: 'Canva AI', x: '42%', y: '35%', delay: 0.9 },
+            { label: 'ChatGPT',  delay: 0   },
+            { label: 'Claude AI', delay: 0.5 },
+            { label: 'Gemini',   delay: 1.0 },
+            { label: 'Runway',   delay: 1.5 },
+            { label: 'Canva AI', delay: 2.0 },
           ].map(badge => (
-            // 위치 transform과 float 애니메이션 transform을 분리해 충돌 방지
             <div
               key={badge.label}
-              className="absolute pointer-events-none"
-              style={{ left: '50%', top: '50%', transform: `translate(${badge.x}, ${badge.y})` }}
+              className="glass border border-cyan-500/20 text-cyan-300 text-xs px-4 py-2 rounded-full animate-float whitespace-nowrap"
+              style={{ animationDelay: `${badge.delay}s` }}
             >
-              <div
-                className="glass border border-cyan-500/20 text-cyan-300 text-xs px-3 py-1.5 rounded-full animate-float whitespace-nowrap"
-                style={{ animationDelay: `${badge.delay}s` }}
-              >
-                ✦ {badge.label}
-              </div>
+              ✦ {badge.label}
             </div>
           ))}
         </motion.div>
