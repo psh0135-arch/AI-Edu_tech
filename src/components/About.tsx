@@ -98,8 +98,7 @@ export default function About() {
             <img
               src={`${import.meta.env.BASE_URL}leader.jpg`}
               alt="Leader 매거진"
-              className="w-full h-full rounded-2xl object-cover object-top shadow-xl shadow-purple-900/30 border border-purple-500/20"
-              style={{ minHeight: '400px' }}
+              className="w-full rounded-2xl shadow-xl shadow-purple-900/30 border border-purple-500/20"
             />
           </motion.div>
 
