@@ -86,42 +86,64 @@ export default function About() {
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-          {/* Left — Profile + Credentials */}
+
+          {/* Left — Leader Image (모바일: 맨 아래 / 데스크탑: 왼쪽) */}
           <motion.div
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeUp}
             custom={2}
-            className="lg:col-span-2 space-y-4"
+            className="lg:col-span-2 order-3 lg:order-1"
           >
+            <img
+              src={`${import.meta.env.BASE_URL}leader.jpg`}
+              alt="Leader 매거진"
+              className="w-full h-full rounded-2xl object-cover object-top shadow-xl shadow-purple-900/30 border border-purple-500/20"
+              style={{ minHeight: '400px' }}
+            />
+          </motion.div>
+
+          {/* Right — Profile + Credentials + Career (모바일: 위 / 데스크탑: 오른쪽) */}
+          <div className="lg:col-span-3 space-y-4 order-1 lg:order-2">
+
             {/* Profile Card */}
-            <div className="glass-card rounded-2xl p-6 border border-purple-500/25 bg-gradient-to-br from-purple-900/20 to-purple-950/30">
-              <img
-                src={`${import.meta.env.BASE_URL}profile.jpg`}
-                alt="강사 프로필"
-                className="w-20 h-20 rounded-2xl object-cover object-top mb-4 shadow-lg shadow-purple-900/50 border border-purple-500/30"
-              />
-              <h3 className="text-white font-bold text-xl mb-1">디지털 마케팅 전문 강사</h3>
-              <p className="text-purple-300 text-sm font-medium mb-3">경영지도사 · MBA</p>
-              <p className="text-slate-400 text-sm leading-relaxed">
+            <motion.div
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              variants={fadeUp}
+              custom={3}
+              className="glass-card rounded-2xl p-6 border border-purple-500/25 bg-gradient-to-br from-purple-900/20 to-purple-950/30"
+            >
+              <div className="flex items-center gap-4">
+                <img
+                  src={`${import.meta.env.BASE_URL}profile.jpg`}
+                  alt="강사 프로필"
+                  className="w-20 h-20 rounded-2xl object-cover object-top shadow-lg shadow-purple-900/50 border border-purple-500/30 flex-shrink-0"
+                />
+                <div>
+                  <h3 className="text-white font-bold text-xl mb-1">디지털 마케팅 전문 강사</h3>
+                  <p className="text-purple-300 text-sm font-medium">경영지도사 · MBA</p>
+                </div>
+              </div>
+              <p className="text-slate-400 text-sm leading-relaxed mt-4">
                 롯데쇼핑·중앙일보마케팅·대명스테이션 등 대기업 마케팅 기획팀 출신으로,
                 현장 실무 경험을 바탕으로 한 생생한 디지털 마케팅 교육을 제공합니다.
                 현재 메가스터디에서 디지털 마케팅 운영교수로 활동 중입니다.
               </p>
-            </div>
+            </motion.div>
 
-            {/* Credentials */}
-            <div className="grid grid-cols-1 gap-3">
+            {/* Credentials — 2열 그리드 */}
+            <div className="grid grid-cols-2 gap-3">
               {credentials.map((cred, i) => (
                 <motion.div
                   key={cred.title}
                   initial="hidden"
                   animate={inView ? 'visible' : 'hidden'}
                   variants={fadeUp}
-                  custom={3 + i}
+                  custom={4 + i * 0.5}
                   className="glass-card rounded-xl p-4 flex items-center gap-3"
                 >
-                  <div className={`w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0`}>
+                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
                     <cred.icon className={`w-4 h-4 ${cred.color}`} />
                   </div>
                   <div>
@@ -131,36 +153,31 @@ export default function About() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
 
-          {/* Right — Career Timeline */}
-          <motion.div
-            initial="hidden"
-            animate={inView ? 'visible' : 'hidden'}
-            variants={fadeUp}
-            custom={3}
-            className="lg:col-span-3"
-          >
-            <div className="glass-card rounded-2xl p-6 h-full flex flex-col">
+            {/* Career Timeline */}
+            <motion.div
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              variants={fadeUp}
+              custom={6}
+              className="glass-card rounded-2xl p-6"
+            >
               <div className="flex items-center gap-2 mb-6">
                 <Briefcase className="w-5 h-5 text-cyan-400" />
                 <h3 className="text-white font-bold text-lg">주요 경력</h3>
               </div>
 
               <div className="relative space-y-0">
-                {/* Timeline line */}
                 <div className="absolute left-3 top-2 bottom-2 w-px bg-gradient-to-b from-purple-500/60 via-cyan-500/40 to-transparent" />
-
                 {careerItems.map((item, i) => (
                   <motion.div
                     key={item.org}
                     initial="hidden"
                     animate={inView ? 'visible' : 'hidden'}
                     variants={fadeUp}
-                    custom={4 + i * 0.5}
+                    custom={7 + i * 0.4}
                     className="relative flex items-start gap-4 pb-5 last:pb-0"
                   >
-                    {/* Dot */}
                     <div className={`relative z-10 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
                       item.current
                         ? 'bg-gradient-to-br from-purple-500 to-cyan-500 shadow-lg shadow-purple-500/40'
@@ -168,8 +185,6 @@ export default function About() {
                     }`}>
                       <div className={`w-2 h-2 rounded-full ${item.current ? 'bg-white' : 'bg-slate-500'}`} />
                     </div>
-
-                    {/* Content */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="text-white font-semibold text-sm">{item.org}</span>
@@ -206,17 +221,8 @@ export default function About() {
                   ))}
                 </div>
               </div>
-
-              {/* Leader Magazine Cover */}
-              <div className="flex-1 mt-5 pt-5 border-t border-white/5 min-h-0">
-                <img
-                  src={`${import.meta.env.BASE_URL}leader.jpg`}
-                  alt="Leader 매거진"
-                  className="w-full h-full rounded-xl object-cover object-top shadow-xl shadow-purple-900/30 border border-purple-500/20"
-                />
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Philosophy Banner */}
