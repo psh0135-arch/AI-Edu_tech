@@ -8,7 +8,11 @@ const stats = [
   { icon: Sparkles, value: '7단계', label: 'AI 커리큘럼' },
 ]
 
-export default function Hero() {
+interface HeroProps {
+  onApply: () => void
+}
+
+export default function Hero({ onApply }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-pattern pt-16">
       {/* Background Glow */}
@@ -69,13 +73,13 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.35 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
         >
-          <a
-            href="#contact"
+          <button
+            onClick={onApply}
             className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-2xl shadow-lg shadow-purple-900/40 hover:shadow-purple-900/60 hover:scale-105 transition-all duration-200"
           >
-            강의 상담 신청
+            수강신청
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </button>
           <a
             href="#curriculum"
             className="flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold bg-gradient-to-r from-purple-600/30 to-cyan-600/30 border border-purple-400/50 hover:from-purple-600/50 hover:to-cyan-600/50 hover:border-purple-400/80 hover:scale-105 transition-all duration-200"

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -10,13 +11,16 @@ import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ApplyModal from './components/ApplyModal'
 
 function App() {
+  const [isApplyOpen, setIsApplyOpen] = useState(false)
+
   return (
     <div className="min-h-screen bg-[#020617] text-white overflow-x-hidden">
-      <Navbar />
+      <Navbar onApply={() => setIsApplyOpen(true)} />
       <main>
-        <Hero />
+        <Hero onApply={() => setIsApplyOpen(true)} />
         <About />
         <Curriculum />
         <AITools />
@@ -27,6 +31,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <ApplyModal isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
     </div>
   )
 }

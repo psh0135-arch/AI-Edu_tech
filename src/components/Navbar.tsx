@@ -11,7 +11,11 @@ const navLinks = [
   { label: 'FAQ', href: '#faq' },
 ]
 
-export default function Navbar() {
+interface NavbarProps {
+  onApply: () => void
+}
+
+export default function Navbar({ onApply }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -57,12 +61,12 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <a
-              href="#contact"
-              className="px-5 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:from-purple-500 hover:to-cyan-500 transition-all duration-200 shadow-lg shadow-purple-900/30"
+            <button
+              onClick={onApply}
+              className="px-5 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:from-purple-500 hover:to-cyan-500 hover:scale-105 transition-all duration-200 shadow-lg shadow-purple-900/30"
             >
-              강의 상담 신청
-            </a>
+              수강신청
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,13 +99,12 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className="mt-2 px-5 py-3 text-center font-semibold rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white"
+              <button
+                onClick={() => { setMenuOpen(false); onApply() }}
+                className="mt-2 px-5 py-3 text-center font-semibold rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white w-full"
               >
-                강의 상담 신청
-              </a>
+                수강신청
+              </button>
             </div>
           </motion.div>
         )}
