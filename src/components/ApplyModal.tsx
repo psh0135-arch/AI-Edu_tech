@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Send, CheckCircle2, ChevronDown } from 'lucide-react'
+import { saveEnrollment } from '../lib/firebase'
 
 interface ApplyModalProps {
   isOpen: boolean
@@ -46,7 +47,18 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
     setLoading(true)
 
     try {
-      await fetch('https://formsubmit.co/ajax/psh0135@gmail.com', {
+      // 1) Firebase Realtime Database 저장 (CRM 관리)
+      await saveEnrollment({
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        affiliation: form.affiliation,
+        aiLevel: form.aiLevel,
+        goal: form.goal,
+      })
+
+      // 2) 이메일 알림 (백그라운드, 실패해도 신청 완료 처리)
+      fetch('https://formsubmit.co/ajax/psh0135@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
@@ -59,7 +71,8 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
           수강목표: form.goal || '미입력',
           _template: 'table',
         }),
-      })
+      }).catch(() => {})
+
       setSubmitted(true)
     } catch {
       alert('제출 중 오류가 발생했습니다. 이메일로 직접 문의해주세요.')
