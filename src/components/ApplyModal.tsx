@@ -150,6 +150,20 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
+                    {/* 수강 정보 */}
+                    <div className="rounded-xl bg-purple-900/20 border border-purple-500/20 px-4 py-3 space-y-2.5">
+                      <p className="text-purple-400 text-xs font-semibold tracking-widest uppercase mb-2">수강 정보</p>
+                      <div className="flex items-center justify-between">
+                        <span className="text-slate-400 text-sm">수강과목</span>
+                        <span className="text-white text-sm font-medium">AI 활용 디지털 콘텐츠 마케팅</span>
+                      </div>
+                      <div className="h-px bg-white/5" />
+                      <div className="flex items-center justify-between">
+                        <span className="text-slate-400 text-sm">수강금액</span>
+                        <span className="gradient-text text-sm font-bold">15만원</span>
+                      </div>
+                    </div>
+
                     {/* 기본 정보 */}
                     <div className="pb-1">
                       <p className="text-purple-400 text-xs font-semibold tracking-widest uppercase mb-3">기본 정보</p>
