@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://psh0135-arch.github.io/AI-Edu_tech/sitemap.xml
