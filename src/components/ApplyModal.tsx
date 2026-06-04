@@ -1,11 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Send, CheckCircle2, ChevronDown } from 'lucide-react'
-import emailjs from '@emailjs/browser'
 import { saveEnrollment } from '../lib/firebase'
-
-// EmailJS 초기화
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
 
 interface ApplyModalProps {
   isOpen: boolean
@@ -61,25 +57,10 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
         goal: form.goal,
       })
 
-      // 2) 신청자에게 이메일 자동발송 (EmailJS)
-      try {
-        await emailjs.send(
-          import.meta.env.VITE_EMAILJS_SERVICE_ID,
-          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-          {
-            to_name: form.name,
-            to_email: form.email,
-            phone: form.phone,
-            course_name: 'AI 활용 디지털 콘텐츠 마케팅',
-            amount: '150,000원',
-          }
-        )
-      } catch (emailErr) {
-        console.error('[EmailJS 오류]', emailErr)
-        // 이메일 실패해도 신청은 완료 처리
-      }
+      // 2) 이메일은 Firebase Cloud Function이 자동으로 발송
+      //    (신청자 확인 메일 + 관리자 알림 동시 처리)
 
-      // 3) 관리자 알림 이메일 (백그라운드)
+      // 3) 관리자 알림 이메일 백업 (formsubmit)
       fetch('https://formsubmit.co/ajax/psh0135@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },

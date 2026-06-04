@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "enrollments": {
+      ".read": "auth != null",
+      ".write": true
+    }
+  }
+}
