@@ -14,19 +14,21 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ApplyModal from './components/ApplyModal'
 import AdminPage from './pages/AdminPage'
+import WebinarPage from './pages/WebinarPage'
 
 function App() {
   const [isApplyOpen, setIsApplyOpen] = useState(false)
-  const [isAdmin, setIsAdmin] = useState(() => window.location.hash === '#admin')
+  const [page, setPage] = useState(() => window.location.hash)
 
-  // 해시 변경 감지 (#admin ↔ 메인)
+  // 해시 변경 감지
   useEffect(() => {
-    const onHash = () => setIsAdmin(window.location.hash === '#admin')
+    const onHash = () => setPage(window.location.hash)
     window.addEventListener('hashchange', onHash)
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
 
-  if (isAdmin) return <AdminPage />
+  if (page === '#admin') return <AdminPage />
+  if (page === '#webinar') return <WebinarPage />
 
   return (
     <div className="min-h-screen bg-[#020617] text-white overflow-x-hidden">

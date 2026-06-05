@@ -112,9 +112,7 @@ export default function Webinar() {
 
                 {/* CTA — dark style */}
                 <a
-                  href="https://edu.saltlux.com/course/course_view.jsp?id=199703&cid=119301#course-view-199703"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#webinar"
                   className="flex items-center justify-between w-full px-6 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-amber-50 transition-all duration-200 group text-sm"
                 >
                   <span>과정 상세보기</span>
