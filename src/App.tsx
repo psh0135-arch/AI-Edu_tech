@@ -9,6 +9,7 @@ import Projects from './components/Projects'
 import Outcomes from './components/Outcomes'
 import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
+import Webinar from './components/Webinar'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ApplyModal from './components/ApplyModal'
@@ -39,6 +40,7 @@ function App() {
         <Outcomes />
         <Testimonials />
         <FAQ />
+        <Webinar />
         <Contact />
       </main>
       <Footer />
