@@ -3,9 +3,9 @@ import { useRef } from 'react'
 import { Calendar, Video, CheckCircle2, ArrowRight } from 'lucide-react'
 
 const benefits = [
-  '전문 편집자 없이 완성하는 AI 영상 실전기법',
-  'ChatGPT · Runway · CapCut AI 멀티모델 워크플로우',
-  '영상 편집 경험 없어도 2시간 만에 결과물 완성',
+  '코딩 지식 0에서 실제 작동하는 웹앱 완성까지',
+  'Claude AI + Cursor로 개발자 없이 직접 서비스 배포',
+  '마케터·기획자를 위한 실무 바이브코딩 워크플로우',
 ]
 
 export default function Webinar() {
@@ -41,9 +41,8 @@ export default function Webinar() {
             </h2>
 
             <p className="text-slate-400 text-base leading-relaxed mb-8">
-              AI 영상 콘텐츠 제작 과정이 고민되신다면,
-              <br />
-              6월 15일 무료 LIVE 특강으로 먼저 만나보실 수 있습니다.
+              AI 바이브코딩이 궁금하신가요?<br />
+              7월 1일 무료 LIVE 특강으로 먼저 경험해보실 수 있습니다.
             </p>
 
             <ul className="space-y-3.5">
@@ -83,10 +82,10 @@ export default function Webinar() {
               {/* Card Body */}
               <div className="p-6">
                 <h3 className="text-white font-bold text-xl mb-1 leading-snug">
-                  AI 영상 제작
+                  AI 바이브코딩
                 </h3>
                 <p className="text-slate-400 text-sm mb-6">
-                  멀티모델로 완성하는 실전 워크플로우
+                  코딩 없이 Claude AI로 앱 만들기 실전 특강
                 </p>
 
                 {/* Info Rows */}
@@ -94,7 +93,7 @@ export default function Webinar() {
                   <div className="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3">
                     <Calendar className="w-4 h-4 text-amber-400 flex-shrink-0" />
                     <div>
-                      <p className="text-white text-sm font-medium">2026.06.15(월) 19:00 ~ 21:00</p>
+                      <p className="text-white text-sm font-medium">2026.07.01(수) 19:00 ~ 21:00</p>
                       <p className="text-slate-500 text-xs mt-0.5">ZOOM 실시간 온라인 참여</p>
                     </div>
                   </div>
@@ -120,7 +119,7 @@ export default function Webinar() {
                 </a>
 
                 <p className="text-slate-600 text-xs text-center mt-3">
-                  신청 기간: 2026.05.21 ~ 2026.06.15
+                  신청 기간: 2026.06.15 ~ 2026.07.01
                 </p>
               </div>
             </div>
