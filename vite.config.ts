@@ -29,5 +29,5 @@ function sitemapPlugin() {
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), sitemapPlugin()],
-  base: '/AI-Edu_tech/',
+  base: process.env.VITE_BASE_PATH ?? '/AI-Edu_tech/',
 })
