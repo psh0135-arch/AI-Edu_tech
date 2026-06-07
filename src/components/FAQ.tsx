@@ -51,7 +51,7 @@ export default function FAQ() {
           <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
             FAQ
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
             AI 디지털 마케팅 강의 자주 묻는 질문
           </h2>
           <p className="text-slate-400 text-lg">
