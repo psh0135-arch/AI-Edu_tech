@@ -64,10 +64,8 @@ export default function Contact() {
             <br />
             <span className="gradient-text">시작하세요</span>
           </h2>
-          <p className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-            100시간 완성 커리큘럼으로 AI 마케팅 전문가가 되는 여정을 지금 바로 시작하세요.
-            <br className="hidden md:block" />
-            수강 상담은 무료입니다.
+          <p className="text-slate-400 text-base md:text-lg max-w-3xl mx-auto mb-10">
+            100시간 완성 커리큘럼으로 AI 마케팅 전문가가 되는 여정을 지금 바로 시작하세요. 수강 상담은 무료입니다.
           </p>
 
           {/* Main CTA */}
