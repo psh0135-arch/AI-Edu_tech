@@ -32,6 +32,7 @@ jobs:
         run: npm run build
         env:
           VITE_BASE_PATH: /AI-Edu_tech/
+          VITE_SITE_URL: https://psh0135-arch.github.io/AI-Edu_tech
           VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
           VITE_EMAILJS_SERVICE_ID: ${{ secrets.VITE_EMAILJS_SERVICE_ID }}
           VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_EMAILJS_TEMPLATE_ID }}

@@ -4,6 +4,7 @@
 
 [build.environment]
   VITE_BASE_PATH = "/"
+  VITE_SITE_URL = "https://ai-edu-tech.netlify.app"
   NODE_VERSION = "20"
 
 [[redirects]]
