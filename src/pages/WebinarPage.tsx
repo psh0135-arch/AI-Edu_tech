@@ -154,6 +154,11 @@ export default function WebinarPage() {
   const instructorInView = useInView(instructorRef, { once: true, margin: '-80px' })
   const faqInView = useInView(faqRef, { once: true, margin: '-80px' })
 
+  // 페이지 진입 시 최상단으로 스크롤
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [])
+
   // 실시간 신청 수
   useEffect(() => {
     const unsub = subscribeWebinarCount((n) => setCount(n + SEED_COUNT))
