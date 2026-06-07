@@ -38,7 +38,7 @@ export default function AITools() {
             AI Tools
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            11가지 AI 툴 완전 정복
+            ChatGPT·Gemini·Claude 등 AI 툴 실습
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             최신 생성형 AI 툴을 직접 실습하며 실무에 즉시 활용 가능한 역량을 키웁니다

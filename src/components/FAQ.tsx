@@ -52,7 +52,7 @@ export default function FAQ() {
             FAQ
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            자주 묻는 질문
+            AI 디지털 마케팅 강의 자주 묻는 질문
           </h2>
           <p className="text-slate-400 text-lg">
             궁금한 점이 있으시면 언제든지 상담 신청을 해주세요

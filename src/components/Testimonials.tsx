@@ -79,7 +79,7 @@ export default function Testimonials() {
             Testimonials
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            수강생 실제 후기
+            생성형 AI 마케팅 교육 수강생 후기
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             강의를 수료하고 실제 변화를 경험한 수강생들의 이야기

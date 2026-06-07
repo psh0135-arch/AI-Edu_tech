@@ -60,7 +60,7 @@ export default function About() {
             About Instructor
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            강사 소개
+            AI 마케팅 전문 강사 소개
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             기업 실무 11년 · 강의 5년 · 컨설팅 5년의 현장 중심 디지털 마케팅 전문가

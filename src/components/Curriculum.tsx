@@ -112,7 +112,7 @@ export default function Curriculum() {
             Curriculum
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            100시간 AI 커리큘럼
+            생성형 AI 마케팅 100시간 커리큘럼
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             7단계 체계적 커리큘럼으로 AI 마케팅 전문가로 성장하세요

@@ -39,7 +39,7 @@ export default function Outcomes() {
             Outcomes
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            수강생 성과
+            AI 마케팅 교육 수강 후 실제 성과
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             강의 수료 후 실제 커리어와 실무에서 만들어낸 변화들

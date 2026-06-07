@@ -87,7 +87,7 @@ export default function Projects() {
             Projects
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            실무형 AI 프로젝트
+            생성형 AI 활용 실무 포트폴리오 프로젝트
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             강의에서 직접 완성하는 6가지 실습 프로젝트로 포트폴리오를 채우세요

@@ -35,9 +35,9 @@ export default function Webinar() {
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
-              무료 웨비나를
+              AI 마케팅 무료 웨비나
               <br />
-              먼저 들어보세요
+              지금 바로 체험하세요
             </h2>
 
             <p className="text-slate-400 text-base leading-relaxed mb-8">
