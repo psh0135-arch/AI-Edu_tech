@@ -176,7 +176,10 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
                       <div className="h-px bg-white/5" />
                       <div className="flex items-center justify-between">
                         <span className="text-slate-400 text-sm">수강금액</span>
-                        <span className="gradient-text text-sm font-bold">15만원</span>
+                        <span className="gradient-text text-sm font-bold">70만원</span>
+                      </div>
+                      <div className="flex items-center justify-end">
+                        <span className="text-emerald-400 text-xs font-medium">국민내일배움카드 결제시 70% 할인</span>
                       </div>
                     </div>
 
