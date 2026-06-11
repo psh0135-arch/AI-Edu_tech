@@ -9,7 +9,7 @@ const channels = [
     title: '카카오톡 상담',
     desc: '빠른 1:1 상담 및 수강 문의',
     action: '카카오톡으로 문의',
-    gradient: 'from-blue-500 to-cyan-600',
+    gradient: 'from-[#0F172A] to-[#2563EB]',
     href: 'http://pf.kakao.com/_xecRAG',
   },
   {
@@ -17,7 +17,7 @@ const channels = [
     title: '수강 신청',
     desc: '신청서 작성 후 빠르게 연락 드립니다',
     action: '수강 신청하기',
-    gradient: 'from-blue-600 to-cyan-600',
+    gradient: 'from-[#0F172A] to-[#2563EB]',
     href: '#modal',
   },
   {
@@ -25,7 +25,7 @@ const channels = [
     title: '이메일 문의',
     desc: '상세한 교육 제안서 및 견적 요청',
     action: '이메일 보내기',
-    gradient: 'from-blue-600 to-cyan-600',
+    gradient: 'from-[#0F172A] to-[#2563EB]',
     href: 'mailto:psh0135@gmail.com',
   },
 ]
@@ -54,17 +54,17 @@ export default function Contact() {
           className="text-center mb-16"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-500/30 text-sm text-blue-600 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-200 text-sm text-blue-600 mb-8">
             <Sparkles className="w-4 h-4" />
             지금 시작하면 가장 빠릅니다
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
             지금 생성형 AI 마케팅을
             <br />
             <span className="gradient-text">시작하세요</span>
           </h2>
-          <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto mb-10">
+          <p className="text-slate-600 text-base md:text-lg max-w-3xl mx-auto mb-10">
             100시간 완성 커리큘럼으로 AI 마케팅 전문가가 되는 여정을 지금 바로 시작하세요.<br />수강 상담은 무료입니다.
           </p>
 
@@ -108,10 +108,10 @@ export default function Contact() {
               <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${ch.gradient} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200`}>
                 <ch.icon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-gray-900 font-bold text-lg mb-2">{ch.title}</h3>
-              <p className="text-gray-600 text-sm mb-3">{ch.desc}</p>
+              <h3 className="text-slate-900 font-bold text-lg mb-2">{ch.title}</h3>
+              <p className="text-slate-600 text-sm mb-3">{ch.desc}</p>
               {ch.href.startsWith('mailto:') && (
-                <p className="text-gray-500 text-xs mb-3 font-mono">{ch.href.replace('mailto:', '')}</p>
+                <p className="text-slate-500 text-xs mb-3 font-mono">{ch.href.replace('mailto:', '')}</p>
               )}
               <span className="inline-flex items-center gap-1 text-sm text-blue-600 font-medium group-hover:gap-2 transition-all">
                 {ch.action}
@@ -127,7 +127,7 @@ export default function Contact() {
             href="http://pf.kakao.com/_xecRAG"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-2xl shadow-2xl shadow-blue-500/50"
+            className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white font-bold rounded-2xl shadow-2xl shadow-blue-900/20"
           >
             <MessageCircle className="w-5 h-5" />
             카카오톡 상담 신청

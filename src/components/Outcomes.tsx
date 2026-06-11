@@ -6,7 +6,7 @@ const stats = [
   { icon: Trophy, value: '100H+', label: '완성형 커리큘럼', sub: '7단계 체계 구성', color: 'text-blue-600' },
   { icon: Briefcase, value: '25회', label: '라이브 세션', sub: '실시간 실습 수업', color: 'text-blue-400' },
   { icon: Star, value: 'AI 프로젝트', label: '직접 완성', sub: '포트폴리오 기반 교육', color: 'text-blue-600' },
-  { icon: Rocket, value: '포트폴리오', label: '취업 연결', sub: '커리어 전환 지원', color: 'text-cyan-600' },
+  { icon: Rocket, value: '포트폴리오', label: '취업 연결', sub: '커리어 전환 지원', color: 'text-blue-600' },
 ]
 
 const outcomes = [
@@ -38,10 +38,10 @@ export default function Outcomes() {
           <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase mb-3 block">
             Outcomes
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             AI 마케팅 교육 수강 후 실제 성과
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
             강의 수료 후 실제 커리어와 실무에서 만들어낸 변화들
           </p>
         </motion.div>
@@ -58,8 +58,8 @@ export default function Outcomes() {
             >
               <stat.icon className={`w-7 h-7 ${stat.color} mx-auto mb-3`} />
               <div className={`text-2xl md:text-3xl font-bold gradient-text mb-1`}>{stat.value}</div>
-              <div className="text-gray-900 text-sm font-medium mb-1">{stat.label}</div>
-              <div className="text-gray-500 text-xs">{stat.sub}</div>
+              <div className="text-slate-900 text-sm font-medium mb-1">{stat.label}</div>
+              <div className="text-slate-500 text-xs">{stat.sub}</div>
             </motion.div>
           ))}
         </div>
@@ -76,8 +76,8 @@ export default function Outcomes() {
             >
               <div className="text-3xl flex-shrink-0">{item.emoji}</div>
               <div>
-                <h3 className="text-gray-900 font-bold text-lg mb-1">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-slate-900 font-bold text-lg mb-1">{item.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
               </div>
             </motion.div>
           ))}

@@ -8,15 +8,15 @@ const phases = [
     label: 'PHASE 1.',
     title: 'AI 리터러시 및\n콘텐츠 제작\n기술 습득',
     color: 'from-blue-600 to-blue-600',
-    borderColor: 'border-blue-500/40',
-    glowColor: 'shadow-blue-500/20',
+    borderColor: 'border-blue-300',
+    glowColor: 'shadow-blue-900/20',
     bgColor: 'from-blue-900/20 to-blue-200/20',
     sessions: [
       {
         icon: Brain,
         title: 'AI 리터러시 및 프롬프트 엔지니어링',
         range: '1~4차시',
-        rangeColor: 'text-cyan-600',
+        rangeColor: 'text-blue-600',
         barColor: 'from-blue-500 to-blue-500',
         barWidth: '35%',
         desc: 'LLM의 원리를 이해하고 업무 생산성 향상을 위한 맞춤형 프롬프트 설계 기술을 습득합니다.',
@@ -39,15 +39,15 @@ const phases = [
     label: 'PHASE 2.',
     title: '마케팅 자동화\n및 실무 전략\n고도화',
     color: 'from-blue-600 to-pink-600',
-    borderColor: 'border-blue-500/40',
-    glowColor: 'shadow-blue-500/20',
+    borderColor: 'border-blue-300',
+    glowColor: 'shadow-blue-900/20',
     bgColor: 'from-blue-200/20 to-pink-900/20',
     sessions: [
       {
         icon: Bot,
         title: 'AI 마케팅 자동화 및 챗봇 구축',
         range: '12~15차시',
-        rangeColor: 'text-cyan-600',
+        rangeColor: 'text-blue-600',
         barColor: 'from-blue-400 to-blue-500',
         barWidth: '60%',
         desc: 'NotebookLM과 GPTs를 활용해 문서 자동화와 나만의 맞춤형 AI 챗봇 워크플로우를 설계합니다.',
@@ -88,11 +88,11 @@ function TimelineBar() {
     <div ref={ref} className="glass-card rounded-2xl p-5 mb-6">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-3">
-          <span className="text-xs font-bold text-gray-600 tracking-widest uppercase">Phases & Steps</span>
+          <span className="text-xs font-bold text-slate-600 tracking-widest uppercase">Phases & Steps</span>
         </div>
         <div className="text-center flex-1 px-4">
-          <span className="text-xs font-bold text-gray-600 tracking-widest uppercase">Timeline & Progress</span>
-          <p className="text-xs text-gray-400">타임라인 및 진행</p>
+          <span className="text-xs font-bold text-slate-600 tracking-widest uppercase">Timeline & Progress</span>
+          <p className="text-xs text-slate-500">타임라인 및 진행</p>
         </div>
         <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600/20 border border-emerald-500/30">
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
@@ -116,7 +116,7 @@ function TimelineBar() {
           <span className="text-xs text-blue-400 font-bold">START</span>
           <div className="flex gap-0 flex-1 justify-around px-2">
             {ticks.map(n => (
-              <span key={n} className="text-gray-400 text-[9px] leading-none">{n}</span>
+              <span key={n} className="text-slate-500 text-[9px] leading-none">{n}</span>
             ))}
           </div>
           <span className="text-xs text-emerald-400 font-bold">관료</span>
@@ -139,14 +139,14 @@ export default function CurriculumRoadmap() {
         transition={{ duration: 0.5 }}
         className="text-center mb-10"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-blue-500/30 text-xs text-cyan-600 mb-4">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-blue-200 text-xs text-blue-600 mb-4">
           <ChevronRight className="w-3 h-3" />
           로드맵 상세 가이드
         </div>
-        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+        <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
           생성형 AI 활용과 디지털 마케팅 마스터 과정
         </h3>
-        <p className="text-gray-500 text-sm">24단계 성공 가이드 · 2-Phase 구조</p>
+        <p className="text-slate-500 text-sm">24단계 성공 가이드 · 2-Phase 구조</p>
       </motion.div>
 
       {/* Timeline Bar */}
@@ -171,8 +171,8 @@ export default function CurriculumRoadmap() {
             <div className="flex flex-col md:flex-row">
               {/* Phase Label */}
               <div className={`md:w-44 flex-shrink-0 bg-gradient-to-br ${phase.color} p-5 flex flex-col justify-center`}>
-                <div className="text-gray-900/70 text-xs font-bold tracking-widest mb-1">{phase.label}</div>
-                <div className="text-gray-900 font-bold text-base leading-snug whitespace-pre-line">
+                <div className="text-slate-900/70 text-xs font-bold tracking-widest mb-1">{phase.label}</div>
+                <div className="text-slate-900 font-bold text-base leading-snug whitespace-pre-line">
                   {phase.title}
                 </div>
               </div>
@@ -188,16 +188,16 @@ export default function CurriculumRoadmap() {
                     className={si > 0 ? 'pt-5' : ''}
                   >
                     <div className="flex items-start gap-3 mb-2">
-                      <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <session.icon className="w-4 h-4 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex flex-wrap items-center gap-2 mb-1">
-                          <span className="text-gray-900 font-bold text-sm">{session.title}</span>
+                          <span className="text-slate-900 font-bold text-sm">{session.title}</span>
                           <span className={`text-xs font-bold ${session.rangeColor}`}>({session.range})</span>
                         </div>
                         {/* Progress Bar */}
-                        <div className="h-2 bg-gray-100 rounded-full overflow-hidden mb-2">
+                        <div className="h-2 bg-slate-100 rounded-full overflow-hidden mb-2">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={inView ? { width: session.barWidth } : {}}
@@ -205,12 +205,12 @@ export default function CurriculumRoadmap() {
                             className={`h-full rounded-full bg-gradient-to-r ${session.barColor}`}
                           />
                         </div>
-                        <p className="text-gray-600 text-xs leading-relaxed mb-2">{session.desc}</p>
+                        <p className="text-slate-600 text-xs leading-relaxed mb-2">{session.desc}</p>
                         <div className="flex flex-wrap gap-1">
                           {session.tools.map(tool => (
                             <span
                               key={tool}
-                              className="text-[10px] px-2 py-0.5 rounded-md bg-gray-100 text-gray-900/60 border border-gray-200"
+                              className="text-[10px] px-2 py-0.5 rounded-md bg-slate-100 text-slate-900/60 border border-gray-200"
                             >
                               {tool}
                             </span>

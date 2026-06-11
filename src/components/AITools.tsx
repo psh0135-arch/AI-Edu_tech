@@ -4,15 +4,15 @@ import { useRef } from 'react'
 const tools = [
   { name: 'ChatGPT', category: '텍스트 생성', emoji: '💬', practice: true, color: 'from-green-600/20 to-green-900/20', border: 'border-green-500/30', text: 'text-green-400' },
   { name: 'Claude AI', category: 'AI 어시스턴트', emoji: '🤖', practice: true, color: 'from-orange-600/20 to-orange-900/20', border: 'border-orange-500/30', text: 'text-orange-400' },
-  { name: 'Gemini', category: '멀티모달 AI', emoji: '♊', practice: true, color: 'from-blue-600/20 to-blue-900/20', border: 'border-blue-500/30', text: 'text-blue-400' },
+  { name: 'Gemini', category: '멀티모달 AI', emoji: '♊', practice: true, color: 'from-blue-600/20 to-blue-900/20', border: 'border-blue-200', text: 'text-blue-400' },
   { name: 'Canva AI', category: '디자인 자동화', emoji: '🎨', practice: true, color: 'from-pink-600/20 to-pink-900/20', border: 'border-pink-500/30', text: 'text-pink-400' },
-  { name: 'Gamma AI', category: '프레젠테이션', emoji: '📊', practice: true, color: 'from-cyan-600/20 to-yellow-900/20', border: 'border-cyan-500/30', text: 'text-yellow-400' },
+  { name: 'Gamma AI', category: '프레젠테이션', emoji: '📊', practice: true, color: 'from-blue-600/20 to-yellow-900/20', border: 'border-blue-200', text: 'text-yellow-400' },
   { name: 'Runway', category: 'AI 영상 생성', emoji: '🎬', practice: true, color: 'from-red-600/20 to-red-900/20', border: 'border-red-500/30', text: 'text-red-500' },
-  { name: 'CapCut', category: '영상 편집', emoji: '✂️', practice: true, color: 'from-cyan-600/20 to-yellow-900/20', border: 'border-cyan-500/30', text: 'text-yellow-400' },
+  { name: 'CapCut', category: '영상 편집', emoji: '✂️', practice: true, color: 'from-blue-600/20 to-yellow-900/20', border: 'border-blue-200', text: 'text-yellow-400' },
   { name: 'SUNO', category: 'AI 음악 생성', emoji: '🎵', practice: true, color: 'from-teal-600/20 to-teal-900/20', border: 'border-teal-500/30', text: 'text-teal-400' },
-  { name: 'NotebookLM', category: 'AI 리서치', emoji: '📓', practice: false, color: 'from-blue-600/20 to-blue-200/20', border: 'border-blue-500/30', text: 'text-cyan-600' },
+  { name: 'NotebookLM', category: 'AI 리서치', emoji: '📓', practice: false, color: 'from-blue-600/20 to-blue-200/20', border: 'border-blue-200', text: 'text-blue-600' },
   { name: 'Make', category: '마케팅 자동화', emoji: '⚙️', practice: true, color: 'from-indigo-600/20 to-indigo-900/20', border: 'border-indigo-500/30', text: 'text-indigo-400' },
-  { name: 'Cursor AI', category: '바이브코딩', emoji: '💻', practice: true, color: 'from-slate-600/20 to-slate-900/20', border: 'border-slate-500/30', text: 'text-gray-700' },
+  { name: 'Cursor AI', category: '바이브코딩', emoji: '💻', practice: true, color: 'from-slate-600/20 to-slate-900/20', border: 'border-slate-500/30', text: 'text-slate-700' },
 ]
 
 export default function AITools() {
@@ -37,10 +37,10 @@ export default function AITools() {
           <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase mb-3 block">
             AI Tools
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             ChatGPT·Gemini·Claude 등 AI 툴 실습
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
             최신 생성형 AI 툴을 직접 실습하며 실무에 즉시 활용 가능한 역량을 키웁니다
           </p>
         </motion.div>
@@ -61,7 +61,7 @@ export default function AITools() {
               {/* Practice Badge */}
               {tool.practice && (
                 <div className="absolute top-3 right-3">
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-900/60 border border-gray-200">
+                  <span className="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-900/60 border border-gray-200">
                     실습
                   </span>
                 </div>
@@ -71,7 +71,7 @@ export default function AITools() {
               <div className="text-3xl mb-3">{tool.emoji}</div>
 
               {/* Name */}
-              <h3 className="text-gray-900 font-bold text-base mb-1">{tool.name}</h3>
+              <h3 className="text-slate-900 font-bold text-base mb-1">{tool.name}</h3>
 
               {/* Category */}
               <p className={`text-xs font-medium ${tool.text}`}>{tool.category}</p>
@@ -88,7 +88,7 @@ export default function AITools() {
             {[...tools, ...tools].map((tool, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 px-4 py-2 glass border border-blue-500/20 rounded-full text-sm text-gray-600 flex-shrink-0"
+                className="flex items-center gap-2 px-4 py-2 glass border border-blue-200 rounded-full text-sm text-slate-600 flex-shrink-0"
               >
                 <span>{tool.emoji}</span>
                 <span>{tool.name}</span>

@@ -31,17 +31,17 @@ export default function Navbar({ onApply }: NavbarProps) {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass border-b border-blue-500/10 shadow-lg shadow-blue-500/10' : 'bg-transparent'
+        scrolled ? 'glass border-b border-blue-100 shadow-lg shadow-blue-900/10' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center animate-pulse-glow">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#0F172A] to-[#2563EB] flex items-center justify-center animate-pulse-glow">
               <Zap className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold text-gray-900 text-lg" style={{ fontFamily: 'Playfair Display, Noto Serif KR, serif' }}>
+            <span className="font-bold text-slate-900 text-lg" style={{ fontFamily: 'Playfair Display, Noto Serif KR, serif' }}>
               AI<span className="gradient-text">마케팅</span>
             </span>
           </a>
@@ -52,7 +52,7 @@ export default function Navbar({ onApply }: NavbarProps) {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-200"
+                className="px-4 py-2 text-sm text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all duration-200"
               >
                 {link.label}
               </a>
@@ -63,7 +63,7 @@ export default function Navbar({ onApply }: NavbarProps) {
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={onApply}
-              className="px-5 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white hover:from-blue-700 hover:to-cyan-600 hover:scale-105 transition-all duration-200 shadow-lg shadow-blue-500/30"
+              className="px-5 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white hover:from-[#1E293B] hover:to-[#1D4ED8] hover:scale-105 transition-all duration-200 shadow-lg shadow-blue-900/15"
             >
               수강신청
             </button>
@@ -71,7 +71,7 @@ export default function Navbar({ onApply }: NavbarProps) {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-gray-700 hover:text-gray-900"
+            className="md:hidden p-2 text-slate-700 hover:text-slate-900"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -86,7 +86,7 @@ export default function Navbar({ onApply }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-blue-500/10"
+            className="md:hidden glass border-t border-blue-100"
           >
             <div className="px-4 py-4 flex flex-col gap-2">
               {navLinks.map(link => (
@@ -94,14 +94,14 @@ export default function Navbar({ onApply }: NavbarProps) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="px-4 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all"
+                  className="px-4 py-3 text-slate-700 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all"
                 >
                   {link.label}
                 </a>
               ))}
               <button
                 onClick={() => { setMenuOpen(false); onApply() }}
-                className="mt-2 px-5 py-3 text-center font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white w-full"
+                className="mt-2 px-5 py-3 text-center font-semibold rounded-xl bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white w-full"
               >
                 수강신청
               </button>

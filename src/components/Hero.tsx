@@ -28,9 +28,9 @@ export default function Hero({ onApply }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-500/30 text-sm text-blue-600 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-200 text-sm text-blue-600 mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
           생성형 AI × 디지털 마케팅 × 바이브코딩
         </motion.div>
 
@@ -41,7 +41,7 @@ export default function Hero({ onApply }: HeroProps) {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
         >
-          <span className="text-gray-900">생성형 AI로 배우는</span>
+          <span className="text-slate-900">생성형 AI로 배우는</span>
           <br />
           <span className="gradient-text-main">실무 중심 디지털</span>
           <br />
@@ -53,7 +53,7 @@ export default function Hero({ onApply }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto mb-4"
+          className="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto mb-4"
         >
           ChatGPT · Gemini · Claude · Runway · Canva AI
         </motion.p>
@@ -61,7 +61,7 @@ export default function Hero({ onApply }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="text-gray-500 text-base md:text-lg max-w-xl mx-auto mb-10"
+          className="text-slate-500 text-base md:text-lg max-w-xl mx-auto mb-10"
         >
           실무 프로젝트 기반 생성형 AI 마케팅 교육
         </motion.p>
@@ -75,7 +75,7 @@ export default function Hero({ onApply }: HeroProps) {
         >
           <button
             onClick={onApply}
-            className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-2xl shadow-lg shadow-blue-500/40 hover:shadow-blue-500/60 hover:scale-105 transition-all duration-200"
+            className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white font-semibold rounded-2xl shadow-lg shadow-blue-900/40 hover:shadow-blue-900/60 hover:scale-105 transition-all duration-200"
           >
             수강신청
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -85,7 +85,7 @@ export default function Hero({ onApply }: HeroProps) {
             className="flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold bg-gradient-to-r from-blue-600/30 to-blue-600/30 border border-blue-400/50 hover:from-blue-600/50 hover:to-blue-600/50 hover:border-blue-400/80 hover:scale-105 transition-all duration-200"
           >
             <span className="gradient-text font-semibold">커리큘럼 보기</span>
-            <BookOpen className="w-4 h-4 text-cyan-600" />
+            <BookOpen className="w-4 h-4 text-blue-600" />
           </a>
         </motion.div>
 
@@ -106,7 +106,7 @@ export default function Hero({ onApply }: HeroProps) {
             >
               <stat.icon className="w-5 h-5 text-blue-600 mx-auto mb-2" />
               <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-              <div className="text-xs text-gray-500 mt-1">{stat.label}</div>
+              <div className="text-xs text-slate-500 mt-1">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -127,7 +127,7 @@ export default function Hero({ onApply }: HeroProps) {
           ].map(badge => (
             <div
               key={badge.label}
-              className="glass border border-blue-500/20 text-cyan-600 text-xs px-4 py-2 rounded-full animate-float whitespace-nowrap"
+              className="glass border border-blue-200 text-blue-600 text-xs px-4 py-2 rounded-full animate-float whitespace-nowrap"
               style={{ animationDelay: `${badge.delay}s` }}
             >
               ✦ {badge.label}

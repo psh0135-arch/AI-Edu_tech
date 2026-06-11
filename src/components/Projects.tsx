@@ -49,7 +49,7 @@ const projects = [
     tag: '바이브코딩',
     emoji: '💻',
     gradient: 'from-yellow-900/40 to-blue-200/40',
-    border: 'border-cyan-500/30',
+    border: 'border-blue-200',
     colSpan: 'md:col-span-1',
     rowSpan: '',
   },
@@ -59,7 +59,7 @@ const projects = [
     tag: '포트폴리오',
     emoji: '📁',
     gradient: 'from-blue-200/40 to-yellow-900/40',
-    border: 'border-blue-500/30',
+    border: 'border-blue-200',
     colSpan: 'md:col-span-2',
     rowSpan: '',
   },
@@ -86,10 +86,10 @@ export default function Projects() {
           <span className="text-emerald-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
             Projects
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
             생성형 AI 활용 실무 포트폴리오 프로젝트
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
             강의에서 직접 완성하는 6가지 실습 프로젝트로 포트폴리오를 채우세요
           </p>
         </motion.div>
@@ -109,18 +109,18 @@ export default function Projects() {
 
               {/* Tag */}
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-900/70 border border-gray-200">
+                <span className="text-xs px-3 py-1 rounded-full bg-slate-100 text-slate-900/70 border border-gray-200">
                   {project.tag}
                 </span>
-                <ExternalLink className="w-4 h-4 text-gray-900/30 group-hover:text-gray-900/70 transition-colors" />
+                <ExternalLink className="w-4 h-4 text-slate-900/30 group-hover:text-slate-900/70 transition-colors" />
               </div>
 
               {/* Emoji */}
               <div className="text-4xl mb-3">{project.emoji}</div>
 
               {/* Content */}
-              <h3 className="text-gray-900 font-bold text-lg mb-2">{project.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{project.desc}</p>
+              <h3 className="text-slate-900 font-bold text-lg mb-2">{project.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed">{project.desc}</p>
 
               {/* Bottom accent */}
               <div className="mt-4 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-blue-500 to-blue-500 transition-all duration-500 rounded-full" />

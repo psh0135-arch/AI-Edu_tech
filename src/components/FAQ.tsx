@@ -48,13 +48,13 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-cyan-600 text-sm font-semibold tracking-widest uppercase mb-3 block">
+          <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase mb-3 block">
             FAQ
           </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
             AI 디지털 마케팅 강의 자주 묻는 질문
           </h2>
-          <p className="text-gray-600 text-lg">
+          <p className="text-slate-600 text-lg">
             궁금한 점이 있으시면 언제든지 상담 신청을 해주세요
           </p>
         </motion.div>
@@ -68,14 +68,14 @@ export default function FAQ() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: i * 0.07 }}
               className={`glass-card rounded-2xl overflow-hidden border transition-all duration-300 ${
-                openIndex === i ? 'border-blue-500/40' : 'border-gray-200'
+                openIndex === i ? 'border-blue-300' : 'border-gray-200'
               }`}
             >
               <button
                 className="w-full flex items-center justify-between px-6 py-4 text-left"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
-                <span className="text-gray-900 font-medium pr-4">{faq.q}</span>
+                <span className="text-slate-900 font-medium pr-4">{faq.q}</span>
                 <ChevronDown
                   className={`w-5 h-5 text-blue-600 flex-shrink-0 transition-transform duration-300 ${
                     openIndex === i ? 'rotate-180' : ''
@@ -91,7 +91,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
+                    <div className="px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-gray-200 pt-4">
                       {faq.a}
                     </div>
                   </motion.div>

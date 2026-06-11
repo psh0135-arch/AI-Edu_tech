@@ -106,25 +106,25 @@ function useCountdown(target: Date) {
 function CountdownUnit({ value, label }: { value: number; label: string }) {
   return (
     <div className="flex flex-col items-center">
-      <div className="w-14 h-14 rounded-xl bg-gray-100 border border-gray-200 flex items-center justify-center text-2xl font-bold text-gray-900 tabular-nums">
+      <div className="w-14 h-14 rounded-xl bg-slate-100 border border-gray-200 flex items-center justify-center text-2xl font-bold text-slate-900 tabular-nums">
         {String(value).padStart(2, '0')}
       </div>
-      <span className="text-gray-500 text-xs mt-1">{label}</span>
+      <span className="text-slate-500 text-xs mt-1">{label}</span>
     </div>
   )
 }
 
 function FAQItem({ q, a, open, onToggle }: { q: string; a: string; open: boolean; onToggle: () => void }) {
   return (
-    <div className={`rounded-2xl border transition-all duration-300 overflow-hidden ${open ? 'border-blue-500/40 bg-blue-50' : 'border-gray-200 bg-white'}`}>
+    <div className={`rounded-2xl border transition-all duration-300 overflow-hidden ${open ? 'border-blue-300 bg-blue-50' : 'border-gray-200 bg-white'}`}>
       <button className="w-full flex items-center justify-between px-6 py-4 text-left" onClick={onToggle}>
-        <span className="text-gray-900 font-medium pr-4 text-sm md:text-base">{q}</span>
+        <span className="text-slate-900 font-medium pr-4 text-sm md:text-base">{q}</span>
         <ChevronDown className={`w-5 h-5 text-blue-600 flex-shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
       </button>
       <AnimatePresence>
         {open && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }}>
-            <p className="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-4">{a}</p>
+            <p className="px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-gray-200 pt-4">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -215,20 +215,20 @@ export default function WebinarPage() {
           <div className="w-20 h-20 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 className="w-10 h-10 text-emerald-400" />
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">신청 완료!</h2>
-          <p className="text-gray-600 leading-relaxed mb-4">
-            <strong className="text-gray-900">{form.name}</strong>님, 웨비나 신청이 접수되었습니다.<br />
+          <h2 className="text-3xl font-bold text-slate-900 mb-3">신청 완료!</h2>
+          <p className="text-slate-600 leading-relaxed mb-4">
+            <strong className="text-slate-900">{form.name}</strong>님, 웨비나 신청이 접수되었습니다.<br />
             ZOOM 링크는 <strong className="text-blue-600">{form.email}</strong>과<br />
             <strong className="text-blue-600">{form.phone}</strong>으로 발송됩니다.
           </p>
-          <div className="glass rounded-2xl border border-blue-500/20 p-5 mb-8 text-sm text-gray-600 text-left space-y-2">
-            <p>📅 <strong className="text-gray-900">일시</strong>: {WEBINAR_DATE}</p>
-            <p>💻 <strong className="text-gray-900">방식</strong>: ZOOM 실시간 온라인</p>
-            <p>📩 <strong className="text-gray-900">확인 메일</strong>: 영업일 기준 24시간 이내 발송</p>
+          <div className="glass rounded-2xl border border-blue-200 p-5 mb-8 text-sm text-slate-600 text-left space-y-2">
+            <p>📅 <strong className="text-slate-900">일시</strong>: {WEBINAR_DATE}</p>
+            <p>💻 <strong className="text-slate-900">방식</strong>: ZOOM 실시간 온라인</p>
+            <p>📩 <strong className="text-slate-900">확인 메일</strong>: 영업일 기준 24시간 이내 발송</p>
           </div>
           <button
             onClick={() => { window.location.hash = '' }}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-xl text-sm"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white font-bold rounded-xl text-sm"
           >
             메인 강의 살펴보기
             <ArrowRight className="w-4 h-4" />
@@ -240,12 +240,12 @@ export default function WebinarPage() {
 
   // ── 메인 렌더 ─────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-[#FAFBFC] text-gray-900">
+    <div className="min-h-screen bg-[#FAFBFC] text-slate-900">
 
       {/* ── 상단 네비 ── */}
       <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-          <button onClick={() => { window.location.hash = '' }} className="text-gray-600 hover:text-gray-900 text-sm transition-colors flex items-center gap-1.5">
+          <button onClick={() => { window.location.hash = '' }} className="text-slate-600 hover:text-slate-900 text-sm transition-colors flex items-center gap-1.5">
             ← 메인으로
           </button>
           <div className="flex items-center gap-2">
@@ -254,9 +254,9 @@ export default function WebinarPage() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
             </span>
             <span className="text-red-500 text-xs font-bold uppercase tracking-widest">LIVE</span>
-            <span className="text-gray-500 text-xs hidden sm:inline">· 2026.07.01(수) 19:00~21:00</span>
+            <span className="text-slate-500 text-xs hidden sm:inline">· 2026.07.01(수) 19:00~21:00</span>
           </div>
-          <button onClick={scrollToForm} className="px-4 py-1.5 text-xs font-bold rounded-lg bg-gradient-to-r from-blue-600 to-cyan-500 text-white hover:opacity-90 transition-opacity">
+          <button onClick={scrollToForm} className="px-4 py-1.5 text-xs font-bold rounded-lg bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white hover:opacity-90 transition-opacity">
             무료 신청
           </button>
         </div>
@@ -291,7 +291,7 @@ export default function WebinarPage() {
           </motion.h1>
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-600 text-lg md:text-xl leading-relaxed mb-8 max-w-xl mx-auto">
+            className="text-slate-600 text-lg md:text-xl leading-relaxed mb-8 max-w-xl mx-auto">
             Claude AI + Cursor로 마케터·기획자도<br className="hidden sm:block" />
             24시간 안에 실제 작동하는 서비스를 배포합니다.
           </motion.p>
@@ -300,11 +300,11 @@ export default function WebinarPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center justify-center gap-3 mb-8">
             <CountdownUnit value={d} label="일" />
-            <span className="text-gray-400 text-2xl font-bold pb-4">:</span>
+            <span className="text-slate-500 text-2xl font-bold pb-4">:</span>
             <CountdownUnit value={h} label="시간" />
-            <span className="text-gray-400 text-2xl font-bold pb-4">:</span>
+            <span className="text-slate-500 text-2xl font-bold pb-4">:</span>
             <CountdownUnit value={m} label="분" />
-            <span className="text-gray-400 text-2xl font-bold pb-4">:</span>
+            <span className="text-slate-500 text-2xl font-bold pb-4">:</span>
             <CountdownUnit value={s} label="초" />
           </motion.div>
 
@@ -316,18 +316,18 @@ export default function WebinarPage() {
                 <div key={i} className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-500 to-blue-500 border-2 border-white" />
               ))}
             </div>
-            <span className="text-gray-600 text-sm">
-              현재 <strong className="text-gray-900">{count}명</strong>이 신청했습니다
+            <span className="text-slate-600 text-sm">
+              현재 <strong className="text-slate-900">{count}명</strong>이 신청했습니다
             </span>
           </motion.div>
 
           <motion.button onClick={scrollToForm} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.4 }}
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-lg font-bold rounded-2xl shadow-2xl shadow-blue-500/50 hover:from-blue-700 hover:to-cyan-600 transition-all duration-200 hover:scale-105">
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white text-lg font-bold rounded-2xl shadow-2xl shadow-blue-900/20 hover:from-[#1E293B] hover:to-[#1D4ED8] transition-all duration-200 hover:scale-105">
             무료 웨비나 신청하기
             <ArrowRight className="w-5 h-5" />
           </motion.button>
 
-          <p className="text-gray-400 text-xs mt-4">선착순 100명 · 비용 없음 · 언제든 취소 가능</p>
+          <p className="text-slate-500 text-xs mt-4">선착순 100명 · 비용 없음 · 언제든 취소 가능</p>
         </div>
       </section>
 
@@ -336,18 +336,18 @@ export default function WebinarPage() {
         <div className="max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={benefitsInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
             className="text-center mb-12">
-            <span className="text-cyan-600 text-xs font-bold uppercase tracking-widest block mb-3">이 웨비나에서 얻어가는 것</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">2시간 후, 당신이 달라집니다</h2>
+            <span className="text-blue-600 text-xs font-bold uppercase tracking-widest block mb-3">이 웨비나에서 얻어가는 것</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">2시간 후, 당신이 달라집니다</h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {benefits.map((b, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} animate={benefitsInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="glass-card rounded-2xl p-6 border border-gray-200 hover:border-blue-500/30 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/30 to-blue-600/30 border border-blue-500/20 flex items-center justify-center mb-4">
+                className="glass-card rounded-2xl p-6 border border-gray-200 hover:border-blue-200 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/30 to-blue-600/30 border border-blue-200 flex items-center justify-center mb-4">
                   <b.icon className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-gray-900 font-bold text-lg mb-2">{b.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{b.desc}</p>
+                <h3 className="text-slate-900 font-bold text-lg mb-2">{b.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{b.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -359,9 +359,9 @@ export default function WebinarPage() {
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={curriculumInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
             className="text-center mb-12">
-            <span className="text-cyan-600 text-xs font-bold uppercase tracking-widest block mb-3">CURRICULUM</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">2시간 타임라인</h2>
-            <p className="text-gray-600">처음부터 끝까지 라이브로 함께합니다</p>
+            <span className="text-blue-600 text-xs font-bold uppercase tracking-widest block mb-3">CURRICULUM</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">2시간 타임라인</h2>
+            <p className="text-slate-600">처음부터 끝까지 라이브로 함께합니다</p>
           </motion.div>
 
           <div className="relative">
@@ -373,17 +373,17 @@ export default function WebinarPage() {
                 <motion.div key={i} initial={{ opacity: 0, x: -20 }} animate={curriculumInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.12 }}
                   className="flex gap-6 md:gap-8">
                   {/* 아이콘 노드 */}
-                  <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-blue-600/40 to-blue-600/20 border border-blue-500/30 flex items-center justify-center relative z-10">
+                  <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-blue-600/40 to-blue-600/20 border border-blue-200 flex items-center justify-center relative z-10">
                     <item.icon className="w-5 h-5 md:w-6 md:h-6 text-blue-600" />
                   </div>
                   {/* 내용 */}
                   <div className="glass-card rounded-2xl p-5 flex-1 border border-gray-200">
                     <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <span className="text-gray-500 text-xs font-mono">{item.time}</span>
-                      <span className="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-600 text-xs font-medium">{item.tag}</span>
+                      <span className="text-slate-500 text-xs font-mono">{item.time}</span>
+                      <span className="px-2 py-0.5 rounded-full bg-blue-100 text-blue-600 text-xs font-medium">{item.tag}</span>
                     </div>
-                    <h3 className="text-gray-900 font-bold text-base md:text-lg mb-1.5">{item.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                    <h3 className="text-slate-900 font-bold text-base md:text-lg mb-1.5">{item.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -397,25 +397,25 @@ export default function WebinarPage() {
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={instructorInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
             className="glass-card rounded-3xl border border-gray-200 p-8 md:p-10">
-            <span className="text-cyan-600 text-xs font-bold uppercase tracking-widest block mb-6">INSTRUCTOR</span>
+            <span className="text-blue-600 text-xs font-bold uppercase tracking-widest block mb-6">INSTRUCTOR</span>
             <div className="flex flex-col sm:flex-row gap-6 items-start">
               <img
                 src={`${import.meta.env.BASE_URL}leader.jpg`}
                 alt="강사 박상훈"
-                className="w-24 h-24 rounded-2xl object-cover border-2 border-blue-500/30 flex-shrink-0"
+                className="w-24 h-24 rounded-2xl object-cover border-2 border-blue-200 flex-shrink-0"
               />
               <div>
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <h3 className="text-gray-900 font-bold text-2xl">박상훈</h3>
-                  <span className="px-3 py-1 rounded-full bg-blue-500/20 border border-blue-500/30 text-blue-600 text-xs font-medium">AI 마케팅 강사</span>
+                  <h3 className="text-slate-900 font-bold text-2xl">박상훈</h3>
+                  <span className="px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-600 text-xs font-medium">AI 마케팅 강사</span>
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                <p className="text-slate-600 text-sm leading-relaxed mb-4">
                   생성형 AI와 바이브코딩을 결합해 마케터·기획자가 직접 디지털 서비스를 만드는 방법을 연구하고 가르칩니다.
                   ChatGPT·Claude AI·Cursor를 활용한 No-Code 개발 워크플로우 전문가로, 비전공자 수백 명에게 AI 도구 실무 활용을 강의했습니다.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {['Claude AI', 'Cursor', 'ChatGPT', '바이브코딩', 'AI 마케팅'].map(tag => (
-                    <span key={tag} className="px-3 py-1 rounded-full bg-gray-100 border border-gray-200 text-gray-600 text-xs">{tag}</span>
+                    <span key={tag} className="px-3 py-1 rounded-full bg-slate-100 border border-gray-200 text-slate-600 text-xs">{tag}</span>
                   ))}
                 </div>
               </div>
@@ -428,24 +428,24 @@ export default function WebinarPage() {
       <section className="py-20 px-4 border-t border-gray-200">
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-10">
-            <span className="text-cyan-600 text-xs font-bold uppercase tracking-widest block mb-3">REGISTER</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">지금 무료로 신청하세요</h2>
-            <p className="text-gray-600 text-sm">
-              <strong className="text-gray-900">{count}명</strong>이 이미 신청했습니다 · 선착순 100명
+            <span className="text-blue-600 text-xs font-bold uppercase tracking-widest block mb-3">REGISTER</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">지금 무료로 신청하세요</h2>
+            <p className="text-slate-600 text-sm">
+              <strong className="text-slate-900">{count}명</strong>이 이미 신청했습니다 · 선착순 100명
             </p>
           </div>
 
-          <div ref={formRef} className="glass-card rounded-3xl border border-blue-500/20 p-8">
+          <div ref={formRef} className="glass-card rounded-3xl border border-blue-200 p-8">
             {/* 웨비나 정보 요약 */}
-            <div className="rounded-xl bg-blue-200/20 border border-blue-500/20 px-4 py-3 mb-6 space-y-2">
+            <div className="rounded-xl bg-blue-200/20 border border-blue-200 px-4 py-3 mb-6 space-y-2">
               <div className="flex items-center gap-2 text-blue-600 text-xs font-semibold uppercase tracking-wider">
                 <Play className="w-3 h-3" /> 웨비나 정보
               </div>
-              <div className="flex items-center gap-2 text-gray-700 text-sm">
+              <div className="flex items-center gap-2 text-slate-700 text-sm">
                 <Calendar className="w-4 h-4 text-blue-600" />
                 {WEBINAR_DATE}
               </div>
-              <div className="flex items-center gap-2 text-gray-700 text-sm">
+              <div className="flex items-center gap-2 text-slate-700 text-sm">
                 <Clock className="w-4 h-4 text-blue-600" />
                 ZOOM 실시간 온라인 · 참가비 <span className="text-emerald-400 font-bold ml-1">무료</span>
               </div>
@@ -454,34 +454,34 @@ export default function WebinarPage() {
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* 성함 */}
               <div>
-                <label className="block text-gray-700 text-sm font-medium mb-1.5">성함 <span className="text-blue-600">*</span></label>
+                <label className="block text-slate-700 text-sm font-medium mb-1.5">성함 <span className="text-blue-600">*</span></label>
                 <input type="text" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                   placeholder="홍길동"
-                  className="w-full bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500/60 transition-all" />
+                  className="w-full bg-slate-50 border border-gray-300 text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all" />
                 {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
               </div>
               {/* 연락처 */}
               <div>
-                <label className="block text-gray-700 text-sm font-medium mb-1.5">연락처 <span className="text-blue-600">*</span></label>
+                <label className="block text-slate-700 text-sm font-medium mb-1.5">연락처 <span className="text-blue-600">*</span></label>
                 <input type="tel" value={form.phone} onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                   placeholder="010-0000-0000"
-                  className="w-full bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500/60 transition-all" />
+                  className="w-full bg-slate-50 border border-gray-300 text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all" />
                 {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
               </div>
               {/* 이메일 */}
               <div>
-                <label className="block text-gray-700 text-sm font-medium mb-1.5">이메일 <span className="text-blue-600">*</span></label>
+                <label className="block text-slate-700 text-sm font-medium mb-1.5">이메일 <span className="text-blue-600">*</span></label>
                 <input type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                   placeholder="example@email.com"
-                  className="w-full bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500/60 transition-all" />
+                  className="w-full bg-slate-50 border border-gray-300 text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all" />
                 {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
               </div>
               {/* 소속 */}
               <div>
-                <label className="block text-gray-700 text-sm font-medium mb-1.5">소속 및 직함 <span className="text-gray-400 text-xs font-normal">(선택)</span></label>
+                <label className="block text-slate-700 text-sm font-medium mb-1.5">소속 및 직함 <span className="text-slate-500 text-xs font-normal">(선택)</span></label>
                 <input type="text" value={form.affiliation} onChange={e => setForm(f => ({ ...f, affiliation: e.target.value }))}
                   placeholder="예: ○○회사 / 마케팅팀 팀장"
-                  className="w-full bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500/60 transition-all" />
+                  className="w-full bg-slate-50 border border-gray-300 text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all" />
               </div>
 
               {/* 개인정보 동의 */}
@@ -491,7 +491,7 @@ export default function WebinarPage() {
                     className={`w-5 h-5 mt-0.5 rounded-md border flex-shrink-0 flex items-center justify-center transition-all ${privacy ? 'bg-blue-600 border-blue-600' : 'bg-transparent border-gray-300 group-hover:border-blue-600'}`}>
                     {privacy && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
                   </div>
-                  <span className="text-gray-600 text-xs leading-relaxed">
+                  <span className="text-slate-600 text-xs leading-relaxed">
                     웨비나 안내 및 ZOOM 링크 발송을 위해 개인정보(성함·연락처·이메일)를 수집·이용하는 것에 동의합니다. <span className="text-blue-600">*</span>
                   </span>
                 </label>
@@ -500,14 +500,14 @@ export default function WebinarPage() {
 
               {/* 제출 버튼 */}
               <button type="submit" disabled={loading}
-                className="w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-xl hover:from-blue-700 hover:to-cyan-600 transition-all disabled:opacity-60 disabled:cursor-not-allowed text-base">
+                className="w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white font-bold rounded-xl hover:from-[#1E293B] hover:to-[#1D4ED8] transition-all disabled:opacity-60 disabled:cursor-not-allowed text-base">
                 {loading ? (
                   <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> 신청 중...</>
                 ) : (
                   <><Send className="w-4 h-4" /> 무료 웨비나 신청하기</>
                 )}
               </button>
-              <p className="text-gray-400 text-xs text-center">신청 즉시 이메일 + 문자로 ZOOM 링크를 보내드립니다</p>
+              <p className="text-slate-500 text-xs text-center">신청 즉시 이메일 + 문자로 ZOOM 링크를 보내드립니다</p>
             </form>
           </div>
         </div>
@@ -518,8 +518,8 @@ export default function WebinarPage() {
         <div className="max-w-2xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={faqInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
             className="text-center mb-10">
-            <span className="text-cyan-600 text-xs font-bold uppercase tracking-widest block mb-3">FAQ</span>
-            <h2 className="text-3xl font-bold text-gray-900">자주 묻는 질문</h2>
+            <span className="text-blue-600 text-xs font-bold uppercase tracking-widest block mb-3">FAQ</span>
+            <h2 className="text-3xl font-bold text-slate-900">자주 묻는 질문</h2>
           </motion.div>
           <div className="space-y-3">
             {faqs.map((faq, i) => (
@@ -534,17 +534,17 @@ export default function WebinarPage() {
       {/* ── 하단 CTA ── */}
       <section className="py-20 px-4 border-t border-gray-200 text-center">
         <div className="max-w-xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">
             2시간이 당신의 커리어를<br />바꿀 수 있습니다
           </h2>
-          <p className="text-gray-600 mb-8">비용 없음 · ZOOM 실시간 · 당일 녹화본 제공</p>
+          <p className="text-slate-600 mb-8">비용 없음 · ZOOM 실시간 · 당일 녹화본 제공</p>
           <button onClick={scrollToForm}
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-lg font-bold rounded-2xl shadow-2xl shadow-blue-500/50 hover:from-blue-700 hover:to-cyan-600 transition-all hover:scale-105">
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white text-lg font-bold rounded-2xl shadow-2xl shadow-blue-900/20 hover:from-[#1E293B] hover:to-[#1D4ED8] transition-all hover:scale-105">
             지금 무료 신청하기
             <ArrowRight className="w-5 h-5" />
           </button>
-          <p className="text-gray-400 text-xs mt-4">
-            본 과정 문의: <a href="mailto:psh0135@gmail.com" className="text-gray-500 hover:text-gray-700 underline">psh0135@gmail.com</a>
+          <p className="text-slate-500 text-xs mt-4">
+            본 과정 문의: <a href="mailto:psh0135@gmail.com" className="text-slate-500 hover:text-slate-700 underline">psh0135@gmail.com</a>
           </p>
         </div>
       </section>
@@ -552,7 +552,7 @@ export default function WebinarPage() {
       {/* ── 모바일 고정 CTA ── */}
       <div className="md:hidden fixed bottom-4 left-4 right-4 z-50">
         <button onClick={scrollToForm}
-          className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold rounded-2xl shadow-2xl shadow-blue-500/50">
+          className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white font-bold rounded-2xl shadow-2xl shadow-blue-900/20">
           <Users className="w-5 h-5" />
           무료 웨비나 신청 ({count}명 신청 중)
         </button>
