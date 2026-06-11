@@ -40,7 +40,7 @@ export default function Webinar() {
               지금 바로 체험하세요
             </h2>
 
-            <p className="text-slate-400 text-base leading-relaxed mb-8">
+            <p className="text-stone-300 text-base leading-relaxed mb-8">
               AI 바이브코딩이 궁금하신가요?<br />
               7월 1일 무료 LIVE 특강으로 먼저 경험해보실 수 있습니다.
             </p>
@@ -55,7 +55,7 @@ export default function Webinar() {
                   className="flex items-start gap-3"
                 >
                   <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0 mt-0.5" />
-                  <span className="text-slate-300 text-sm leading-relaxed">{b}</span>
+                  <span className="text-stone-200 text-sm leading-relaxed">{b}</span>
                 </motion.li>
               ))}
             </ul>
@@ -75,7 +75,7 @@ export default function Webinar() {
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
                 </span>
                 <span className="text-red-400 text-xs font-bold uppercase tracking-widest">LIVE</span>
-                <span className="text-slate-400 text-xs">·</span>
+                <span className="text-stone-300 text-xs">·</span>
                 <span className="text-amber-300 text-sm font-semibold">무료 웨비나</span>
               </div>
 
@@ -84,7 +84,7 @@ export default function Webinar() {
                 <h3 className="text-white font-bold text-xl mb-1 leading-snug">
                   AI 바이브코딩
                 </h3>
-                <p className="text-slate-400 text-sm mb-6">
+                <p className="text-stone-300 text-sm mb-6">
                   코딩 없이 Claude AI로 앱 만들기 실전 특강
                 </p>
 
@@ -94,7 +94,7 @@ export default function Webinar() {
                     <Calendar className="w-4 h-4 text-amber-400 flex-shrink-0" />
                     <div>
                       <p className="text-white text-sm font-medium">2026.07.01(수) 19:00 ~ 21:00</p>
-                      <p className="text-slate-500 text-xs mt-0.5">ZOOM 실시간 온라인 참여</p>
+                      <p className="text-stone-400 text-xs mt-0.5">ZOOM 실시간 온라인 참여</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3">
@@ -104,7 +104,7 @@ export default function Webinar() {
                         교육비&nbsp;
                         <span className="text-amber-400 font-bold">무료</span>
                       </p>
-                      <p className="text-slate-500 text-xs mt-0.5">사전 신청 후 참여 가능</p>
+                      <p className="text-stone-400 text-xs mt-0.5">사전 신청 후 참여 가능</p>
                     </div>
                   </div>
                 </div>
@@ -112,13 +112,13 @@ export default function Webinar() {
                 {/* CTA — dark style */}
                 <a
                   href="#webinar"
-                  className="flex items-center justify-between w-full px-6 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-amber-50 transition-all duration-200 group text-sm"
+                  className="flex items-center justify-between w-full px-6 py-4 bg-white text-black font-bold rounded-xl hover:bg-amber-50 transition-all duration-200 group text-sm"
                 >
                   <span>과정 상세보기</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </a>
 
-                <p className="text-slate-600 text-xs text-center mt-3">
+                <p className="text-stone-500 text-xs text-center mt-3">
                   신청 기간: 2026.06.15 ~ 2026.07.01
                 </p>
               </div>

@@ -11,9 +11,9 @@ const steps = [
     tools: ['ChatGPT', 'Claude', 'Gemini'],
     outcomes: ['AI 개념 이해', '프롬프트 작성', '모델별 특성 파악'],
     hours: '8H',
-    color: 'from-purple-600 to-purple-800',
-    glow: 'shadow-purple-600/40',
-    border: 'border-purple-500/40',
+    color: 'from-amber-600 to-amber-800',
+    glow: 'shadow-amber-600/40',
+    border: 'border-amber-500/40',
   },
   {
     step: 'STEP 2',
@@ -22,9 +22,9 @@ const steps = [
     tools: ['DALL·E', 'Midjourney', 'Runway', 'SUNO'],
     outcomes: ['AI 이미지 생성', 'AI 영상 제작', 'AI 음악 생성'],
     hours: '12H',
-    color: 'from-violet-600 to-violet-800',
-    glow: 'shadow-violet-600/40',
-    border: 'border-violet-500/40',
+    color: 'from-yellow-600 to-yellow-800',
+    glow: 'shadow-yellow-600/40',
+    border: 'border-yellow-500/40',
   },
   {
     step: 'STEP 3',
@@ -44,9 +44,9 @@ const steps = [
     tools: ['Make', 'ChatGPT API', 'Zapier', 'NotebookLM'],
     outcomes: ['자동화 워크플로', 'AI 챗봇 제작', '데이터 분석'],
     hours: '16H',
-    color: 'from-cyan-600 to-cyan-800',
-    glow: 'shadow-cyan-600/40',
-    border: 'border-cyan-500/40',
+    color: 'from-amber-600 to-amber-800',
+    glow: 'shadow-amber-600/40',
+    border: 'border-amber-500/40',
   },
   {
     step: 'STEP 5',
@@ -97,7 +97,7 @@ export default function Curriculum() {
   return (
     <section id="curriculum" className="py-24 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-cyan-600/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-600/10 rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,13 +108,13 @@ export default function Curriculum() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
+          <span className="text-amber-200 text-sm font-semibold tracking-widest uppercase mb-3 block">
             Curriculum
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             생성형 AI 마케팅 100시간 커리큘럼
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+          <p className="text-stone-300 text-lg max-w-2xl mx-auto">
             7단계 체계적 커리큘럼으로 AI 마케팅 전문가로 성장하세요
           </p>
         </motion.div>
@@ -124,13 +124,13 @@ export default function Curriculum() {
           {/* Navigation Buttons */}
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 rounded-full glass border border-purple-500/30 text-white flex items-center justify-center hover:bg-purple-600/20 transition-all hidden md:flex"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 rounded-full glass border border-amber-500/30 text-white flex items-center justify-center hover:bg-amber-600/20 transition-all hidden md:flex"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 rounded-full glass border border-purple-500/30 text-white flex items-center justify-center hover:bg-purple-600/20 transition-all hidden md:flex"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 rounded-full glass border border-amber-500/30 text-white flex items-center justify-center hover:bg-amber-600/20 transition-all hidden md:flex"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -157,11 +157,11 @@ export default function Curriculum() {
                 {/* Step Badge */}
                 <div className="flex items-center justify-between mb-4">
                   <span className={`text-xs font-bold px-3 py-1 rounded-full ${
-                    active === i ? 'bg-white/20 text-white' : 'bg-purple-600/20 text-purple-400'
+                    active === i ? 'bg-white/20 text-white' : 'bg-amber-600/20 text-amber-400'
                   }`}>
                     {step.step}
                   </span>
-                  <span className={`text-xs font-semibold ${active === i ? 'text-white/70' : 'text-slate-500'}`}>
+                  <span className={`text-xs font-semibold ${active === i ? 'text-white/70' : 'text-stone-400'}`}>
                     {step.hours}
                   </span>
                 </div>
@@ -169,13 +169,13 @@ export default function Curriculum() {
                 <h3 className={`text-lg font-bold mb-2 ${active === i ? 'text-white' : 'text-slate-200'}`}>
                   {step.title}
                 </h3>
-                <p className={`text-sm leading-relaxed mb-4 ${active === i ? 'text-white/80' : 'text-slate-500'}`}>
+                <p className={`text-sm leading-relaxed mb-4 ${active === i ? 'text-white/80' : 'text-stone-400'}`}>
                   {step.desc}
                 </p>
 
                 {/* Tools */}
                 <div className="mb-3">
-                  <p className={`text-xs font-semibold mb-2 ${active === i ? 'text-white/60' : 'text-slate-600'}`}>
+                  <p className={`text-xs font-semibold mb-2 ${active === i ? 'text-white/60' : 'text-stone-500'}`}>
                     실습 툴
                   </p>
                   <div className="flex flex-wrap gap-1">
@@ -183,7 +183,7 @@ export default function Curriculum() {
                       <span
                         key={tool}
                         className={`text-xs px-2 py-0.5 rounded-md ${
-                          active === i ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-400'
+                          active === i ? 'bg-white/20 text-white' : 'bg-neutral-900 text-stone-300'
                         }`}
                       >
                         {tool}
@@ -194,13 +194,13 @@ export default function Curriculum() {
 
                 {/* Outcomes */}
                 <div>
-                  <p className={`text-xs font-semibold mb-2 ${active === i ? 'text-white/60' : 'text-slate-600'}`}>
+                  <p className={`text-xs font-semibold mb-2 ${active === i ? 'text-white/60' : 'text-stone-500'}`}>
                     학습 결과
                   </p>
                   <ul className="space-y-1">
                     {step.outcomes.map(out => (
-                      <li key={out} className={`text-xs flex items-center gap-1.5 ${active === i ? 'text-white/80' : 'text-slate-500'}`}>
-                        <span className={`w-1 h-1 rounded-full flex-shrink-0 ${active === i ? 'bg-white' : 'bg-purple-500'}`} />
+                      <li key={out} className={`text-xs flex items-center gap-1.5 ${active === i ? 'text-white/80' : 'text-stone-400'}`}>
+                        <span className={`w-1 h-1 rounded-full flex-shrink-0 ${active === i ? 'bg-white' : 'bg-amber-500'}`} />
                         {out}
                       </li>
                     ))}
@@ -218,14 +218,14 @@ export default function Curriculum() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mt-8"
         >
-          <div className="flex justify-between text-xs text-slate-600 mb-2">
+          <div className="flex justify-between text-xs text-stone-500 mb-2">
             <span>시작</span>
-            <span className="text-purple-400 font-semibold">총 100시간 완성 과정</span>
+            <span className="text-amber-400 font-semibold">총 100시간 완성 과정</span>
             <span>수료</span>
           </div>
-          <div className="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+          <div className="h-1.5 bg-neutral-900 rounded-full overflow-hidden">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 transition-all duration-500"
+              className="h-full rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 transition-all duration-500"
               style={{ width: `${((active + 1) / steps.length) * 100}%` }}
             />
           </div>
@@ -235,7 +235,7 @@ export default function Curriculum() {
                 key={i}
                 onClick={() => setActive(i)}
                 className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                  i <= active ? 'bg-purple-500' : 'bg-slate-700'
+                  i <= active ? 'bg-amber-500' : 'bg-slate-700'
                 }`}
               />
             ))}
