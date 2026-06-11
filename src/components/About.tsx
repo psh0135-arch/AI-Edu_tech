@@ -213,7 +213,7 @@ export default function About() {
                   ].map(badge => (
                     <span
                       key={badge}
-                      className="text-xs px-2.5 py-1 rounded-lg bg-white/80 text-stone-300 border border-neutral-700/50"
+                      className="text-xs px-2.5 py-1 rounded-lg bg-white/5 text-stone-300 border border-white/10"
                     >
                       {badge}
                     </span>
