@@ -17,9 +17,9 @@ export default function Hero({ onApply }: HeroProps) {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-pattern pt-16">
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/100/15 rounded-full blur-[120px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[150px]" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-amber-600/20 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-amber-500/15 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-900/10 rounded-full blur-[150px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
@@ -28,9 +28,9 @@ export default function Hero({ onApply }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-purple-500/25 text-sm text-purple-400 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-amber-500/30 text-sm text-amber-300 mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-purple-600 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
           생성형 AI × 디지털 마케팅 × 바이브코딩
         </motion.div>
 
@@ -75,17 +75,17 @@ export default function Hero({ onApply }: HeroProps) {
         >
           <button
             onClick={onApply}
-            className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold rounded-2xl shadow-lg shadow-purple-900/40 hover:shadow-purple-900/60 hover:scale-105 transition-all duration-200"
+            className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold rounded-2xl shadow-lg shadow-amber-900/40 hover:shadow-amber-900/60 hover:scale-105 transition-all duration-200"
           >
             수강신청
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
           <a
             href="#curriculum"
-            className="flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold bg-gradient-to-r from-purple-600/30 to-purple-600/30 border border-purple-400/50 hover:from-purple-600/50 hover:to-purple-600/50 hover:border-purple-400/80 hover:scale-105 transition-all duration-200"
+            className="flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold bg-gradient-to-r from-amber-600/30 to-amber-600/30 border border-amber-400/50 hover:from-amber-600/50 hover:to-amber-600/50 hover:border-amber-400/80 hover:scale-105 transition-all duration-200"
           >
             <span className="gradient-text font-semibold">커리큘럼 보기</span>
-            <BookOpen className="w-4 h-4 text-purple-400" />
+            <BookOpen className="w-4 h-4 text-amber-200" />
           </a>
         </motion.div>
 
@@ -104,7 +104,7 @@ export default function Hero({ onApply }: HeroProps) {
               transition={{ duration: 0.5, delay: 0.6 + i * 0.08 }}
               className="glass-card rounded-2xl p-4 text-center"
             >
-              <stat.icon className="w-5 h-5 text-purple-400 mx-auto mb-2" />
+              <stat.icon className="w-5 h-5 text-amber-400 mx-auto mb-2" />
               <div className="text-2xl font-bold gradient-text">{stat.value}</div>
               <div className="text-xs text-stone-400 mt-1">{stat.label}</div>
             </motion.div>
@@ -127,7 +127,7 @@ export default function Hero({ onApply }: HeroProps) {
           ].map(badge => (
             <div
               key={badge.label}
-              className="glass border border-purple-500/25 text-purple-400 text-xs px-4 py-2 rounded-full animate-float whitespace-nowrap"
+              className="glass border border-amber-500/20 text-amber-200 text-xs px-4 py-2 rounded-full animate-float whitespace-nowrap"
               style={{ animationDelay: `${badge.delay}s` }}
             >
               ✦ {badge.label}

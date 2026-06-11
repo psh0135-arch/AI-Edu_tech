@@ -48,7 +48,7 @@ export default function FAQ() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
+          <span className="text-amber-200 text-sm font-semibold tracking-widest uppercase mb-3 block">
             FAQ
           </span>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -68,7 +68,7 @@ export default function FAQ() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: i * 0.07 }}
               className={`glass-card rounded-2xl overflow-hidden border transition-all duration-300 ${
-                openIndex === i ? 'border-purple-500/40' : 'border-white/10'
+                openIndex === i ? 'border-amber-500/40' : 'border-white/5'
               }`}
             >
               <button
@@ -77,7 +77,7 @@ export default function FAQ() {
               >
                 <span className="text-white font-medium pr-4">{faq.q}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-purple-400 flex-shrink-0 transition-transform duration-300 ${
+                  className={`w-5 h-5 text-amber-400 flex-shrink-0 transition-transform duration-300 ${
                     openIndex === i ? 'rotate-180' : ''
                   }`}
                 />
@@ -91,7 +91,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="px-6 pb-5 text-stone-300 text-sm leading-relaxed border-t border-white/10 pt-4">
+                    <div className="px-6 pb-5 text-stone-300 text-sm leading-relaxed border-t border-white/5 pt-4">
                       {faq.a}
                     </div>
                   </motion.div>

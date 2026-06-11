@@ -14,17 +14,17 @@ const careerItems = [
 ]
 
 const credentials = [
-  { icon: GraduationCap, title: '경희대학교 대학원', sub: '경영학 석사', color: 'text-purple-400' },
-  { icon: Award, title: '경영지도사', sub: '자격증 취득 (2021)', color: 'text-purple-400' },
-  { icon: BookOpen, title: '직업능력개발 훈련교사', sub: '경영전략·마케팅 분야', color: 'text-purple-400' },
+  { icon: GraduationCap, title: '경희대학교 대학원', sub: '경영학 석사', color: 'text-amber-400' },
+  { icon: Award, title: '경영지도사', sub: '자격증 취득 (2021)', color: 'text-amber-400' },
+  { icon: BookOpen, title: '직업능력개발 훈련교사', sub: '경영전략·마케팅 분야', color: 'text-amber-200' },
   { icon: Star, title: '용인시 산업진흥원', sub: '경영전략 전문위원', color: 'text-emerald-400' },
 ]
 
 const stats = [
-  { value: '5년', label: '강의 경력', icon: BookOpen, color: 'text-purple-400' },
-  { value: '11년', label: '기업 실무경력', icon: Briefcase, color: 'text-purple-400' },
+  { value: '5년', label: '강의 경력', icon: BookOpen, color: 'text-amber-400' },
+  { value: '11년', label: '기업 실무경력', icon: Briefcase, color: 'text-amber-200' },
   { value: '5년', label: '컨설팅 경력', icon: Building2, color: 'text-emerald-400' },
-  { value: '21년+', label: '총 경력', icon: Star, color: 'text-purple-400' },
+  { value: '21년+', label: '총 경력', icon: Star, color: 'text-amber-400' },
 ]
 
 const fadeUp = {
@@ -43,8 +43,8 @@ export default function About() {
   return (
     <section id="about" className="py-24 relative" ref={ref}>
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-80 h-80 bg-purple-600/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 left-0 w-60 h-60 bg-purple-600/8 rounded-full blur-[100px]" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-amber-600/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 left-0 w-60 h-60 bg-amber-600/8 rounded-full blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +56,7 @@ export default function About() {
           custom={0}
           className="text-center mb-16"
         >
-          <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
+          <span className="text-amber-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
             About Instructor
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -98,7 +98,7 @@ export default function About() {
             <img
               src={`${import.meta.env.BASE_URL}leader.jpg`}
               alt="Leader 매거진"
-              className="w-full rounded-2xl shadow-xl shadow-purple-900/15 border border-purple-500/25"
+              className="w-full rounded-2xl shadow-xl shadow-amber-900/30 border border-amber-500/20"
             />
           </motion.div>
 
@@ -111,17 +111,17 @@ export default function About() {
               animate={inView ? 'visible' : 'hidden'}
               variants={fadeUp}
               custom={3}
-              className="glass-card rounded-2xl p-6 border border-purple-500/25 bg-gradient-to-br from-purple-200/20 to-purple-950/30"
+              className="glass-card rounded-2xl p-6 border border-amber-500/25 bg-gradient-to-br from-amber-900/20 to-amber-950/30"
             >
               <div className="flex items-center gap-4">
                 <img
                   src={`${import.meta.env.BASE_URL}profile.jpg`}
                   alt="강사 프로필"
-                  className="w-20 h-20 rounded-2xl object-cover object-top shadow-lg shadow-purple-900/20 border border-purple-500/25 flex-shrink-0"
+                  className="w-20 h-20 rounded-2xl object-cover object-top shadow-lg shadow-amber-900/50 border border-amber-500/30 flex-shrink-0"
                 />
                 <div>
                   <h3 className="text-white font-bold text-xl mb-1">디지털 마케팅 전문 강사</h3>
-                  <p className="text-purple-400 text-sm font-medium">경영지도사 · MBA</p>
+                  <p className="text-amber-300 text-sm font-medium">경영지도사 · MBA</p>
                 </div>
               </div>
               <p className="text-stone-300 text-sm leading-relaxed mt-4">
@@ -142,7 +142,7 @@ export default function About() {
                   custom={4 + i * 0.5}
                   className="glass-card rounded-xl p-4 flex items-center gap-3"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
                     <cred.icon className={`w-4 h-4 ${cred.color}`} />
                   </div>
                   <div>
@@ -162,12 +162,12 @@ export default function About() {
               className="glass-card rounded-2xl p-6"
             >
               <div className="flex items-center gap-2 mb-6">
-                <Briefcase className="w-5 h-5 text-purple-400" />
+                <Briefcase className="w-5 h-5 text-amber-200" />
                 <h3 className="text-white font-bold text-lg">주요 경력</h3>
               </div>
 
               <div className="relative space-y-0">
-                <div className="absolute left-3 top-2 bottom-2 w-px bg-gradient-to-b from-purple-500/60 via-purple-500/40 to-transparent" />
+                <div className="absolute left-3 top-2 bottom-2 w-px bg-gradient-to-b from-amber-500/60 via-amber-500/40 to-transparent" />
                 {careerItems.map((item, i) => (
                   <motion.div
                     key={item.org}
@@ -179,30 +179,30 @@ export default function About() {
                   >
                     <div className={`relative z-10 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
                       item.current
-                        ? 'bg-gradient-to-br from-purple-500 to-cyan-500 shadow-lg shadow-purple-900/40'
-                        : 'bg-white/10 border border-slate-700'
+                        ? 'bg-gradient-to-br from-amber-500 to-amber-500 shadow-lg shadow-amber-500/40'
+                        : 'bg-neutral-900 border border-neutral-600'
                     }`}>
-                      <div className={`w-2 h-2 rounded-full ${item.current ? 'bg-white/5' : 'bg-slate-8000'}`} />
+                      <div className={`w-2 h-2 rounded-full ${item.current ? 'bg-white' : 'bg-slate-500'}`} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="text-white font-semibold text-sm">{item.org}</span>
                         {item.current && (
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-purple-600/30 text-purple-400 border border-purple-500/25">
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-amber-600/30 text-amber-300 border border-amber-500/30">
                             현재
                           </span>
                         )}
                       </div>
                       <div className="text-stone-300 text-xs mt-0.5">{item.role}</div>
-                      <div className="text-cyan-400/70 text-xs mt-0.5">{item.field}</div>
+                      <div className="text-amber-500/70 text-xs mt-0.5">{item.field}</div>
                     </div>
                   </motion.div>
                 ))}
               </div>
 
               {/* Extra badges */}
-              <div className="mt-5 pt-5 border-t border-white/10">
-                <p className="text-stone-400 text-xs mb-3">기타 활동</p>
+              <div className="mt-5 pt-5 border-t border-white/5">
+                <p className="text-stone-500 text-xs mb-3">기타 활동</p>
                 <div className="flex flex-wrap gap-2">
                   {[
                     '소상공인시장진흥공단 컨설턴트',
@@ -213,7 +213,7 @@ export default function About() {
                   ].map(badge => (
                     <span
                       key={badge}
-                      className="text-xs px-2.5 py-1 rounded-lg bg-white/5 text-stone-300 border border-white/10"
+                      className="text-xs px-2.5 py-1 rounded-lg bg-neutral-900/80 text-stone-300 border border-neutral-700/50"
                     >
                       {badge}
                     </span>
@@ -230,12 +230,12 @@ export default function About() {
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
           custom={10}
-          className="mt-6 glass-card rounded-2xl p-6 border border-purple-500/25 bg-gradient-to-r from-purple-200/10 to-purple-200/10 text-center"
+          className="mt-6 glass-card rounded-2xl p-6 border border-amber-500/20 bg-gradient-to-r from-amber-900/10 to-amber-900/10 text-center"
         >
           <p className="text-stone-200 text-base md:text-lg italic">
             "AI 툴은 도구입니다. 중요한 건 <span className="gradient-text font-semibold not-italic">전략과 창의력</span>입니다."
           </p>
-          <p className="text-stone-400 text-sm mt-2">
+          <p className="text-stone-500 text-sm mt-2">
             기업 실무 · 마케팅 컨설팅 · 강의 현장에서 직접 검증한 노하우를 그대로 전달합니다.
           </p>
         </motion.div>

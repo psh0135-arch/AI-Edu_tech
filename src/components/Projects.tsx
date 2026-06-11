@@ -8,7 +8,7 @@ const projects = [
     desc: 'Midjourney & Canva AI로 브랜드 아이덴티티 시각화 및 SNS 콘텐츠 패키지 제작',
     tag: '디자인',
     emoji: '🖼️',
-    gradient: 'from-pink-900/40 to-purple-200/40',
+    gradient: 'from-pink-900/40 to-amber-900/40',
     border: 'border-pink-500/30',
     colSpan: 'md:col-span-1',
     rowSpan: '',
@@ -28,7 +28,7 @@ const projects = [
     desc: 'ChatGPT API + Make를 활용한 고객 응대 자동화 챗봇 구현 및 카카오톡 연동',
     tag: '자동화',
     emoji: '🤖',
-    gradient: 'from-emerald-900/40 to-purple-200/40',
+    gradient: 'from-emerald-900/40 to-amber-900/40',
     border: 'border-emerald-500/30',
     colSpan: 'md:col-span-2',
     rowSpan: '',
@@ -38,7 +38,7 @@ const projects = [
     desc: 'Make 자동화 플로우로 리드 수집 → 이메일 발송 → 보고서 생성 완전 자동화',
     tag: '자동화',
     emoji: '⚙️',
-    gradient: 'from-indigo-900/40 to-purple-900/40',
+    gradient: 'from-indigo-900/40 to-blue-900/40',
     border: 'border-indigo-500/30',
     colSpan: 'md:col-span-1',
     rowSpan: '',
@@ -48,8 +48,8 @@ const projects = [
     desc: 'Cursor AI로 코딩 지식 없이 랜딩 페이지 및 미니 웹앱 제작 후 Vercel 배포',
     tag: '바이브코딩',
     emoji: '💻',
-    gradient: 'from-yellow-900/40 to-purple-200/40',
-    border: 'border-purple-500/25',
+    gradient: 'from-yellow-900/40 to-amber-900/40',
+    border: 'border-yellow-500/30',
     colSpan: 'md:col-span-1',
     rowSpan: '',
   },
@@ -58,8 +58,8 @@ const projects = [
     desc: 'Notion + Gamma AI로 취업·프리랜서용 AI 마케터 포트폴리오 완성 및 발표',
     tag: '포트폴리오',
     emoji: '📁',
-    gradient: 'from-purple-200/40 to-yellow-900/40',
-    border: 'border-purple-500/25',
+    gradient: 'from-amber-900/40 to-yellow-900/40',
+    border: 'border-amber-500/30',
     colSpan: 'md:col-span-2',
     rowSpan: '',
   },
@@ -72,7 +72,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-64 bg-purple-600/20 rounded-full blur-[100px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-64 bg-amber-900/20 rounded-full blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -105,7 +105,7 @@ export default function Projects() {
               className={`group relative rounded-2xl p-6 bg-gradient-to-br ${project.gradient} border ${project.border} ${project.colSpan} cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02]`}
             >
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+              <div className="absolute inset-0 bg-white/3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
               {/* Tag */}
               <div className="flex items-center justify-between mb-4">
@@ -123,7 +123,7 @@ export default function Projects() {
               <p className="text-stone-300 text-sm leading-relaxed">{project.desc}</p>
 
               {/* Bottom accent */}
-              <div className="mt-4 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-purple-500 to-cyan-500 transition-all duration-500 rounded-full" />
+              <div className="mt-4 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-amber-500 to-amber-500 transition-all duration-500 rounded-full" />
             </motion.div>
           ))}
         </div>

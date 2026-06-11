@@ -2,7 +2,7 @@ import { Zap } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 py-12">
+    <footer className="border-t border-white/5 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
@@ -25,14 +25,14 @@ export default function Footer() {
           </nav>
 
           {/* Copy */}
-          <p className="text-stone-400 text-sm">
+          <p className="text-stone-500 text-sm">
             © 2026 AI마케팅 강의. All rights reserved.
           </p>
         </div>
 
         {/* Bottom tagline */}
         <div className="mt-8 text-center">
-          <p className="text-stone-400 text-xs">
+          <p className="text-stone-500 text-xs">
             생성형 AI + 디지털 마케팅 + 바이브코딩 교육 전문
           </p>
         </div>
