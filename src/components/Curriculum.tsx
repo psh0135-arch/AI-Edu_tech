@@ -183,7 +183,7 @@ export default function Curriculum() {
                       <span
                         key={tool}
                         className={`text-xs px-2 py-0.5 rounded-md ${
-                          active === i ? 'bg-white/20 text-white' : 'bg-white text-stone-300'
+                          active === i ? 'bg-white/20 text-white' : 'bg-white/5 text-stone-300'
                         }`}
                       >
                         {tool}
@@ -223,7 +223,7 @@ export default function Curriculum() {
             <span className="text-blue-400 font-semibold">총 100시간 완성 과정</span>
             <span>수료</span>
           </div>
-          <div className="h-1.5 bg-white rounded-full overflow-hidden">
+          <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
             <div
               className="h-full rounded-full bg-gradient-to-r from-[#2563EB] to-[#60A5FA] transition-all duration-500"
               style={{ width: `${((active + 1) / steps.length) * 100}%` }}

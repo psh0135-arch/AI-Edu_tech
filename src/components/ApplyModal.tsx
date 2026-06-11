@@ -99,7 +99,7 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
         value={form[key] as string}
         onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))}
         placeholder={placeholder}
-        className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 focus:bg-white transition-all"
+        className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-all"
       />
       {errors[key] && <p className="text-red-500 text-xs mt-1">{errors[key]}</p>}
     </div>
@@ -210,7 +210,7 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
                             className="w-full bg-[#1A1A1A] border border-neutral-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all appearance-none pr-10"
                             style={{ colorScheme: 'dark' }}
                           >
-                            <option value="" className="bg-white text-stone-300">선택해주세요</option>
+                            <option value="" className="bg-[#1A1A1A] text-stone-300">선택해주세요</option>
                             {aiLevels.map(lv => (
                               <option key={lv} value={lv} className="bg-[#1A1A1A] text-white">{lv}</option>
                             ))}

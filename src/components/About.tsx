@@ -180,7 +180,7 @@ export default function About() {
                     <div className={`relative z-10 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
                       item.current
                         ? 'bg-gradient-to-br from-blue-500 to-blue-500 shadow-lg shadow-blue-900/40'
-                        : 'bg-white border border-neutral-700'
+                        : 'bg-white/10 border border-neutral-700'
                     }`}>
                       <div className={`w-2 h-2 rounded-full ${item.current ? 'bg-white/5' : 'bg-[#1A1A1A]0'}`} />
                     </div>

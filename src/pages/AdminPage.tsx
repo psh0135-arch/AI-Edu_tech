@@ -180,7 +180,7 @@ function DetailModal({ item, onClose }: { item: Enrollment; onClose: () => void 
 
         <div className="overflow-y-auto flex-1 px-6 py-5 space-y-5">
           {/* 기본 정보 */}
-          <div className="rounded-xl bg-white border border-white/10 p-4 space-y-2 text-sm">
+          <div className="rounded-xl bg-white/5 border border-white/10 p-4 space-y-2 text-sm">
             <p className="text-blue-400 text-xs font-semibold tracking-widest uppercase mb-2">기본 정보</p>
             <div className="grid grid-cols-2 gap-2">
               {[
@@ -213,7 +213,7 @@ function DetailModal({ item, onClose }: { item: Enrollment; onClose: () => void 
                 style={{ colorScheme: 'dark' }}
               >
                 {(Object.entries(CONSULT_LABELS) as [ConsultStatus, string][]).map(([v, l]) => (
-                  <option key={v} value={v} className="bg-white">{l}</option>
+                  <option key={v} value={v} className="bg-[#1A1A1A]">{l}</option>
                 ))}
               </select>
               <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-300 pointer-events-none" />
@@ -232,7 +232,7 @@ function DetailModal({ item, onClose }: { item: Enrollment; onClose: () => void 
                   style={{ colorScheme: 'dark' }}
                 >
                   {(Object.entries(PAYMENT_LABELS) as [PaymentStatus, string][]).map(([v, l]) => (
-                    <option key={v} value={v} className="bg-white">{l}</option>
+                    <option key={v} value={v} className="bg-[#1A1A1A]">{l}</option>
                   ))}
                 </select>
                 <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-300 pointer-events-none" />
@@ -466,7 +466,7 @@ function Dashboard({ user }: { user: User }) {
                     <tr
                       key={e.id}
                       onClick={() => setSelected(e)}
-                      className="border-b border-white/3 hover:bg-white cursor-pointer transition-colors"
+                      className="border-b border-white/3 hover:bg-white/5 cursor-pointer transition-colors"
                     >
                       <td className="px-4 py-3 text-white font-medium whitespace-nowrap">{e.name}</td>
                       <td className="px-4 py-3 text-stone-300 whitespace-nowrap">{e.phone}</td>

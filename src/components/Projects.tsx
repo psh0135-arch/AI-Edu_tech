@@ -105,7 +105,7 @@ export default function Projects() {
               className={`group relative rounded-2xl p-6 bg-gradient-to-br ${project.gradient} border ${project.border} ${project.colSpan} cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02]`}
             >
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+              <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
 
               {/* Tag */}
               <div className="flex items-center justify-between mb-4">

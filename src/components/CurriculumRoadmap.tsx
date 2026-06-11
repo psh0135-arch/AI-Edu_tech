@@ -103,7 +103,7 @@ function TimelineBar() {
       {/* Tick Bar */}
       <div className="relative">
         {/* Track */}
-        <div className="h-2 bg-white rounded-full overflow-hidden">
+        <div className="h-2 bg-white/10 rounded-full overflow-hidden">
           <motion.div
             initial={{ width: 0 }}
             animate={inView ? { width: '100%' } : {}}
