@@ -92,14 +92,14 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
   const field = (key: keyof typeof form, label: string, placeholder: string, required = false) => (
     <div>
       <label className="block text-stone-200 text-sm font-medium mb-1.5">
-        {label} {required && <span className="text-blue-400">*</span>}
+        {label} {required && <span className="text-purple-400">*</span>}
       </label>
       <input
         type="text"
         value={form[key] as string}
         onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))}
         placeholder={placeholder}
-        className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 focus:bg-white/10 transition-all"
+        className="w-full bg-slate-800 border border-slate-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 focus:bg-white/10 transition-all"
       />
       {errors[key] && <p className="text-red-500 text-xs mt-1">{errors[key]}</p>}
     </div>
@@ -128,7 +128,7 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
             className="fixed inset-x-4 top-1/2 -translate-y-1/2 z-[101] max-w-xl mx-auto"
             style={{ maxHeight: '90vh' }}
           >
-            <div className="glass rounded-2xl border border-blue-500/25 overflow-hidden flex flex-col" style={{ maxHeight: '90vh' }}>
+            <div className="glass rounded-2xl border border-purple-500/25 overflow-hidden flex flex-col" style={{ maxHeight: '90vh' }}>
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 flex-shrink-0">
                 <div>
@@ -159,7 +159,7 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
                     </p>
                     <button
                       onClick={handleClose}
-                      className="px-6 py-3 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-semibold rounded-xl text-sm"
+                      className="px-6 py-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold rounded-xl text-sm"
                     >
                       닫기
                     </button>
@@ -167,8 +167,8 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     {/* 수강 정보 */}
-                    <div className="rounded-xl bg-blue-600/20 border border-blue-500/25 px-4 py-3 space-y-2.5">
-                      <p className="text-blue-400 text-xs font-semibold tracking-widest uppercase mb-2">수강 정보</p>
+                    <div className="rounded-xl bg-purple-600/20 border border-purple-500/25 px-4 py-3 space-y-2.5">
+                      <p className="text-purple-400 text-xs font-semibold tracking-widest uppercase mb-2">수강 정보</p>
                       <div className="flex items-center justify-between">
                         <span className="text-stone-300 text-sm">수강과목</span>
                         <span className="text-white text-sm font-medium">AI 활용 디지털 콘텐츠 마케팅</span>
@@ -185,7 +185,7 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
 
                     {/* 기본 정보 */}
                     <div className="pb-1">
-                      <p className="text-blue-400 text-xs font-semibold tracking-widest uppercase mb-3">기본 정보</p>
+                      <p className="text-purple-400 text-xs font-semibold tracking-widest uppercase mb-3">기본 정보</p>
                       <div className="space-y-3">
                         {field('name', '성함', '홍길동', true)}
                         {field('phone', '연락처', '010-0000-0000', true)}
@@ -196,23 +196,23 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
 
                     {/* 사전 설문 */}
                     <div className="pt-2 border-t border-white/10">
-                      <p className="text-blue-400 text-xs font-semibold tracking-widest uppercase mb-3">사전 설문</p>
+                      <p className="text-purple-400 text-xs font-semibold tracking-widest uppercase mb-3">사전 설문</p>
 
                       {/* AI 활용 수준 */}
                       <div className="mb-3">
                         <label className="block text-stone-200 text-sm font-medium mb-1.5">
-                          현재 AI 활용 수준 <span className="text-blue-400">*</span>
+                          현재 AI 활용 수준 <span className="text-purple-400">*</span>
                         </label>
                         <div className="relative">
                           <select
                             value={form.aiLevel}
                             onChange={e => setForm(f => ({ ...f, aiLevel: e.target.value }))}
-                            className="w-full bg-[#1A1A1A] border border-neutral-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all appearance-none pr-10"
+                            className="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all appearance-none pr-10"
                             style={{ colorScheme: 'dark' }}
                           >
-                            <option value="" className="bg-[#1A1A1A] text-stone-300">선택해주세요</option>
+                            <option value="" className="bg-slate-800 text-stone-300">선택해주세요</option>
                             {aiLevels.map(lv => (
-                              <option key={lv} value={lv} className="bg-[#1A1A1A] text-white">{lv}</option>
+                              <option key={lv} value={lv} className="bg-slate-800 text-white">{lv}</option>
                             ))}
                           </select>
                           <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-300 pointer-events-none" />
@@ -230,7 +230,7 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
                           onChange={e => setForm(f => ({ ...f, goal: e.target.value }))}
                           placeholder="예: SNS 콘텐츠 제작 자동화, AI로 광고 성과 개선 등 자유롭게 작성해주세요."
                           rows={3}
-                          className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all resize-none"
+                          className="w-full bg-slate-800 border border-slate-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all resize-none"
                         />
                       </div>
                     </div>
@@ -241,7 +241,7 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
                         <div
                           onClick={() => setForm(f => ({ ...f, privacy: !f.privacy }))}
                           className={`w-5 h-5 mt-0.5 rounded-md border flex-shrink-0 flex items-center justify-center transition-all ${
-                            form.privacy ? 'bg-blue-600 border-blue-600' : 'bg-transparent border-neutral-700 group-hover:border-blue-600'
+                            form.privacy ? 'bg-purple-600 border-purple-600' : 'bg-transparent border-slate-700 group-hover:border-purple-600'
                           }`}
                         >
                           {form.privacy && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
@@ -249,7 +249,7 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
                         <span className="text-stone-300 text-xs leading-relaxed">
                           수강 신청 및 강의 안내를 위해 입력하신 개인정보(성함, 연락처, 이메일)를 수집·이용하는 것에 동의합니다.
                           개인정보는 강의 운영 목적으로만 사용되며, 제3자에게 제공되지 않습니다.{' '}
-                          <span className="text-blue-400">*</span>
+                          <span className="text-purple-400">*</span>
                         </span>
                       </label>
                       {errors.privacy && <p className="text-red-500 text-xs mt-1 ml-8">{errors.privacy}</p>}
@@ -259,7 +259,7 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-bold rounded-xl hover:from-[#1D4ED8] hover:to-[#3B82F6] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                      className="w-full flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-bold rounded-xl hover:from-amber-300 hover:to-yellow-400 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                     >
                       {loading ? (
                         <>

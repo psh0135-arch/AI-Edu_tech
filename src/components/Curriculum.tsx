@@ -11,9 +11,9 @@ const steps = [
     tools: ['ChatGPT', 'Claude', 'Gemini'],
     outcomes: ['AI 개념 이해', '프롬프트 작성', '모델별 특성 파악'],
     hours: '8H',
-    color: 'from-blue-600 to-blue-800',
-    glow: 'shadow-blue-600/40',
-    border: 'border-blue-500/40',
+    color: 'from-purple-600 to-purple-800',
+    glow: 'shadow-purple-600/40',
+    border: 'border-purple-500/40',
   },
   {
     step: 'STEP 2',
@@ -22,9 +22,9 @@ const steps = [
     tools: ['DALL·E', 'Midjourney', 'Runway', 'SUNO'],
     outcomes: ['AI 이미지 생성', 'AI 영상 제작', 'AI 음악 생성'],
     hours: '12H',
-    color: 'from-blue-600 to-yellow-800',
-    glow: 'shadow-blue-600/40',
-    border: 'border-blue-500/40',
+    color: 'from-purple-600 to-yellow-800',
+    glow: 'shadow-purple-600/40',
+    border: 'border-purple-500/40',
   },
   {
     step: 'STEP 3',
@@ -44,9 +44,9 @@ const steps = [
     tools: ['Make', 'ChatGPT API', 'Zapier', 'NotebookLM'],
     outcomes: ['자동화 워크플로', 'AI 챗봇 제작', '데이터 분석'],
     hours: '16H',
-    color: 'from-blue-600 to-blue-800',
-    glow: 'shadow-blue-600/40',
-    border: 'border-blue-500/40',
+    color: 'from-purple-600 to-purple-800',
+    glow: 'shadow-purple-600/40',
+    border: 'border-purple-500/40',
   },
   {
     step: 'STEP 5',
@@ -55,9 +55,9 @@ const steps = [
     tools: ['ChatGPT', 'Google Analytics', 'Meta Ads', 'Semrush'],
     outcomes: ['마케팅 전략 수립', 'SEO 최적화', '광고 캠페인'],
     hours: '18H',
-    color: 'from-blue-600 to-blue-800',
-    glow: 'shadow-blue-600/40',
-    border: 'border-blue-500/40',
+    color: 'from-purple-600 to-purple-800',
+    glow: 'shadow-purple-600/40',
+    border: 'border-purple-500/40',
   },
   {
     step: 'STEP 6',
@@ -77,9 +77,9 @@ const steps = [
     tools: ['모든 AI 툴', 'GitHub', 'Notion', 'Behance'],
     outcomes: ['포트폴리오 완성', '최종 발표', '취업/창업 연결'],
     hours: '12H',
-    color: 'from-blue-600 to-blue-800',
-    glow: 'shadow-blue-600/40',
-    border: 'border-blue-500/40',
+    color: 'from-purple-600 to-purple-800',
+    glow: 'shadow-purple-600/40',
+    border: 'border-purple-500/40',
   },
 ]
 
@@ -97,7 +97,7 @@ export default function Curriculum() {
   return (
     <section id="curriculum" className="py-24 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +108,7 @@ export default function Curriculum() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
+          <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
             Curriculum
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -124,13 +124,13 @@ export default function Curriculum() {
           {/* Navigation Buttons */}
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 rounded-full glass border border-blue-500/25 text-white flex items-center justify-center hover:bg-blue-600/20 transition-all hidden md:flex"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 rounded-full glass border border-purple-500/25 text-white flex items-center justify-center hover:bg-purple-600/20 transition-all hidden md:flex"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 rounded-full glass border border-blue-500/25 text-white flex items-center justify-center hover:bg-blue-600/20 transition-all hidden md:flex"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 rounded-full glass border border-purple-500/25 text-white flex items-center justify-center hover:bg-purple-600/20 transition-all hidden md:flex"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -157,7 +157,7 @@ export default function Curriculum() {
                 {/* Step Badge */}
                 <div className="flex items-center justify-between mb-4">
                   <span className={`text-xs font-bold px-3 py-1 rounded-full ${
-                    active === i ? 'bg-white/20 text-white' : 'bg-blue-600/20 text-blue-400'
+                    active === i ? 'bg-white/20 text-white' : 'bg-purple-600/20 text-purple-400'
                   }`}>
                     {step.step}
                   </span>
@@ -200,7 +200,7 @@ export default function Curriculum() {
                   <ul className="space-y-1">
                     {step.outcomes.map(out => (
                       <li key={out} className={`text-xs flex items-center gap-1.5 ${active === i ? 'text-white/80' : 'text-stone-400'}`}>
-                        <span className={`w-1 h-1 rounded-full flex-shrink-0 ${active === i ? 'bg-white/5' : 'bg-blue-600'}`} />
+                        <span className={`w-1 h-1 rounded-full flex-shrink-0 ${active === i ? 'bg-white/5' : 'bg-purple-600'}`} />
                         {out}
                       </li>
                     ))}
@@ -220,12 +220,12 @@ export default function Curriculum() {
         >
           <div className="flex justify-between text-xs text-stone-400 mb-2">
             <span>시작</span>
-            <span className="text-blue-400 font-semibold">총 100시간 완성 과정</span>
+            <span className="text-purple-400 font-semibold">총 100시간 완성 과정</span>
             <span>수료</span>
           </div>
           <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-[#2563EB] to-[#60A5FA] transition-all duration-500"
+              className="h-full rounded-full bg-gradient-to-r from-amber-400 to-yellow-500 transition-all duration-500"
               style={{ width: `${((active + 1) / steps.length) * 100}%` }}
             />
           </div>
@@ -235,7 +235,7 @@ export default function Curriculum() {
                 key={i}
                 onClick={() => setActive(i)}
                 className={`w-2 h-2 rounded-full transition-all duration-200 ${
-                  i <= active ? 'bg-blue-600' : 'bg-slate-700'
+                  i <= active ? 'bg-purple-600' : 'bg-slate-700'
                 }`}
               />
             ))}

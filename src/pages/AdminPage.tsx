@@ -39,9 +39,9 @@ const CONSULT_LABELS: Record<ConsultStatus, string> = {
 }
 
 const CONSULT_COLORS: Record<ConsultStatus, string> = {
-  new: 'bg-blue-500/100/15 text-blue-300 border-blue-500/25',
-  contacted: 'bg-blue-600/20 text-yellow-300 border-blue-500/25',
-  consulting: 'bg-blue-500/100/15 text-blue-400 border-blue-500/25',
+  new: 'bg-purple-500/100/15 text-purple-300 border-purple-500/25',
+  contacted: 'bg-purple-600/20 text-yellow-300 border-purple-500/25',
+  consulting: 'bg-purple-500/100/15 text-purple-400 border-purple-500/25',
   confirmed: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
   cancelled: 'bg-red-500/20 text-red-300 border-red-500/30',
 }
@@ -90,17 +90,17 @@ function LoginScreen() {
   }
 
   return (
-    <div className="min-h-screen bg-[#111111] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#020617] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-8">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#60A5FA] flex items-center justify-center">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center">
             <Zap className="w-5 h-5 text-white" />
           </div>
           <span className="text-white font-bold text-xl">AI마케팅 <span className="text-stone-300 text-sm font-normal">관리자</span></span>
         </div>
 
-        <div className="glass rounded-2xl border border-blue-500/25 p-8">
+        <div className="glass rounded-2xl border border-purple-500/25 p-8">
           <h2 className="text-white font-bold text-lg mb-6 text-center">관리자 로그인</h2>
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
@@ -110,7 +110,7 @@ function LoginScreen() {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="admin@example.com"
-                className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all"
+                className="w-full bg-slate-800 border border-slate-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all"
               />
             </div>
             <div>
@@ -120,14 +120,14 @@ function LoginScreen() {
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all"
+                className="w-full bg-slate-800 border border-slate-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all"
               />
             </div>
             {error && <p className="text-red-500 text-xs">{error}</p>}
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-semibold rounded-xl hover:from-[#1D4ED8] hover:to-[#3B82F6] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full py-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold rounded-xl hover:from-amber-300 hover:to-yellow-400 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? '로그인 중...' : '로그인'}
             </button>
@@ -166,7 +166,7 @@ function DetailModal({ item, onClose }: { item: Enrollment; onClose: () => void 
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative z-10 w-full max-w-lg bg-[#0f172a] border border-blue-500/25 rounded-2xl overflow-hidden max-h-[90vh] flex flex-col">
+      <div className="relative z-10 w-full max-w-lg bg-[#0f172a] border border-purple-500/25 rounded-2xl overflow-hidden max-h-[90vh] flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
           <div>
@@ -181,7 +181,7 @@ function DetailModal({ item, onClose }: { item: Enrollment; onClose: () => void 
         <div className="overflow-y-auto flex-1 px-6 py-5 space-y-5">
           {/* 기본 정보 */}
           <div className="rounded-xl bg-white/5 border border-white/10 p-4 space-y-2 text-sm">
-            <p className="text-blue-400 text-xs font-semibold tracking-widest uppercase mb-2">기본 정보</p>
+            <p className="text-purple-400 text-xs font-semibold tracking-widest uppercase mb-2">기본 정보</p>
             <div className="grid grid-cols-2 gap-2">
               {[
                 ['소속', item.affiliation || '-'],
@@ -209,11 +209,11 @@ function DetailModal({ item, onClose }: { item: Enrollment; onClose: () => void 
               <select
                 value={consultStatus}
                 onChange={e => setConsultStatus(e.target.value as ConsultStatus)}
-                className="w-full bg-[#1A1A1A] border border-neutral-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all appearance-none pr-10"
+                className="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all appearance-none pr-10"
                 style={{ colorScheme: 'dark' }}
               >
                 {(Object.entries(CONSULT_LABELS) as [ConsultStatus, string][]).map(([v, l]) => (
-                  <option key={v} value={v} className="bg-[#1A1A1A]">{l}</option>
+                  <option key={v} value={v} className="bg-slate-800">{l}</option>
                 ))}
               </select>
               <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-300 pointer-events-none" />
@@ -228,11 +228,11 @@ function DetailModal({ item, onClose }: { item: Enrollment; onClose: () => void 
                 <select
                   value={paymentStatus}
                   onChange={e => setPaymentStatus(e.target.value as PaymentStatus)}
-                  className="w-full bg-[#1A1A1A] border border-neutral-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all appearance-none pr-8"
+                  className="w-full bg-slate-800 border border-slate-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all appearance-none pr-8"
                   style={{ colorScheme: 'dark' }}
                 >
                   {(Object.entries(PAYMENT_LABELS) as [PaymentStatus, string][]).map(([v, l]) => (
-                    <option key={v} value={v} className="bg-[#1A1A1A]">{l}</option>
+                    <option key={v} value={v} className="bg-slate-800">{l}</option>
                   ))}
                 </select>
                 <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-300 pointer-events-none" />
@@ -245,7 +245,7 @@ function DetailModal({ item, onClose }: { item: Enrollment; onClose: () => void 
                 value={paymentAmount}
                 onChange={e => setPaymentAmount(e.target.value)}
                 placeholder="150000"
-                className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all"
+                className="w-full bg-slate-800 border border-slate-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all"
               />
             </div>
           </div>
@@ -258,14 +258,14 @@ function DetailModal({ item, onClose }: { item: Enrollment; onClose: () => void 
               onChange={e => setMemo(e.target.value)}
               placeholder="상담 내용, 특이사항 등을 기록하세요."
               rows={4}
-              className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all resize-none"
+              className="w-full bg-slate-800 border border-slate-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all resize-none"
             />
           </div>
 
           <button
             onClick={handleSave}
             disabled={saving}
-            className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-semibold rounded-xl hover:from-[#1D4ED8] hover:to-[#3B82F6] transition-all disabled:opacity-60"
+            className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-semibold rounded-xl hover:from-amber-300 hover:to-yellow-400 transition-all disabled:opacity-60"
           >
             {saving ? (
               <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -356,12 +356,12 @@ function Dashboard({ user }: { user: User }) {
   }, [enrollments])
 
   return (
-    <div className="min-h-screen bg-[#111111] text-white">
+    <div className="min-h-screen bg-[#020617] text-white">
       {/* Navbar */}
-      <div className="glass border-b border-blue-500/20 sticky top-0 z-50">
+      <div className="glass border-b border-purple-500/20 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#2563EB] to-[#60A5FA] flex items-center justify-center">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center">
               <Zap className="w-3.5 h-3.5 text-white" />
             </div>
             <span className="font-bold text-white">AI마케팅</span>
@@ -384,11 +384,11 @@ function Dashboard({ user }: { user: User }) {
         {/* KPI 카드 */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
           {[
-            { icon: Users, label: '총 신청자', value: `${kpi.total}명`, color: 'text-blue-400' },
-            { icon: Calendar, label: '오늘 신규', value: `${kpi.todayNew}명`, color: 'text-blue-400' },
-            { icon: MessageSquare, label: '상담 진행중', value: `${kpi.consulting}명`, color: 'text-blue-400' },
+            { icon: Users, label: '총 신청자', value: `${kpi.total}명`, color: 'text-purple-400' },
+            { icon: Calendar, label: '오늘 신규', value: `${kpi.todayNew}명`, color: 'text-purple-400' },
+            { icon: MessageSquare, label: '상담 진행중', value: `${kpi.consulting}명`, color: 'text-purple-400' },
             { icon: TrendingUp, label: '결제 완료', value: `${kpi.paid}명`, color: 'text-emerald-400' },
-            { icon: DollarSign, label: '총 매출', value: fmtMoney(kpi.revenue), color: 'text-blue-400' },
+            { icon: DollarSign, label: '총 매출', value: fmtMoney(kpi.revenue), color: 'text-purple-400' },
           ].map(card => (
             <div key={card.label} className="glass-card rounded-2xl p-4">
               <card.icon className={`w-4 h-4 ${card.color} mb-2`} />
@@ -408,7 +408,7 @@ function Dashboard({ user }: { user: User }) {
                 onClick={() => setFilter(t.key)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
                   filter === t.key
-                    ? 'bg-blue-600/40 text-blue-400 border border-blue-500/40'
+                    ? 'bg-purple-600/40 text-purple-400 border border-purple-500/40'
                     : 'text-stone-300 hover:text-white hover:bg-white/10 border border-transparent'
                 }`}
               >
@@ -431,14 +431,14 @@ function Dashboard({ user }: { user: User }) {
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="이름 / 연락처 / 이메일 검색"
-              className="pl-8 pr-4 py-2 bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl text-xs focus:outline-none focus:border-blue-500 transition-all w-52"
+              className="pl-8 pr-4 py-2 bg-slate-800 border border-slate-700 text-white placeholder-stone-500 rounded-xl text-xs focus:outline-none focus:border-purple-500 transition-all w-52"
             />
           </div>
 
           {/* CSV */}
           <button
             onClick={handleCsvDownload}
-            className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium bg-[#1A1A1A] border border-neutral-700 text-stone-200 hover:text-white hover:border-slate-500 rounded-xl transition-all"
+            className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium bg-slate-800 border border-slate-700 text-stone-200 hover:text-white hover:border-slate-500 rounded-xl transition-all"
           >
             <Download className="w-3.5 h-3.5" />
             CSV 다운로드
@@ -446,7 +446,7 @@ function Dashboard({ user }: { user: User }) {
         </div>
 
         {/* 테이블 */}
-        <div className="glass rounded-2xl border border-blue-500/20 overflow-hidden">
+        <div className="glass rounded-2xl border border-purple-500/20 overflow-hidden">
           {loading ? (
             <div className="py-20 text-center text-stone-400 text-sm">데이터 로딩 중...</div>
           ) : filtered.length === 0 ? (
@@ -524,8 +524,8 @@ export default function AdminPage() {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-[#111111] flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-blue-500/25 border-t-blue-500 rounded-full animate-spin" />
+      <div className="min-h-screen bg-[#020617] flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-purple-500/25 border-t-purple-500 rounded-full animate-spin" />
       </div>
     )
   }

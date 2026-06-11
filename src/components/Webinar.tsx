@@ -16,9 +16,9 @@ export default function Webinar() {
     <section id="webinar" className="py-24 relative overflow-hidden" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E8B4B8]/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/60 to-transparent" />
-        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[400px] bg-blue-500/10 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-50/60 to-transparent" />
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[400px] bg-purple-500/10 rounded-full blur-[130px] pointer-events-none" />
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,7 +30,7 @@ export default function Webinar() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-4">
+            <p className="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-4">
               고민이 되신다면?
             </p>
 
@@ -54,7 +54,7 @@ export default function Webinar() {
                   transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
                   <span className="text-stone-200 text-sm leading-relaxed">{b}</span>
                 </motion.li>
               ))}
@@ -67,16 +67,16 @@ export default function Webinar() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="glass-card rounded-3xl overflow-hidden border border-[#E8B4B8]/30">
+            <div className="glass-card rounded-3xl overflow-hidden border border-[#D4AF37]/30">
               {/* Card Header */}
-              <div className="bg-[#E8B4B8]/10 px-6 py-4 flex items-center gap-3 border-b border-[#E8B4B8]/30">
+              <div className="bg-[#D4AF37]/10 px-6 py-4 flex items-center gap-3 border-b border-[#D4AF37]/30">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
                 </span>
                 <span className="text-red-500 text-xs font-bold uppercase tracking-widest">LIVE</span>
                 <span className="text-stone-300 text-xs">·</span>
-                <span className="text-blue-400 text-sm font-semibold">무료 웨비나</span>
+                <span className="text-purple-400 text-sm font-semibold">무료 웨비나</span>
               </div>
 
               {/* Card Body */}
@@ -91,18 +91,18 @@ export default function Webinar() {
                 {/* Info Rows */}
                 <div className="space-y-3 mb-7">
                   <div className="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3">
-                    <Calendar className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                    <Calendar className="w-4 h-4 text-purple-400 flex-shrink-0" />
                     <div>
                       <p className="text-white text-sm font-medium">2026.07.01(수) 19:00 ~ 21:00</p>
                       <p className="text-stone-400 text-xs mt-0.5">ZOOM 실시간 온라인 참여</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3">
-                    <Video className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                    <Video className="w-4 h-4 text-purple-400 flex-shrink-0" />
                     <div>
                       <p className="text-white text-sm font-medium">
                         교육비&nbsp;
-                        <span className="text-blue-400 font-bold">무료</span>
+                        <span className="text-purple-400 font-bold">무료</span>
                       </p>
                       <p className="text-stone-400 text-xs mt-0.5">사전 신청 후 참여 가능</p>
                     </div>
@@ -112,7 +112,7 @@ export default function Webinar() {
                 {/* CTA — dark style */}
                 <a
                   href="#webinar"
-                  className="flex items-center justify-between w-full px-6 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all duration-200 group text-sm"
+                  className="flex items-center justify-between w-full px-6 py-4 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-bold rounded-xl hover:opacity-90 transition-all duration-200 group text-sm"
                 >
                   <span>과정 상세보기</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />

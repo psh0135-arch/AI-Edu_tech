@@ -51,7 +51,7 @@ function Stars({ count }: { count: number }) {
   return (
     <div className="flex gap-0.5">
       {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} className="w-3 h-3 fill-blue-400 text-blue-400" />
+        <Star key={i} className="w-3 h-3 fill-purple-400 text-purple-400" />
       ))}
     </div>
   )
@@ -64,7 +64,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="py-24 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-64 bg-blue-600/15 rounded-full blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-64 bg-purple-600/15 rounded-full blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,7 +75,7 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
+          <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
             Testimonials
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -95,7 +95,7 @@ export default function Testimonials() {
                 className="flex-shrink-0 w-80 glass-card rounded-2xl p-5"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#2563EB] to-[#60A5FA] flex items-center justify-center text-lg">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center text-lg">
                     {review.avatar}
                   </div>
                   <div>
@@ -119,7 +119,7 @@ export default function Testimonials() {
                 className="flex-shrink-0 w-80 glass-card rounded-2xl p-5"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-600 flex items-center justify-center text-lg">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-600 to-purple-600 flex items-center justify-center text-lg">
                     {review.avatar}
                   </div>
                   <div>

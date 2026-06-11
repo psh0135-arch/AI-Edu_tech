@@ -3,10 +3,10 @@ import { useRef } from 'react'
 import { Trophy, Briefcase, Star, Rocket } from 'lucide-react'
 
 const stats = [
-  { icon: Trophy, value: '100H+', label: '완성형 커리큘럼', sub: '7단계 체계 구성', color: 'text-blue-400' },
-  { icon: Briefcase, value: '25회', label: '라이브 세션', sub: '실시간 실습 수업', color: 'text-blue-400' },
-  { icon: Star, value: 'AI 프로젝트', label: '직접 완성', sub: '포트폴리오 기반 교육', color: 'text-blue-400' },
-  { icon: Rocket, value: '포트폴리오', label: '취업 연결', sub: '커리어 전환 지원', color: 'text-blue-400' },
+  { icon: Trophy, value: '100H+', label: '완성형 커리큘럼', sub: '7단계 체계 구성', color: 'text-purple-400' },
+  { icon: Briefcase, value: '25회', label: '라이브 세션', sub: '실시간 실습 수업', color: 'text-purple-400' },
+  { icon: Star, value: 'AI 프로젝트', label: '직접 완성', sub: '포트폴리오 기반 교육', color: 'text-purple-400' },
+  { icon: Rocket, value: '포트폴리오', label: '취업 연결', sub: '커리어 전환 지원', color: 'text-purple-400' },
 ]
 
 const outcomes = [
@@ -23,8 +23,8 @@ export default function Outcomes() {
   return (
     <section id="outcomes" className="py-24 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-600/8 rounded-full blur-[100px]" />
+        <div className="absolute top-0 left-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-purple-600/8 rounded-full blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,7 @@ export default function Outcomes() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
+          <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
             Outcomes
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">

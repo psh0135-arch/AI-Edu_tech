@@ -31,14 +31,14 @@ export default function Navbar({ onApply }: NavbarProps) {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass border-b border-blue-500/20 shadow-lg shadow-blue-900/10' : 'bg-transparent'
+        scrolled ? 'glass border-b border-purple-500/20 shadow-lg shadow-purple-900/10' : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#2563EB] to-[#60A5FA] flex items-center justify-center animate-pulse-glow">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center animate-pulse-glow">
               <Zap className="w-4 h-4 text-white" />
             </div>
             <span className="font-bold text-white text-lg" style={{ fontFamily: 'Playfair Display, Noto Serif KR, serif' }}>
@@ -63,7 +63,7 @@ export default function Navbar({ onApply }: NavbarProps) {
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={onApply}
-              className="px-5 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white hover:from-[#1D4ED8] hover:to-[#3B82F6] hover:scale-105 transition-all duration-200 shadow-lg shadow-blue-900/15"
+              className="px-5 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 text-black hover:from-amber-300 hover:to-yellow-400 hover:scale-105 transition-all duration-200 shadow-lg shadow-purple-900/15"
             >
               수강신청
             </button>
@@ -86,7 +86,7 @@ export default function Navbar({ onApply }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-blue-500/20"
+            className="md:hidden glass border-t border-purple-500/20"
           >
             <div className="px-4 py-4 flex flex-col gap-2">
               {navLinks.map(link => (
@@ -101,7 +101,7 @@ export default function Navbar({ onApply }: NavbarProps) {
               ))}
               <button
                 onClick={() => { setMenuOpen(false); onApply() }}
-                className="mt-2 px-5 py-3 text-center font-semibold rounded-xl bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white w-full"
+                className="mt-2 px-5 py-3 text-center font-semibold rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 text-black w-full"
               >
                 수강신청
               </button>

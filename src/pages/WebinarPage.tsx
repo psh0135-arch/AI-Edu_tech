@@ -116,10 +116,10 @@ function CountdownUnit({ value, label }: { value: number; label: string }) {
 
 function FAQItem({ q, a, open, onToggle }: { q: string; a: string; open: boolean; onToggle: () => void }) {
   return (
-    <div className={`rounded-2xl border transition-all duration-300 overflow-hidden ${open ? 'border-blue-500/40 bg-blue-500/10' : 'border-white/10 bg-white/5'}`}>
+    <div className={`rounded-2xl border transition-all duration-300 overflow-hidden ${open ? 'border-purple-500/40 bg-purple-500/10' : 'border-white/10 bg-white/5'}`}>
       <button className="w-full flex items-center justify-between px-6 py-4 text-left" onClick={onToggle}>
         <span className="text-white font-medium pr-4 text-sm md:text-base">{q}</span>
-        <ChevronDown className={`w-5 h-5 text-blue-400 flex-shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-5 h-5 text-purple-400 flex-shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
       </button>
       <AnimatePresence>
         {open && (
@@ -210,7 +210,7 @@ export default function WebinarPage() {
   // ── 성공 화면 ──────────────────────────────────────────────────────────────
   if (submitted) {
     return (
-      <div className="min-h-screen bg-[#111111] flex flex-col items-center justify-center px-4 text-center">
+      <div className="min-h-screen bg-[#020617] flex flex-col items-center justify-center px-4 text-center">
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="max-w-md">
           <div className="w-20 h-20 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 className="w-10 h-10 text-emerald-400" />
@@ -218,17 +218,17 @@ export default function WebinarPage() {
           <h2 className="text-3xl font-bold text-white mb-3">신청 완료!</h2>
           <p className="text-stone-300 leading-relaxed mb-4">
             <strong className="text-white">{form.name}</strong>님, 웨비나 신청이 접수되었습니다.<br />
-            ZOOM 링크는 <strong className="text-blue-400">{form.email}</strong>과<br />
-            <strong className="text-blue-400">{form.phone}</strong>으로 발송됩니다.
+            ZOOM 링크는 <strong className="text-purple-400">{form.email}</strong>과<br />
+            <strong className="text-purple-400">{form.phone}</strong>으로 발송됩니다.
           </p>
-          <div className="glass rounded-2xl border border-blue-500/25 p-5 mb-8 text-sm text-stone-300 text-left space-y-2">
+          <div className="glass rounded-2xl border border-purple-500/25 p-5 mb-8 text-sm text-stone-300 text-left space-y-2">
             <p>📅 <strong className="text-white">일시</strong>: {WEBINAR_DATE}</p>
             <p>💻 <strong className="text-white">방식</strong>: ZOOM 실시간 온라인</p>
             <p>📩 <strong className="text-white">확인 메일</strong>: 영업일 기준 24시간 이내 발송</p>
           </div>
           <button
             onClick={() => { window.location.hash = '' }}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-bold rounded-xl text-sm"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-bold rounded-xl text-sm"
           >
             메인 강의 살펴보기
             <ArrowRight className="w-4 h-4" />
@@ -240,10 +240,10 @@ export default function WebinarPage() {
 
   // ── 메인 렌더 ─────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-[#111111] text-white">
+    <div className="min-h-screen bg-[#020617] text-white">
 
       {/* ── 상단 네비 ── */}
-      <nav className="sticky top-0 z-50 bg-[#111111]/90 backdrop-blur-md border-b border-white/10">
+      <nav className="sticky top-0 z-50 bg-[#020617]/90 backdrop-blur-md border-b border-white/10">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           <button onClick={() => { window.location.hash = '' }} className="text-stone-300 hover:text-white text-sm transition-colors flex items-center gap-1.5">
             ← 메인으로
@@ -256,7 +256,7 @@ export default function WebinarPage() {
             <span className="text-red-500 text-xs font-bold uppercase tracking-widest">LIVE</span>
             <span className="text-stone-400 text-xs hidden sm:inline">· 2026.07.01(수) 19:00~21:00</span>
           </div>
-          <button onClick={scrollToForm} className="px-4 py-1.5 text-xs font-bold rounded-lg bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white hover:opacity-90 transition-opacity">
+          <button onClick={scrollToForm} className="px-4 py-1.5 text-xs font-bold rounded-lg bg-gradient-to-r from-amber-400 to-yellow-500 text-black hover:opacity-90 transition-opacity">
             무료 신청
           </button>
         </div>
@@ -266,8 +266,8 @@ export default function WebinarPage() {
       <section ref={heroRef} className="relative overflow-hidden pt-20 pb-24 px-4">
         {/* BG glows */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-blue-600/20 rounded-full blur-[140px]" />
-          <div className="absolute top-20 right-1/4 w-[300px] h-[300px] bg-blue-600/15 rounded-full blur-[100px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-purple-600/20 rounded-full blur-[140px]" />
+          <div className="absolute top-20 right-1/4 w-[300px] h-[300px] bg-purple-600/15 rounded-full blur-[100px]" />
         </div>
 
         <div className="max-w-3xl mx-auto text-center relative">
@@ -285,7 +285,7 @@ export default function WebinarPage() {
             className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-6">
             코딩 몰라도
             <br />
-            <span className="bg-gradient-to-r from-blue-400 via-blue-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-400 via-purple-400 to-purple-400 bg-clip-text text-transparent">
               AI로 앱 만들기
             </span>
           </motion.h1>
@@ -313,7 +313,7 @@ export default function WebinarPage() {
             className="flex items-center justify-center gap-2 mb-8">
             <div className="flex -space-x-2">
               {[...Array(4)].map((_, i) => (
-                <div key={i} className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-500 to-blue-500 border-2 border-white" />
+                <div key={i} className="w-7 h-7 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 border-2 border-white" />
               ))}
             </div>
             <span className="text-stone-300 text-sm">
@@ -322,7 +322,7 @@ export default function WebinarPage() {
           </motion.div>
 
           <motion.button onClick={scrollToForm} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.4 }}
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white text-lg font-bold rounded-2xl shadow-2xl shadow-blue-900/20 hover:from-[#1D4ED8] hover:to-[#3B82F6] transition-all duration-200 hover:scale-105">
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-amber-400 to-yellow-500 text-black text-lg font-bold rounded-2xl shadow-2xl shadow-purple-900/20 hover:from-amber-300 hover:to-yellow-400 transition-all duration-200 hover:scale-105">
             무료 웨비나 신청하기
             <ArrowRight className="w-5 h-5" />
           </motion.button>
@@ -336,15 +336,15 @@ export default function WebinarPage() {
         <div className="max-w-5xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={benefitsInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
             className="text-center mb-12">
-            <span className="text-blue-400 text-xs font-bold uppercase tracking-widest block mb-3">이 웨비나에서 얻어가는 것</span>
+            <span className="text-purple-400 text-xs font-bold uppercase tracking-widest block mb-3">이 웨비나에서 얻어가는 것</span>
             <h2 className="text-3xl md:text-4xl font-bold text-white">2시간 후, 당신이 달라집니다</h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             {benefits.map((b, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 30 }} animate={benefitsInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="glass-card rounded-2xl p-6 border border-white/10 hover:border-blue-500/25 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/30 to-blue-600/30 border border-blue-500/25 flex items-center justify-center mb-4">
-                  <b.icon className="w-6 h-6 text-blue-400" />
+                className="glass-card rounded-2xl p-6 border border-white/10 hover:border-purple-500/25 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600/30 to-purple-600/30 border border-purple-500/25 flex items-center justify-center mb-4">
+                  <b.icon className="w-6 h-6 text-purple-400" />
                 </div>
                 <h3 className="text-white font-bold text-lg mb-2">{b.title}</h3>
                 <p className="text-stone-300 text-sm leading-relaxed">{b.desc}</p>
@@ -359,28 +359,28 @@ export default function WebinarPage() {
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={curriculumInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
             className="text-center mb-12">
-            <span className="text-blue-400 text-xs font-bold uppercase tracking-widest block mb-3">CURRICULUM</span>
+            <span className="text-purple-400 text-xs font-bold uppercase tracking-widest block mb-3">CURRICULUM</span>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">2시간 타임라인</h2>
             <p className="text-stone-300">처음부터 끝까지 라이브로 함께합니다</p>
           </motion.div>
 
           <div className="relative">
             {/* 세로선 */}
-            <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-blue-500/50 via-blue-500/30 to-transparent" />
+            <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-purple-500/50 via-purple-500/30 to-transparent" />
 
             <div className="space-y-8">
               {curriculum.map((item, i) => (
                 <motion.div key={i} initial={{ opacity: 0, x: -20 }} animate={curriculumInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.12 }}
                   className="flex gap-6 md:gap-8">
                   {/* 아이콘 노드 */}
-                  <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-blue-600/40 to-blue-600/20 border border-blue-500/25 flex items-center justify-center relative z-10">
-                    <item.icon className="w-5 h-5 md:w-6 md:h-6 text-blue-400" />
+                  <div className="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-purple-600/40 to-purple-600/20 border border-purple-500/25 flex items-center justify-center relative z-10">
+                    <item.icon className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
                   </div>
                   {/* 내용 */}
                   <div className="glass-card rounded-2xl p-5 flex-1 border border-white/10">
                     <div className="flex flex-wrap items-center gap-2 mb-2">
                       <span className="text-stone-400 text-xs font-mono">{item.time}</span>
-                      <span className="px-2 py-0.5 rounded-full bg-blue-500/100/15 text-blue-400 text-xs font-medium">{item.tag}</span>
+                      <span className="px-2 py-0.5 rounded-full bg-purple-500/100/15 text-purple-400 text-xs font-medium">{item.tag}</span>
                     </div>
                     <h3 className="text-white font-bold text-base md:text-lg mb-1.5">{item.title}</h3>
                     <p className="text-stone-300 text-sm leading-relaxed">{item.desc}</p>
@@ -397,17 +397,17 @@ export default function WebinarPage() {
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={instructorInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
             className="glass-card rounded-3xl border border-white/10 p-8 md:p-10">
-            <span className="text-blue-400 text-xs font-bold uppercase tracking-widest block mb-6">INSTRUCTOR</span>
+            <span className="text-purple-400 text-xs font-bold uppercase tracking-widest block mb-6">INSTRUCTOR</span>
             <div className="flex flex-col sm:flex-row gap-6 items-start">
               <img
                 src={`${import.meta.env.BASE_URL}leader.jpg`}
                 alt="강사 박상훈"
-                className="w-24 h-24 rounded-2xl object-cover border-2 border-blue-500/25 flex-shrink-0"
+                className="w-24 h-24 rounded-2xl object-cover border-2 border-purple-500/25 flex-shrink-0"
               />
               <div>
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <h3 className="text-white font-bold text-2xl">박상훈</h3>
-                  <span className="px-3 py-1 rounded-full bg-blue-500/100/15 border border-blue-500/25 text-blue-400 text-xs font-medium">AI 마케팅 강사</span>
+                  <span className="px-3 py-1 rounded-full bg-purple-500/100/15 border border-purple-500/25 text-purple-400 text-xs font-medium">AI 마케팅 강사</span>
                 </div>
                 <p className="text-stone-300 text-sm leading-relaxed mb-4">
                   생성형 AI와 바이브코딩을 결합해 마케터·기획자가 직접 디지털 서비스를 만드는 방법을 연구하고 가르칩니다.
@@ -428,25 +428,25 @@ export default function WebinarPage() {
       <section className="py-20 px-4 border-t border-white/10">
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-10">
-            <span className="text-blue-400 text-xs font-bold uppercase tracking-widest block mb-3">REGISTER</span>
+            <span className="text-purple-400 text-xs font-bold uppercase tracking-widest block mb-3">REGISTER</span>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">지금 무료로 신청하세요</h2>
             <p className="text-stone-300 text-sm">
               <strong className="text-white">{count}명</strong>이 이미 신청했습니다 · 선착순 100명
             </p>
           </div>
 
-          <div ref={formRef} className="glass-card rounded-3xl border border-blue-500/25 p-8">
+          <div ref={formRef} className="glass-card rounded-3xl border border-purple-500/25 p-8">
             {/* 웨비나 정보 요약 */}
-            <div className="rounded-xl bg-blue-600/20 border border-blue-500/25 px-4 py-3 mb-6 space-y-2">
-              <div className="flex items-center gap-2 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+            <div className="rounded-xl bg-purple-600/20 border border-purple-500/25 px-4 py-3 mb-6 space-y-2">
+              <div className="flex items-center gap-2 text-purple-400 text-xs font-semibold uppercase tracking-wider">
                 <Play className="w-3 h-3" /> 웨비나 정보
               </div>
               <div className="flex items-center gap-2 text-stone-200 text-sm">
-                <Calendar className="w-4 h-4 text-blue-400" />
+                <Calendar className="w-4 h-4 text-purple-400" />
                 {WEBINAR_DATE}
               </div>
               <div className="flex items-center gap-2 text-stone-200 text-sm">
-                <Clock className="w-4 h-4 text-blue-400" />
+                <Clock className="w-4 h-4 text-purple-400" />
                 ZOOM 실시간 온라인 · 참가비 <span className="text-emerald-400 font-bold ml-1">무료</span>
               </div>
             </div>
@@ -454,26 +454,26 @@ export default function WebinarPage() {
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* 성함 */}
               <div>
-                <label className="block text-stone-200 text-sm font-medium mb-1.5">성함 <span className="text-blue-400">*</span></label>
+                <label className="block text-stone-200 text-sm font-medium mb-1.5">성함 <span className="text-purple-400">*</span></label>
                 <input type="text" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
                   placeholder="홍길동"
-                  className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all" />
+                  className="w-full bg-slate-800 border border-slate-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all" />
                 {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
               </div>
               {/* 연락처 */}
               <div>
-                <label className="block text-stone-200 text-sm font-medium mb-1.5">연락처 <span className="text-blue-400">*</span></label>
+                <label className="block text-stone-200 text-sm font-medium mb-1.5">연락처 <span className="text-purple-400">*</span></label>
                 <input type="tel" value={form.phone} onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
                   placeholder="010-0000-0000"
-                  className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all" />
+                  className="w-full bg-slate-800 border border-slate-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all" />
                 {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
               </div>
               {/* 이메일 */}
               <div>
-                <label className="block text-stone-200 text-sm font-medium mb-1.5">이메일 <span className="text-blue-400">*</span></label>
+                <label className="block text-stone-200 text-sm font-medium mb-1.5">이메일 <span className="text-purple-400">*</span></label>
                 <input type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
                   placeholder="example@email.com"
-                  className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all" />
+                  className="w-full bg-slate-800 border border-slate-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all" />
                 {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
               </div>
               {/* 소속 */}
@@ -481,18 +481,18 @@ export default function WebinarPage() {
                 <label className="block text-stone-200 text-sm font-medium mb-1.5">소속 및 직함 <span className="text-stone-400 text-xs font-normal">(선택)</span></label>
                 <input type="text" value={form.affiliation} onChange={e => setForm(f => ({ ...f, affiliation: e.target.value }))}
                   placeholder="예: ○○회사 / 마케팅팀 팀장"
-                  className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all" />
+                  className="w-full bg-slate-800 border border-slate-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-purple-500 transition-all" />
               </div>
 
               {/* 개인정보 동의 */}
               <div className="pt-2 border-t border-white/10">
                 <label className="flex items-start gap-3 cursor-pointer group">
                   <div onClick={() => setPrivacy(p => !p)}
-                    className={`w-5 h-5 mt-0.5 rounded-md border flex-shrink-0 flex items-center justify-center transition-all ${privacy ? 'bg-blue-600 border-blue-600' : 'bg-transparent border-neutral-700 group-hover:border-blue-600'}`}>
+                    className={`w-5 h-5 mt-0.5 rounded-md border flex-shrink-0 flex items-center justify-center transition-all ${privacy ? 'bg-purple-600 border-purple-600' : 'bg-transparent border-slate-700 group-hover:border-purple-600'}`}>
                     {privacy && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
                   </div>
                   <span className="text-stone-300 text-xs leading-relaxed">
-                    웨비나 안내 및 ZOOM 링크 발송을 위해 개인정보(성함·연락처·이메일)를 수집·이용하는 것에 동의합니다. <span className="text-blue-400">*</span>
+                    웨비나 안내 및 ZOOM 링크 발송을 위해 개인정보(성함·연락처·이메일)를 수집·이용하는 것에 동의합니다. <span className="text-purple-400">*</span>
                   </span>
                 </label>
                 {errors.privacy && <p className="text-red-500 text-xs mt-1 ml-8">{errors.privacy}</p>}
@@ -500,7 +500,7 @@ export default function WebinarPage() {
 
               {/* 제출 버튼 */}
               <button type="submit" disabled={loading}
-                className="w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-bold rounded-xl hover:from-[#1D4ED8] hover:to-[#3B82F6] transition-all disabled:opacity-60 disabled:cursor-not-allowed text-base">
+                className="w-full flex items-center justify-center gap-2 py-4 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-bold rounded-xl hover:from-amber-300 hover:to-yellow-400 transition-all disabled:opacity-60 disabled:cursor-not-allowed text-base">
                 {loading ? (
                   <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> 신청 중...</>
                 ) : (
@@ -518,7 +518,7 @@ export default function WebinarPage() {
         <div className="max-w-2xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={faqInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
             className="text-center mb-10">
-            <span className="text-blue-400 text-xs font-bold uppercase tracking-widest block mb-3">FAQ</span>
+            <span className="text-purple-400 text-xs font-bold uppercase tracking-widest block mb-3">FAQ</span>
             <h2 className="text-3xl font-bold text-white">자주 묻는 질문</h2>
           </motion.div>
           <div className="space-y-3">
@@ -539,7 +539,7 @@ export default function WebinarPage() {
           </h2>
           <p className="text-stone-300 mb-8">비용 없음 · ZOOM 실시간 · 당일 녹화본 제공</p>
           <button onClick={scrollToForm}
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white text-lg font-bold rounded-2xl shadow-2xl shadow-blue-900/20 hover:from-[#1D4ED8] hover:to-[#3B82F6] transition-all hover:scale-105">
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-amber-400 to-yellow-500 text-black text-lg font-bold rounded-2xl shadow-2xl shadow-purple-900/20 hover:from-amber-300 hover:to-yellow-400 transition-all hover:scale-105">
             지금 무료 신청하기
             <ArrowRight className="w-5 h-5" />
           </button>
@@ -552,7 +552,7 @@ export default function WebinarPage() {
       {/* ── 모바일 고정 CTA ── */}
       <div className="md:hidden fixed bottom-4 left-4 right-4 z-50">
         <button onClick={scrollToForm}
-          className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-bold rounded-2xl shadow-2xl shadow-blue-900/20">
+          className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-amber-400 to-yellow-500 text-black font-bold rounded-2xl shadow-2xl shadow-purple-900/20">
           <Users className="w-5 h-5" />
           무료 웨비나 신청 ({count}명 신청 중)
         </button>
