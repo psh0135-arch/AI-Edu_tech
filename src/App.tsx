@@ -31,7 +31,7 @@ function App() {
   if (page === '#webinar') return <WebinarPage />
 
   return (
-    <div className="min-h-screen bg-[#FAFBFC] text-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#111111] text-white overflow-x-hidden">
       <Navbar onApply={() => setIsApplyOpen(true)} />
       <main>
         <Hero onApply={() => setIsApplyOpen(true)} />

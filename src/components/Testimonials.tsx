@@ -51,7 +51,7 @@ function Stars({ count }: { count: number }) {
   return (
     <div className="flex gap-0.5">
       {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} className="w-3 h-3 fill-blue-400 text-blue-600" />
+        <Star key={i} className="w-3 h-3 fill-blue-400 text-blue-400" />
       ))}
     </div>
   )
@@ -64,7 +64,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="py-24 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-64 bg-blue-200/15 rounded-full blur-[100px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-64 bg-blue-600/15 rounded-full blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,13 +75,13 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase mb-3 block">
+          <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
             Testimonials
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             생성형 AI 마케팅 교육 수강생 후기
           </h2>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+          <p className="text-stone-300 text-lg max-w-2xl mx-auto">
             강의를 수료하고 실제 변화를 경험한 수강생들의 이야기
           </p>
         </motion.div>
@@ -95,16 +95,16 @@ export default function Testimonials() {
                 className="flex-shrink-0 w-80 glass-card rounded-2xl p-5"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#0F172A] to-[#2563EB] flex items-center justify-center text-lg">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#2563EB] to-[#60A5FA] flex items-center justify-center text-lg">
                     {review.avatar}
                   </div>
                   <div>
-                    <div className="text-slate-900 font-semibold text-sm">{review.name}</div>
-                    <div className="text-slate-500 text-xs">{review.role}</div>
+                    <div className="text-white font-semibold text-sm">{review.name}</div>
+                    <div className="text-stone-400 text-xs">{review.role}</div>
                   </div>
                 </div>
                 <Stars count={review.rating} />
-                <p className="text-slate-600 text-sm leading-relaxed mt-3">"{review.text}"</p>
+                <p className="text-stone-300 text-sm leading-relaxed mt-3">"{review.text}"</p>
               </div>
             ))}
           </div>
@@ -123,12 +123,12 @@ export default function Testimonials() {
                     {review.avatar}
                   </div>
                   <div>
-                    <div className="text-slate-900 font-semibold text-sm">{review.name}</div>
-                    <div className="text-slate-500 text-xs">{review.role}</div>
+                    <div className="text-white font-semibold text-sm">{review.name}</div>
+                    <div className="text-stone-400 text-xs">{review.role}</div>
                   </div>
                 </div>
                 <Stars count={review.rating} />
-                <p className="text-slate-600 text-sm leading-relaxed mt-3">"{review.text}"</p>
+                <p className="text-stone-300 text-sm leading-relaxed mt-3">"{review.text}"</p>
               </div>
             ))}
           </div>

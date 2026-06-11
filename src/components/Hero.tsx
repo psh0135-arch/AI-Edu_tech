@@ -18,8 +18,8 @@ export default function Hero({ onApply }: HeroProps) {
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/15 rounded-full blur-[120px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[150px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/100/15 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[150px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
@@ -28,7 +28,7 @@ export default function Hero({ onApply }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-200 text-sm text-blue-600 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-blue-500/25 text-sm text-blue-400 mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
           생성형 AI × 디지털 마케팅 × 바이브코딩
@@ -41,7 +41,7 @@ export default function Hero({ onApply }: HeroProps) {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
         >
-          <span className="text-slate-900">생성형 AI로 배우는</span>
+          <span className="text-white">생성형 AI로 배우는</span>
           <br />
           <span className="gradient-text-main">실무 중심 디지털</span>
           <br />
@@ -53,7 +53,7 @@ export default function Hero({ onApply }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto mb-4"
+          className="text-stone-300 text-lg md:text-xl max-w-2xl mx-auto mb-4"
         >
           ChatGPT · Gemini · Claude · Runway · Canva AI
         </motion.p>
@@ -61,7 +61,7 @@ export default function Hero({ onApply }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.25 }}
-          className="text-slate-500 text-base md:text-lg max-w-xl mx-auto mb-10"
+          className="text-stone-400 text-base md:text-lg max-w-xl mx-auto mb-10"
         >
           실무 프로젝트 기반 생성형 AI 마케팅 교육
         </motion.p>
@@ -75,7 +75,7 @@ export default function Hero({ onApply }: HeroProps) {
         >
           <button
             onClick={onApply}
-            className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white font-semibold rounded-2xl shadow-lg shadow-blue-900/40 hover:shadow-blue-900/60 hover:scale-105 transition-all duration-200"
+            className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-semibold rounded-2xl shadow-lg shadow-blue-900/40 hover:shadow-blue-900/60 hover:scale-105 transition-all duration-200"
           >
             수강신청
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -85,7 +85,7 @@ export default function Hero({ onApply }: HeroProps) {
             className="flex items-center gap-2 px-8 py-4 rounded-2xl font-semibold bg-gradient-to-r from-blue-600/30 to-blue-600/30 border border-blue-400/50 hover:from-blue-600/50 hover:to-blue-600/50 hover:border-blue-400/80 hover:scale-105 transition-all duration-200"
           >
             <span className="gradient-text font-semibold">커리큘럼 보기</span>
-            <BookOpen className="w-4 h-4 text-blue-600" />
+            <BookOpen className="w-4 h-4 text-blue-400" />
           </a>
         </motion.div>
 
@@ -104,9 +104,9 @@ export default function Hero({ onApply }: HeroProps) {
               transition={{ duration: 0.5, delay: 0.6 + i * 0.08 }}
               className="glass-card rounded-2xl p-4 text-center"
             >
-              <stat.icon className="w-5 h-5 text-blue-600 mx-auto mb-2" />
+              <stat.icon className="w-5 h-5 text-blue-400 mx-auto mb-2" />
               <div className="text-2xl font-bold gradient-text">{stat.value}</div>
-              <div className="text-xs text-slate-500 mt-1">{stat.label}</div>
+              <div className="text-xs text-stone-400 mt-1">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -127,7 +127,7 @@ export default function Hero({ onApply }: HeroProps) {
           ].map(badge => (
             <div
               key={badge.label}
-              className="glass border border-blue-200 text-blue-600 text-xs px-4 py-2 rounded-full animate-float whitespace-nowrap"
+              className="glass border border-blue-500/25 text-blue-400 text-xs px-4 py-2 rounded-full animate-float whitespace-nowrap"
               style={{ animationDelay: `${badge.delay}s` }}
             >
               ✦ {badge.label}

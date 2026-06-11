@@ -14,17 +14,17 @@ const careerItems = [
 ]
 
 const credentials = [
-  { icon: GraduationCap, title: '경희대학교 대학원', sub: '경영학 석사', color: 'text-blue-600' },
-  { icon: Award, title: '경영지도사', sub: '자격증 취득 (2021)', color: 'text-blue-600' },
-  { icon: BookOpen, title: '직업능력개발 훈련교사', sub: '경영전략·마케팅 분야', color: 'text-blue-600' },
+  { icon: GraduationCap, title: '경희대학교 대학원', sub: '경영학 석사', color: 'text-blue-400' },
+  { icon: Award, title: '경영지도사', sub: '자격증 취득 (2021)', color: 'text-blue-400' },
+  { icon: BookOpen, title: '직업능력개발 훈련교사', sub: '경영전략·마케팅 분야', color: 'text-blue-400' },
   { icon: Star, title: '용인시 산업진흥원', sub: '경영전략 전문위원', color: 'text-emerald-400' },
 ]
 
 const stats = [
-  { value: '5년', label: '강의 경력', icon: BookOpen, color: 'text-blue-600' },
-  { value: '11년', label: '기업 실무경력', icon: Briefcase, color: 'text-blue-600' },
+  { value: '5년', label: '강의 경력', icon: BookOpen, color: 'text-blue-400' },
+  { value: '11년', label: '기업 실무경력', icon: Briefcase, color: 'text-blue-400' },
   { value: '5년', label: '컨설팅 경력', icon: Building2, color: 'text-emerald-400' },
-  { value: '21년+', label: '총 경력', icon: Star, color: 'text-blue-600' },
+  { value: '21년+', label: '총 경력', icon: Star, color: 'text-blue-400' },
 ]
 
 const fadeUp = {
@@ -56,13 +56,13 @@ export default function About() {
           custom={0}
           className="text-center mb-16"
         >
-          <span className="text-blue-600 text-sm font-semibold tracking-widest uppercase mb-3 block">
+          <span className="text-blue-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
             About Instructor
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             AI 마케팅 전문 강사 소개
           </h2>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+          <p className="text-stone-300 text-lg max-w-2xl mx-auto">
             기업 실무 11년 · 강의 5년 · 컨설팅 5년의 현장 중심 디지털 마케팅 전문가
           </p>
         </motion.div>
@@ -79,7 +79,7 @@ export default function About() {
             <div key={stat.label} className="glass-card rounded-2xl p-5 text-center">
               <stat.icon className={`w-5 h-5 ${stat.color} mx-auto mb-2`} />
               <div className="text-2xl md:text-3xl font-bold gradient-text mb-1">{stat.value}</div>
-              <div className="text-slate-500 text-xs">{stat.label}</div>
+              <div className="text-stone-400 text-xs">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -98,7 +98,7 @@ export default function About() {
             <img
               src={`${import.meta.env.BASE_URL}leader.jpg`}
               alt="Leader 매거진"
-              className="w-full rounded-2xl shadow-xl shadow-blue-900/15 border border-blue-200"
+              className="w-full rounded-2xl shadow-xl shadow-blue-900/15 border border-blue-500/25"
             />
           </motion.div>
 
@@ -117,14 +117,14 @@ export default function About() {
                 <img
                   src={`${import.meta.env.BASE_URL}profile.jpg`}
                   alt="강사 프로필"
-                  className="w-20 h-20 rounded-2xl object-cover object-top shadow-lg shadow-blue-900/20 border border-blue-200 flex-shrink-0"
+                  className="w-20 h-20 rounded-2xl object-cover object-top shadow-lg shadow-blue-900/20 border border-blue-500/25 flex-shrink-0"
                 />
                 <div>
-                  <h3 className="text-slate-900 font-bold text-xl mb-1">디지털 마케팅 전문 강사</h3>
-                  <p className="text-blue-600 text-sm font-medium">경영지도사 · MBA</p>
+                  <h3 className="text-white font-bold text-xl mb-1">디지털 마케팅 전문 강사</h3>
+                  <p className="text-blue-400 text-sm font-medium">경영지도사 · MBA</p>
                 </div>
               </div>
-              <p className="text-slate-600 text-sm leading-relaxed mt-4">
+              <p className="text-stone-300 text-sm leading-relaxed mt-4">
                 롯데쇼핑·중앙일보마케팅·대명스테이션 등 대기업 마케팅 기획팀 출신으로,
                 현장 실무 경험을 바탕으로 한 생생한 디지털 마케팅 교육을 제공합니다.
                 현재 메가스터디에서 디지털 마케팅 운영교수로 활동 중입니다.
@@ -142,12 +142,12 @@ export default function About() {
                   custom={4 + i * 0.5}
                   className="glass-card rounded-xl p-4 flex items-center gap-3"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center flex-shrink-0">
                     <cred.icon className={`w-4 h-4 ${cred.color}`} />
                   </div>
                   <div>
-                    <div className="text-slate-900 text-sm font-semibold">{cred.title}</div>
-                    <div className="text-slate-500 text-xs">{cred.sub}</div>
+                    <div className="text-white text-sm font-semibold">{cred.title}</div>
+                    <div className="text-stone-400 text-xs">{cred.sub}</div>
                   </div>
                 </motion.div>
               ))}
@@ -162,8 +162,8 @@ export default function About() {
               className="glass-card rounded-2xl p-6"
             >
               <div className="flex items-center gap-2 mb-6">
-                <Briefcase className="w-5 h-5 text-blue-600" />
-                <h3 className="text-slate-900 font-bold text-lg">주요 경력</h3>
+                <Briefcase className="w-5 h-5 text-blue-400" />
+                <h3 className="text-white font-bold text-lg">주요 경력</h3>
               </div>
 
               <div className="relative space-y-0">
@@ -180,20 +180,20 @@ export default function About() {
                     <div className={`relative z-10 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
                       item.current
                         ? 'bg-gradient-to-br from-blue-500 to-blue-500 shadow-lg shadow-blue-900/40'
-                        : 'bg-white border border-gray-300'
+                        : 'bg-white border border-neutral-700'
                     }`}>
-                      <div className={`w-2 h-2 rounded-full ${item.current ? 'bg-white' : 'bg-slate-500'}`} />
+                      <div className={`w-2 h-2 rounded-full ${item.current ? 'bg-white/5' : 'bg-[#1A1A1A]0'}`} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-slate-900 font-semibold text-sm">{item.org}</span>
+                        <span className="text-white font-semibold text-sm">{item.org}</span>
                         {item.current && (
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-blue-600/30 text-blue-600 border border-blue-200">
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-blue-600/30 text-blue-400 border border-blue-500/25">
                             현재
                           </span>
                         )}
                       </div>
-                      <div className="text-slate-600 text-xs mt-0.5">{item.role}</div>
+                      <div className="text-stone-300 text-xs mt-0.5">{item.role}</div>
                       <div className="text-blue-500/70 text-xs mt-0.5">{item.field}</div>
                     </div>
                   </motion.div>
@@ -201,8 +201,8 @@ export default function About() {
               </div>
 
               {/* Extra badges */}
-              <div className="mt-5 pt-5 border-t border-gray-200">
-                <p className="text-slate-500 text-xs mb-3">기타 활동</p>
+              <div className="mt-5 pt-5 border-t border-white/10">
+                <p className="text-stone-400 text-xs mb-3">기타 활동</p>
                 <div className="flex flex-wrap gap-2">
                   {[
                     '소상공인시장진흥공단 컨설턴트',
@@ -213,7 +213,7 @@ export default function About() {
                   ].map(badge => (
                     <span
                       key={badge}
-                      className="text-xs px-2.5 py-1 rounded-lg bg-white/80 text-slate-600 border border-gray-300/50"
+                      className="text-xs px-2.5 py-1 rounded-lg bg-white/80 text-stone-300 border border-neutral-700/50"
                     >
                       {badge}
                     </span>
@@ -230,12 +230,12 @@ export default function About() {
           animate={inView ? 'visible' : 'hidden'}
           variants={fadeUp}
           custom={10}
-          className="mt-6 glass-card rounded-2xl p-6 border border-blue-200 bg-gradient-to-r from-blue-200/10 to-blue-200/10 text-center"
+          className="mt-6 glass-card rounded-2xl p-6 border border-blue-500/25 bg-gradient-to-r from-blue-200/10 to-blue-200/10 text-center"
         >
-          <p className="text-slate-700 text-base md:text-lg italic">
+          <p className="text-stone-200 text-base md:text-lg italic">
             "AI 툴은 도구입니다. 중요한 건 <span className="gradient-text font-semibold not-italic">전략과 창의력</span>입니다."
           </p>
-          <p className="text-slate-500 text-sm mt-2">
+          <p className="text-stone-400 text-sm mt-2">
             기업 실무 · 마케팅 컨설팅 · 강의 현장에서 직접 검증한 노하우를 그대로 전달합니다.
           </p>
         </motion.div>

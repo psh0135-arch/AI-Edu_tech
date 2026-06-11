@@ -39,9 +39,9 @@ const CONSULT_LABELS: Record<ConsultStatus, string> = {
 }
 
 const CONSULT_COLORS: Record<ConsultStatus, string> = {
-  new: 'bg-blue-100 text-blue-300 border-blue-200',
-  contacted: 'bg-blue-600/20 text-yellow-300 border-blue-200',
-  consulting: 'bg-blue-100 text-blue-600 border-blue-200',
+  new: 'bg-blue-500/100/15 text-blue-300 border-blue-500/25',
+  contacted: 'bg-blue-600/20 text-yellow-300 border-blue-500/25',
+  consulting: 'bg-blue-500/100/15 text-blue-400 border-blue-500/25',
   confirmed: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
   cancelled: 'bg-red-500/20 text-red-300 border-red-500/30',
 }
@@ -54,7 +54,7 @@ const PAYMENT_LABELS: Record<PaymentStatus, string> = {
 }
 
 const PAYMENT_COLORS: Record<PaymentStatus, string> = {
-  waiting: 'text-slate-600',
+  waiting: 'text-stone-300',
   partial: 'text-yellow-400',
   paid: 'text-emerald-400',
   refund: 'text-red-500',
@@ -90,44 +90,44 @@ function LoginScreen() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFBFC] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#111111] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-8">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0F172A] to-[#2563EB] flex items-center justify-center">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#2563EB] to-[#60A5FA] flex items-center justify-center">
             <Zap className="w-5 h-5 text-white" />
           </div>
-          <span className="text-slate-900 font-bold text-xl">AI마케팅 <span className="text-slate-600 text-sm font-normal">관리자</span></span>
+          <span className="text-white font-bold text-xl">AI마케팅 <span className="text-stone-300 text-sm font-normal">관리자</span></span>
         </div>
 
-        <div className="glass rounded-2xl border border-blue-200 p-8">
-          <h2 className="text-slate-900 font-bold text-lg mb-6 text-center">관리자 로그인</h2>
+        <div className="glass rounded-2xl border border-blue-500/25 p-8">
+          <h2 className="text-white font-bold text-lg mb-6 text-center">관리자 로그인</h2>
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-slate-600 text-xs mb-1.5">이메일</label>
+              <label className="block text-stone-300 text-xs mb-1.5">이메일</label>
               <input
                 type="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="admin@example.com"
-                className="w-full bg-slate-50 border border-gray-300 text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all"
+                className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all"
               />
             </div>
             <div>
-              <label className="block text-slate-600 text-xs mb-1.5">비밀번호</label>
+              <label className="block text-stone-300 text-xs mb-1.5">비밀번호</label>
               <input
                 type="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-slate-50 border border-gray-300 text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all"
+                className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all"
               />
             </div>
             {error && <p className="text-red-500 text-xs">{error}</p>}
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white font-semibold rounded-xl hover:from-[#1E293B] hover:to-[#1D4ED8] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full py-3 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-semibold rounded-xl hover:from-[#1D4ED8] hover:to-[#3B82F6] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {loading ? '로그인 중...' : '로그인'}
             </button>
@@ -166,22 +166,22 @@ function DetailModal({ item, onClose }: { item: Enrollment; onClose: () => void 
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative z-10 w-full max-w-lg bg-[#0f172a] border border-blue-200 rounded-2xl overflow-hidden max-h-[90vh] flex flex-col">
+      <div className="relative z-10 w-full max-w-lg bg-[#0f172a] border border-blue-500/25 rounded-2xl overflow-hidden max-h-[90vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
           <div>
-            <h3 className="text-slate-900 font-bold">{item.name}</h3>
-            <p className="text-slate-500 text-xs mt-0.5">{item.email} · {item.phone}</p>
+            <h3 className="text-white font-bold">{item.name}</h3>
+            <p className="text-stone-400 text-xs mt-0.5">{item.email} · {item.phone}</p>
           </div>
-          <button onClick={onClose} className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-100 flex items-center justify-center text-slate-600">
+          <button onClick={onClose} className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/10 flex items-center justify-center text-stone-300">
             <X className="w-4 h-4" />
           </button>
         </div>
 
         <div className="overflow-y-auto flex-1 px-6 py-5 space-y-5">
           {/* 기본 정보 */}
-          <div className="rounded-xl bg-white border border-gray-200 p-4 space-y-2 text-sm">
-            <p className="text-blue-600 text-xs font-semibold tracking-widest uppercase mb-2">기본 정보</p>
+          <div className="rounded-xl bg-white border border-white/10 p-4 space-y-2 text-sm">
+            <p className="text-blue-400 text-xs font-semibold tracking-widest uppercase mb-2">기본 정보</p>
             <div className="grid grid-cols-2 gap-2">
               {[
                 ['소속', item.affiliation || '-'],
@@ -189,83 +189,83 @@ function DetailModal({ item, onClose }: { item: Enrollment; onClose: () => void 
                 ['신청일', fmtDate(item.createdAt)],
               ].map(([k, v]) => (
                 <div key={k}>
-                  <span className="text-slate-500 text-xs">{k}</span>
-                  <p className="text-slate-900 text-sm mt-0.5">{v}</p>
+                  <span className="text-stone-400 text-xs">{k}</span>
+                  <p className="text-white text-sm mt-0.5">{v}</p>
                 </div>
               ))}
             </div>
             {item.goal && (
-              <div className="pt-2 border-t border-gray-200">
-                <span className="text-slate-500 text-xs">수강 목표</span>
-                <p className="text-slate-700 text-sm mt-0.5 leading-relaxed">{item.goal}</p>
+              <div className="pt-2 border-t border-white/10">
+                <span className="text-stone-400 text-xs">수강 목표</span>
+                <p className="text-stone-200 text-sm mt-0.5 leading-relaxed">{item.goal}</p>
               </div>
             )}
           </div>
 
           {/* 상담 상태 */}
           <div>
-            <label className="block text-slate-600 text-xs font-medium mb-1.5">상담 상태</label>
+            <label className="block text-stone-300 text-xs font-medium mb-1.5">상담 상태</label>
             <div className="relative">
               <select
                 value={consultStatus}
                 onChange={e => setConsultStatus(e.target.value as ConsultStatus)}
-                className="w-full bg-slate-50 border border-gray-300 text-slate-900 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all appearance-none pr-10"
+                className="w-full bg-[#1A1A1A] border border-neutral-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all appearance-none pr-10"
                 style={{ colorScheme: 'dark' }}
               >
                 {(Object.entries(CONSULT_LABELS) as [ConsultStatus, string][]).map(([v, l]) => (
                   <option key={v} value={v} className="bg-white">{l}</option>
                 ))}
               </select>
-              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600 pointer-events-none" />
+              <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-300 pointer-events-none" />
             </div>
           </div>
 
           {/* 결제 */}
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-slate-600 text-xs font-medium mb-1.5">결제 상태</label>
+              <label className="block text-stone-300 text-xs font-medium mb-1.5">결제 상태</label>
               <div className="relative">
                 <select
                   value={paymentStatus}
                   onChange={e => setPaymentStatus(e.target.value as PaymentStatus)}
-                  className="w-full bg-slate-50 border border-gray-300 text-slate-900 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all appearance-none pr-8"
+                  className="w-full bg-[#1A1A1A] border border-neutral-700 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all appearance-none pr-8"
                   style={{ colorScheme: 'dark' }}
                 >
                   {(Object.entries(PAYMENT_LABELS) as [PaymentStatus, string][]).map(([v, l]) => (
                     <option key={v} value={v} className="bg-white">{l}</option>
                   ))}
                 </select>
-                <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600 pointer-events-none" />
+                <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-300 pointer-events-none" />
               </div>
             </div>
             <div>
-              <label className="block text-slate-600 text-xs font-medium mb-1.5">결제 금액 (원)</label>
+              <label className="block text-stone-300 text-xs font-medium mb-1.5">결제 금액 (원)</label>
               <input
                 type="number"
                 value={paymentAmount}
                 onChange={e => setPaymentAmount(e.target.value)}
                 placeholder="150000"
-                className="w-full bg-slate-50 border border-gray-300 text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all"
+                className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all"
               />
             </div>
           </div>
 
           {/* 상담 메모 */}
           <div>
-            <label className="block text-slate-600 text-xs font-medium mb-1.5">상담 메모</label>
+            <label className="block text-stone-300 text-xs font-medium mb-1.5">상담 메모</label>
             <textarea
               value={memo}
               onChange={e => setMemo(e.target.value)}
               placeholder="상담 내용, 특이사항 등을 기록하세요."
               rows={4}
-              className="w-full bg-slate-50 border border-gray-300 text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all resize-none"
+              className="w-full bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-blue-500 transition-all resize-none"
             />
           </div>
 
           <button
             onClick={handleSave}
             disabled={saving}
-            className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-[#0F172A] to-[#2563EB] text-white font-semibold rounded-xl hover:from-[#1E293B] hover:to-[#1D4ED8] transition-all disabled:opacity-60"
+            className="w-full flex items-center justify-center gap-2 py-3 bg-gradient-to-r from-[#2563EB] to-[#60A5FA] text-white font-semibold rounded-xl hover:from-[#1D4ED8] hover:to-[#3B82F6] transition-all disabled:opacity-60"
           >
             {saving ? (
               <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -356,22 +356,22 @@ function Dashboard({ user }: { user: User }) {
   }, [enrollments])
 
   return (
-    <div className="min-h-screen bg-[#FAFBFC] text-slate-900">
+    <div className="min-h-screen bg-[#111111] text-white">
       {/* Navbar */}
-      <div className="glass border-b border-blue-100 sticky top-0 z-50">
+      <div className="glass border-b border-blue-500/20 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#0F172A] to-[#2563EB] flex items-center justify-center">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#2563EB] to-[#60A5FA] flex items-center justify-center">
               <Zap className="w-3.5 h-3.5 text-white" />
             </div>
-            <span className="font-bold text-slate-900">AI마케팅</span>
-            <span className="text-slate-500 text-sm ml-1">관리자 대시보드</span>
+            <span className="font-bold text-white">AI마케팅</span>
+            <span className="text-stone-400 text-sm ml-1">관리자 대시보드</span>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-slate-600 text-xs hidden sm:block">{user.email}</span>
+            <span className="text-stone-300 text-xs hidden sm:block">{user.email}</span>
             <button
               onClick={() => signOut(auth)}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-all"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs text-stone-300 hover:text-white hover:bg-white/10 rounded-lg transition-all"
             >
               <LogOut className="w-3.5 h-3.5" />
               로그아웃
@@ -384,16 +384,16 @@ function Dashboard({ user }: { user: User }) {
         {/* KPI 카드 */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
           {[
-            { icon: Users, label: '총 신청자', value: `${kpi.total}명`, color: 'text-blue-600' },
+            { icon: Users, label: '총 신청자', value: `${kpi.total}명`, color: 'text-blue-400' },
             { icon: Calendar, label: '오늘 신규', value: `${kpi.todayNew}명`, color: 'text-blue-400' },
-            { icon: MessageSquare, label: '상담 진행중', value: `${kpi.consulting}명`, color: 'text-blue-600' },
+            { icon: MessageSquare, label: '상담 진행중', value: `${kpi.consulting}명`, color: 'text-blue-400' },
             { icon: TrendingUp, label: '결제 완료', value: `${kpi.paid}명`, color: 'text-emerald-400' },
-            { icon: DollarSign, label: '총 매출', value: fmtMoney(kpi.revenue), color: 'text-blue-600' },
+            { icon: DollarSign, label: '총 매출', value: fmtMoney(kpi.revenue), color: 'text-blue-400' },
           ].map(card => (
             <div key={card.label} className="glass-card rounded-2xl p-4">
               <card.icon className={`w-4 h-4 ${card.color} mb-2`} />
-              <div className="text-lg font-bold text-slate-900">{card.value}</div>
-              <div className="text-slate-500 text-xs mt-0.5">{card.label}</div>
+              <div className="text-lg font-bold text-white">{card.value}</div>
+              <div className="text-stone-400 text-xs mt-0.5">{card.label}</div>
             </div>
           ))}
         </div>
@@ -408,14 +408,14 @@ function Dashboard({ user }: { user: User }) {
                 onClick={() => setFilter(t.key)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
                   filter === t.key
-                    ? 'bg-blue-600/40 text-blue-600 border border-blue-300'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+                    ? 'bg-blue-600/40 text-blue-400 border border-blue-500/40'
+                    : 'text-stone-300 hover:text-white hover:bg-white/10 border border-transparent'
                 }`}
               >
                 {t.label}
-                {t.key === 'all' && <span className="ml-1.5 text-slate-500">{enrollments.length}</span>}
+                {t.key === 'all' && <span className="ml-1.5 text-stone-400">{enrollments.length}</span>}
                 {t.key !== 'all' && t.key !== 'cancelled' && (
-                  <span className="ml-1.5 text-slate-500">
+                  <span className="ml-1.5 text-stone-400">
                     {enrollments.filter(e => e.consultStatus === t.key).length}
                   </span>
                 )}
@@ -425,20 +425,20 @@ function Dashboard({ user }: { user: User }) {
 
           {/* 검색 */}
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-500" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-stone-400" />
             <input
               type="text"
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="이름 / 연락처 / 이메일 검색"
-              className="pl-8 pr-4 py-2 bg-slate-50 border border-gray-300 text-slate-900 placeholder-slate-400 rounded-xl text-xs focus:outline-none focus:border-blue-500 transition-all w-52"
+              className="pl-8 pr-4 py-2 bg-[#1A1A1A] border border-neutral-700 text-white placeholder-stone-500 rounded-xl text-xs focus:outline-none focus:border-blue-500 transition-all w-52"
             />
           </div>
 
           {/* CSV */}
           <button
             onClick={handleCsvDownload}
-            className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium bg-slate-50 border border-gray-300 text-slate-700 hover:text-slate-900 hover:border-slate-500 rounded-xl transition-all"
+            className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium bg-[#1A1A1A] border border-neutral-700 text-stone-200 hover:text-white hover:border-slate-500 rounded-xl transition-all"
           >
             <Download className="w-3.5 h-3.5" />
             CSV 다운로드
@@ -446,18 +446,18 @@ function Dashboard({ user }: { user: User }) {
         </div>
 
         {/* 테이블 */}
-        <div className="glass rounded-2xl border border-blue-100 overflow-hidden">
+        <div className="glass rounded-2xl border border-blue-500/20 overflow-hidden">
           {loading ? (
-            <div className="py-20 text-center text-slate-500 text-sm">데이터 로딩 중...</div>
+            <div className="py-20 text-center text-stone-400 text-sm">데이터 로딩 중...</div>
           ) : filtered.length === 0 ? (
-            <div className="py-20 text-center text-slate-500 text-sm">신청자가 없습니다.</div>
+            <div className="py-20 text-center text-stone-400 text-sm">신청자가 없습니다.</div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-gray-200">
+                  <tr className="border-b border-white/10">
                     {['이름', '연락처', '이메일', '소속', 'AI 수준', '상담 상태', '결제', '금액', '신청일'].map(h => (
-                      <th key={h} className="text-left text-slate-500 text-xs font-medium px-4 py-3 whitespace-nowrap">{h}</th>
+                      <th key={h} className="text-left text-stone-400 text-xs font-medium px-4 py-3 whitespace-nowrap">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -468,11 +468,11 @@ function Dashboard({ user }: { user: User }) {
                       onClick={() => setSelected(e)}
                       className="border-b border-white/3 hover:bg-white cursor-pointer transition-colors"
                     >
-                      <td className="px-4 py-3 text-slate-900 font-medium whitespace-nowrap">{e.name}</td>
-                      <td className="px-4 py-3 text-slate-600 whitespace-nowrap">{e.phone}</td>
-                      <td className="px-4 py-3 text-slate-600 max-w-[180px] truncate">{e.email}</td>
-                      <td className="px-4 py-3 text-slate-600 whitespace-nowrap">{e.affiliation || '-'}</td>
-                      <td className="px-4 py-3 text-slate-600 whitespace-nowrap text-xs">{e.aiLevel.split(' ')[0]}</td>
+                      <td className="px-4 py-3 text-white font-medium whitespace-nowrap">{e.name}</td>
+                      <td className="px-4 py-3 text-stone-300 whitespace-nowrap">{e.phone}</td>
+                      <td className="px-4 py-3 text-stone-300 max-w-[180px] truncate">{e.email}</td>
+                      <td className="px-4 py-3 text-stone-300 whitespace-nowrap">{e.affiliation || '-'}</td>
+                      <td className="px-4 py-3 text-stone-300 whitespace-nowrap text-xs">{e.aiLevel.split(' ')[0]}</td>
                       <td className="px-4 py-3 whitespace-nowrap">
                         <span className={`text-xs px-2 py-0.5 rounded-full border ${CONSULT_COLORS[e.consultStatus]}`}>
                           {CONSULT_LABELS[e.consultStatus]}
@@ -481,10 +481,10 @@ function Dashboard({ user }: { user: User }) {
                       <td className={`px-4 py-3 text-xs whitespace-nowrap ${PAYMENT_COLORS[e.paymentStatus]}`}>
                         {PAYMENT_LABELS[e.paymentStatus]}
                       </td>
-                      <td className="px-4 py-3 text-slate-600 whitespace-nowrap text-xs">
+                      <td className="px-4 py-3 text-stone-300 whitespace-nowrap text-xs">
                         {e.paymentAmount ? fmtMoney(e.paymentAmount) : '-'}
                       </td>
-                      <td className="px-4 py-3 text-slate-500 text-xs whitespace-nowrap">{fmtDate(e.createdAt)}</td>
+                      <td className="px-4 py-3 text-stone-400 text-xs whitespace-nowrap">{fmtDate(e.createdAt)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -492,7 +492,7 @@ function Dashboard({ user }: { user: User }) {
             </div>
           )}
         </div>
-        <p className="text-slate-500 text-xs mt-3 text-right">
+        <p className="text-stone-400 text-xs mt-3 text-right">
           {filtered.length}명 표시 중 (전체 {enrollments.length}명)
         </p>
       </div>
@@ -524,8 +524,8 @@ export default function AdminPage() {
 
   if (authLoading) {
     return (
-      <div className="min-h-screen bg-[#FAFBFC] flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-blue-200 border-t-blue-500 rounded-full animate-spin" />
+      <div className="min-h-screen bg-[#111111] flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-blue-500/25 border-t-blue-500 rounded-full animate-spin" />
       </div>
     )
   }
