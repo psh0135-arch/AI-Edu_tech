@@ -93,7 +93,7 @@ export default function Webinar() {
                   <div className="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3">
                     <Calendar className="w-4 h-4 text-amber-400 flex-shrink-0" />
                     <div>
-                      <p className="text-white text-sm font-medium">2026.07.01(수) 19:00 ~ 21:00</p>
+                      <p className="text-white text-sm font-medium">2026.07.17(금) 19:00 ~ 21:00</p>
                       <p className="text-slate-500 text-xs mt-0.5">ZOOM 실시간 온라인 참여</p>
                     </div>
                   </div>
@@ -119,7 +119,7 @@ export default function Webinar() {
                 </a>
 
                 <p className="text-slate-600 text-xs text-center mt-3">
-                  신청 기간: 2026.06.15 ~ 2026.07.01
+                  신청 기간: 2026.06.15 ~ 2026.07.17
                 </p>
               </div>
             </div>
