@@ -42,7 +42,7 @@ export default function Webinar() {
 
             <p className="text-slate-400 text-base leading-relaxed mb-8">
               AI 바이브코딩이 궁금하신가요?<br />
-              7월 1일 무료 LIVE 특강으로 먼저 경험해보실 수 있습니다.
+              8월 1일 무료 LIVE 특강으로 먼저 경험해보실 수 있습니다.
             </p>
 
             <ul className="space-y-3.5">
@@ -93,7 +93,7 @@ export default function Webinar() {
                   <div className="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3">
                     <Calendar className="w-4 h-4 text-amber-400 flex-shrink-0" />
                     <div>
-                      <p className="text-white text-sm font-medium">2026.07.17(금) 19:00 ~ 21:00</p>
+                      <p className="text-white text-sm font-medium">2026.08.01(토) 19:00 ~ 21:00</p>
                       <p className="text-slate-500 text-xs mt-0.5">ZOOM 실시간 온라인 참여</p>
                     </div>
                   </div>
@@ -119,7 +119,7 @@ export default function Webinar() {
                 </a>
 
                 <p className="text-slate-600 text-xs text-center mt-3">
-                  신청 기간: 2026.06.15 ~ 2026.07.17
+                  신청 기간: 2026.07.01 ~ 2026.07.31
                 </p>
               </div>
             </div>
