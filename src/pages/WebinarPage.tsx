@@ -10,7 +10,11 @@ import { saveWebinarRegistration, subscribeWebinarCount } from '../lib/firebase'
 // ── 상수 ─────────────────────────────────────────────────────────────────────
 const WEBINAR_DATE = '2026.08.01(토) 19:00 ~ 21:00'
 const WEBINAR_DEADLINE = new Date('2026-08-01T00:00:00+09:00')
-const SEED_COUNT = 42  // 심리적 사회적 증거 시드
+// 심리적 사회적 증거 시드: 기준일부터 하루마다 10명씩 자동 증가
+const SEED_BASE = 110
+const SEED_START = new Date('2026-07-14T00:00:00+09:00')
+const SEED_COUNT =
+  SEED_BASE + Math.max(0, Math.floor((Date.now() - SEED_START.getTime()) / 86400000)) * 10
 
 // ── 커리큘럼 ──────────────────────────────────────────────────────────────────
 const curriculum = [
@@ -327,7 +331,7 @@ export default function WebinarPage() {
             <ArrowRight className="w-5 h-5" />
           </motion.button>
 
-          <p className="text-slate-600 text-xs mt-4">선착순 100명 · 비용 없음 · 언제든 취소 가능</p>
+          <p className="text-slate-600 text-xs mt-4">선착순 300명 · 비용 없음 · 언제든 취소 가능</p>
         </div>
       </section>
 
@@ -431,7 +435,7 @@ export default function WebinarPage() {
             <span className="text-cyan-400 text-xs font-bold uppercase tracking-widest block mb-3">REGISTER</span>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">지금 무료로 신청하세요</h2>
             <p className="text-slate-400 text-sm">
-              <strong className="text-white">{count}명</strong>이 이미 신청했습니다 · 선착순 100명
+              <strong className="text-white">{count}명</strong>이 이미 신청했습니다 · 선착순 300명
             </p>
           </div>
 
