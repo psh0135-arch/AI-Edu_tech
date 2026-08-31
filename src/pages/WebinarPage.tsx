@@ -8,8 +8,8 @@ import {
 import { saveWebinarRegistration, subscribeWebinarCount } from '../lib/firebase'
 
 // ── 상수 ─────────────────────────────────────────────────────────────────────
-const WEBINAR_DATE = '2026.08.31(월) 18:00 ~ 21:00'
-const WEBINAR_DEADLINE = new Date('2026-08-31T00:00:00+09:00')
+const WEBINAR_DATE = '2026.09.30(수) 19:00 ~ 21:00'
+const WEBINAR_DEADLINE = new Date('2026-09-30T00:00:00+09:00')
 // 심리적 사회적 증거 시드: 기준일부터 하루마다 10명씩 자동 증가
 const SEED_BASE = 110
 const SEED_START = new Date('2026-07-14T00:00:00+09:00')
@@ -19,28 +19,28 @@ const SEED_COUNT =
 // ── 커리큘럼 ──────────────────────────────────────────────────────────────────
 const curriculum = [
   {
-    time: '18:00 – 18:40',
+    time: '19:00 – 19:30',
     title: '바이브코딩 마인드셋',
     desc: '"나는 개발자다" — 코드를 쓰지 않고 AI와 대화로 앱을 만드는 패러다임 전환. Claude AI가 어떻게 코드를 생성하고 버그를 고치는지 실제 사례로 소개합니다.',
     icon: Brain,
     tag: '이론',
   },
   {
-    time: '18:40 – 19:30',
+    time: '19:30 – 20:00',
     title: 'Claude Code + Cursor 실전 셋업',
     desc: '개발 환경 0에서 설치까지 라이브로 진행합니다. 프롬프트 작성법, 명령 패턴, 에러 해결 루틴 등 핵심 워크플로우를 실습합니다.',
     icon: Terminal,
     tag: '실습',
   },
   {
-    time: '19:30 – 20:30',
+    time: '20:00 – 20:40',
     title: '라이브 시연 — 랜딩페이지 30분 완성',
     desc: '실제로 지금 이 웹사이트처럼 퀄리티 높은 랜딩페이지를 30분 안에 완성하는 전 과정을 눈 앞에서 보여드립니다. 참가자 직접 실습 포함.',
     icon: MonitorSmartphone,
     tag: '라이브 코딩',
   },
   {
-    time: '20:30 – 21:00',
+    time: '20:40 – 21:00',
     title: 'Q&A + 본 과정 심화 안내',
     desc: '궁금한 점 무엇이든 질문하세요. 바이브코딩을 포함한 AI 마케팅 풀 커리큘럼 안내 및 수강 혜택을 안내드립니다.',
     icon: Sparkles,
@@ -258,7 +258,7 @@ export default function WebinarPage() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
             </span>
             <span className="text-red-400 text-xs font-bold uppercase tracking-widest">LIVE</span>
-            <span className="text-slate-500 text-xs hidden sm:inline">· 2026.08.31(월) 18:00~21:00</span>
+            <span className="text-slate-500 text-xs hidden sm:inline">· 2026.09.30(수) 19:00~21:00</span>
           </div>
           <button onClick={scrollToForm} className="px-4 py-1.5 text-xs font-bold rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:opacity-90 transition-opacity">
             무료 신청
@@ -282,7 +282,7 @@ export default function WebinarPage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500" />
             </span>
-            무료 LIVE 웨비나 · 2026.08.31
+            무료 LIVE 웨비나 · 2026.09.30
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
