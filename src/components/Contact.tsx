@@ -84,41 +84,35 @@ export default function Contact() {
 
         {/* Contact Channels */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {channels.map((ch, i) => (
-            <motion.div
-              key={ch.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-              className="group glass-card rounded-2xl p-6 text-center cursor-pointer"
-              onClick={() => {
-                if (ch.href === '#modal') {
-                  setModalOpen(true)
-                } else if (ch.href.startsWith('mailto:')) {
-                  const a = document.createElement('a')
-                  a.href = ch.href
-                  document.body.appendChild(a)
-                  a.click()
-                  document.body.removeChild(a)
-                } else if (ch.href !== '#') {
-                  window.open(ch.href, '_blank', 'noopener,noreferrer')
-                }
-              }}
-            >
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${ch.gradient} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200`}>
-                <ch.icon className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-white font-bold text-lg mb-2">{ch.title}</h3>
-              <p className="text-slate-400 text-sm mb-3">{ch.desc}</p>
-              {ch.href.startsWith('mailto:') && (
-                <p className="text-slate-500 text-xs mb-3 font-mono">{ch.href.replace('mailto:', '')}</p>
-              )}
-              <span className="inline-flex items-center gap-1 text-sm text-purple-400 font-medium group-hover:gap-2 transition-all">
-                {ch.action}
-                <ArrowRight className="w-3.5 h-3.5" />
-              </span>
-            </motion.div>
-          ))}
+          {channels.map((ch, i) => {
+            const isModal = ch.href === '#modal'
+            return (
+              <motion.a
+                key={ch.title}
+                href={isModal ? undefined : ch.href}
+                target={ch.href.startsWith('http') ? '_blank' : undefined}
+                rel={ch.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+                className="group glass-card rounded-2xl p-6 text-center cursor-pointer block"
+                onClick={isModal ? (e) => { e.preventDefault(); setModalOpen(true) } : undefined}
+              >
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${ch.gradient} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200`}>
+                  <ch.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-white font-bold text-lg mb-2">{ch.title}</h3>
+                <p className="text-slate-400 text-sm mb-3">{ch.desc}</p>
+                {ch.href.startsWith('mailto:') && (
+                  <p className="text-slate-500 text-xs mb-3 font-mono">{ch.href.replace('mailto:', '')}</p>
+                )}
+                <span className="inline-flex items-center gap-1 text-sm text-purple-400 font-medium group-hover:gap-2 transition-all">
+                  {ch.action}
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </motion.a>
+            )
+          })}
         </div>
 
         {/* Sticky Mobile CTA */}
