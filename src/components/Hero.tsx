@@ -14,7 +14,7 @@ interface HeroProps {
 
 export default function Hero({ onApply }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-pattern pt-16">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-pattern pt-20">
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[120px]" />

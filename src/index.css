@@ -47,6 +47,14 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
 }
 
+.navbar-solid {
+  background: rgba(4, 8, 25, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(120, 100, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
 .gradient-text {
   background: linear-gradient(135deg, #A78BFA 0%, #22D3EE 100%);
   -webkit-background-clip: text;
