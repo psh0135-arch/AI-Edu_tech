@@ -1,9 +1,7 @@
-import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { MessageCircle, Mail, FileText, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react'
+import { MessageCircle, Mail, FileText, ArrowRight, Sparkles } from 'lucide-react'
 import ApplyModal from './ApplyModal'
-
-const CONTACT_EMAIL = 'psh0135@gmail.com'
 
 const channels = [
   {
@@ -28,7 +26,7 @@ const channels = [
     desc: '상세한 교육 제안서 및 견적 요청',
     action: '이메일 보내기',
     gradient: 'from-purple-500 to-violet-600',
-    href: `mailto:${CONTACT_EMAIL}`,
+    href: 'mailto:psh0135@gmail.com',
   },
 ]
 
@@ -36,36 +34,10 @@ export default function Contact() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
   const [modalOpen, setModalOpen] = useState(false)
-  const [copied, setCopied] = useState(false)
-
-  const handleEmailClick = async () => {
-    try {
-      await navigator.clipboard.writeText(CONTACT_EMAIL)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch {
-      // 클립보드 API 미지원 브라우저는 mailto: 링크 동작만 진행
-    }
-  }
 
   return (
     <section id="contact" className="py-24 relative overflow-hidden" ref={ref}>
       <ApplyModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
-
-      {/* 복사 완료 토스트 */}
-      <AnimatePresence>
-        {copied && (
-          <motion.div
-            initial={{ opacity: 0, y: -20, x: '-50%' }}
-            animate={{ opacity: 1, y: 0, x: '-50%' }}
-            exit={{ opacity: 0, y: -20, x: '-50%' }}
-            className="fixed top-20 left-1/2 z-[100] flex items-center gap-2 px-5 py-3 rounded-xl glass border border-emerald-500/30 text-emerald-300 text-sm font-medium shadow-xl"
-          >
-            <CheckCircle2 className="w-4 h-4" />
-            이메일 주소가 복사되었습니다
-          </motion.div>
-        )}
-      </AnimatePresence>
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
@@ -114,7 +86,6 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {channels.map((ch, i) => {
             const isModal = ch.href === '#modal'
-            const isEmail = ch.href.startsWith('mailto:')
             return (
               <motion.a
                 key={ch.title}
@@ -125,13 +96,7 @@ export default function Contact() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
                 className="group glass-card rounded-2xl p-6 text-center cursor-pointer block"
-                onClick={
-                  isModal
-                    ? (e) => { e.preventDefault(); setModalOpen(true) }
-                    : isEmail
-                      ? handleEmailClick
-                      : undefined
-                }
+                onClick={isModal ? (e) => { e.preventDefault(); setModalOpen(true) } : undefined}
               >
                 <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${ch.gradient} flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-200`}>
                   <ch.icon className="w-6 h-6 text-white" />
