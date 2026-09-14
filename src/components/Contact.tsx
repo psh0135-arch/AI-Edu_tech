@@ -69,17 +69,15 @@ export default function Contact() {
           </p>
 
           {/* Main CTA */}
-          <motion.a
-            href="http://pf.kakao.com/_xecRAG"
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.button
+            onClick={() => setModalOpen(true)}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-3 px-10 py-5 bg-white text-slate-900 text-lg font-bold rounded-2xl shadow-xl hover:bg-slate-100 transition-all duration-200"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-pink-300 via-rose-300 to-amber-200 text-slate-900 text-lg font-bold rounded-2xl shadow-xl hover:brightness-105 transition-all duration-200"
           >
-            수강 신청 상담하기
+            수강 신청하기
             <ArrowRight className="w-5 h-5" />
-          </motion.a>
+          </motion.button>
         </motion.div>
 
         {/* Contact Channels */}
