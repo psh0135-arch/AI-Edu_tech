@@ -84,6 +84,32 @@ export default function About() {
           ))}
         </motion.div>
 
+        {/* Profile Card — 독립 컬럼 (전체 너비) */}
+        <motion.div
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          variants={fadeUp}
+          custom={2}
+          className="glass-card rounded-2xl p-6 border border-purple-500/25 bg-gradient-to-br from-purple-900/20 to-purple-950/30 mb-6"
+        >
+          <div className="flex items-center gap-4">
+            <img
+              src={`${import.meta.env.BASE_URL}profile.jpg`}
+              alt="강사 프로필"
+              className="w-20 h-20 rounded-2xl object-cover object-top shadow-lg shadow-purple-900/50 border border-purple-500/30 flex-shrink-0"
+            />
+            <div>
+              <h3 className="text-white font-bold text-xl mb-1">디지털 마케팅 전문 강사</h3>
+              <p className="text-purple-300 text-sm font-medium">경영지도사 · MBA</p>
+            </div>
+          </div>
+          <p className="text-slate-400 text-sm leading-relaxed mt-4">
+            롯데쇼핑·중앙일보마케팅·대명스테이션 등 대기업 마케팅 기획팀 출신으로,
+            현장 실무 경험을 바탕으로 한 생생한 디지털 마케팅 교육을 제공합니다.
+            현재 메가스터디에서 디지털 마케팅 운영교수로 활동 중입니다.
+          </p>
+        </motion.div>
+
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
@@ -92,42 +118,18 @@ export default function About() {
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
             variants={fadeUp}
-            custom={2}
-            className="order-3 lg:order-1 relative"
+            custom={3}
+            className="order-3 lg:order-1"
           >
             <img
               src={`${import.meta.env.BASE_URL}leader.jpg`}
               alt="Leader 매거진"
               className="w-full rounded-2xl shadow-xl shadow-purple-900/30 border border-purple-500/20"
             />
-            <img
-              src={`${import.meta.env.BASE_URL}profile.jpg`}
-              alt="강사 프로필"
-              className="absolute top-4 left-4 w-20 h-20 rounded-2xl object-cover object-top shadow-lg shadow-purple-900/50 border-2 border-white/80"
-            />
           </motion.div>
 
-          {/* Right — Profile + Credentials + Career (모바일: 위 / 데스크탑: 오른쪽) */}
+          {/* Right — Credentials + Career (모바일: 위 / 데스크탑: 오른쪽) */}
           <div className="space-y-4 order-1 lg:order-2">
-
-            {/* Profile Card */}
-            <motion.div
-              initial="hidden"
-              animate={inView ? 'visible' : 'hidden'}
-              variants={fadeUp}
-              custom={3}
-              className="glass-card rounded-2xl p-6 border border-purple-500/25 bg-gradient-to-br from-purple-900/20 to-purple-950/30"
-            >
-              <div>
-                <h3 className="text-white font-bold text-xl mb-1">디지털 마케팅 전문 강사</h3>
-                <p className="text-purple-300 text-sm font-medium">경영지도사 · MBA</p>
-              </div>
-              <p className="text-slate-400 text-sm leading-relaxed mt-4">
-                롯데쇼핑·중앙일보마케팅·대명스테이션 등 대기업 마케팅 기획팀 출신으로,
-                현장 실무 경험을 바탕으로 한 생생한 디지털 마케팅 교육을 제공합니다.
-                현재 메가스터디에서 디지털 마케팅 운영교수로 활동 중입니다.
-              </p>
-            </motion.div>
 
             {/* Credentials — 2열 그리드 */}
             <div className="grid grid-cols-2 gap-3">
