@@ -205,11 +205,12 @@ export default function About() {
                 <p className="text-slate-600 text-xs mb-3">기타 활동</p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    '소상공인시장진흥공단 컨설턴트',
-                    'KAIT 디지털전환 컨설턴트',
-                    '공공기관 채용시험 출제위원',
-                    '내일배움카드 강사',
-                    '용인시 산업진흥원 전문위원',
+                    '경기도 AI 디지털 배움터 전문강사',
+                    '에이블런 AI 전문강사',
+                    '엘리스기업 AI 전문강사',
+                    '한국화학안전협회 AI 전문위원',
+                    '소상공인진흥공단 컨설턴트',
+                    '엑스퍼트 컨설팅 출제 및 검수위원',
                   ].map(badge => (
                     <span
                       key={badge}
