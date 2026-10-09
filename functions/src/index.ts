@@ -71,7 +71,7 @@ export const onWebinarRegistrationCreated = onValueCreated(
     const applicantMail = {
       from: `"AI마케팅 교육팀" <${process.env.GMAIL_USER}>`,
       to: data.email,
-      subject: `[신청 접수] ${WEBINAR_TITLE} 참가비 입금 안내`,
+      subject: `[신청 완료] ${WEBINAR_TITLE} 참가 안내`,
       html: `
         <div style="font-family: 'Apple SD Gothic Neo', Arial, sans-serif; max-width: 560px; margin: 0 auto; background: #ffffff;">
           <div style="background: linear-gradient(135deg, #7C3AED, #06B6D4); padding: 32px 24px; border-radius: 12px 12px 0 0; text-align: center;">
