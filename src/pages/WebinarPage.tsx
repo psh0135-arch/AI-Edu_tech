@@ -8,8 +8,8 @@ import {
 import { saveWebinarRegistration, subscribeWebinarCount } from '../lib/firebase'
 
 // ── 상수 ─────────────────────────────────────────────────────────────────────
-const WEBINAR_DATE = '2026.09.30(수) 19:00 ~ 21:00'
-const WEBINAR_DEADLINE = new Date('2026-09-30T00:00:00+09:00')
+const WEBINAR_DATE = '2026.10.30(금) 19:00 ~ 21:00'
+const WEBINAR_DEADLINE = new Date('2026-10-30T00:00:00+09:00')
 // 심리적 사회적 증거 시드: 기준일부터 하루마다 10명씩 자동 증가
 const SEED_BASE = 110
 const SEED_START = new Date('2026-07-14T00:00:00+09:00')
@@ -78,8 +78,12 @@ const faqs = [
     a: '노트북 1대면 충분합니다. 특강 당일 Claude AI 계정과 Cursor 설치를 함께 진행합니다. 미리 준비하고 싶다면 cursor.sh에서 무료로 설치해 오시면 됩니다.',
   },
   {
+    q: '입금은 어떻게 하나요?',
+    a: '입금 방법은 신청자 메일로 별도 안내해 드립니다.',
+  },
+  {
     q: 'ZOOM 링크는 언제 받을 수 있나요?',
-    a: '신청 완료 시 이메일과 문자로 ZOOM 링크가 자동 발송됩니다. 특강 당일 1시간 전에도 리마인드 메시지가 전송됩니다.',
+    a: '신청 완료 확인 후 이메일과 문자로 ZOOM 링크를 보내드립니다(입금 안내 메일도 포함). 특강 당일 1시간 전에도 리마인드 메시지가 전송됩니다.',
   },
   {
     q: '실시간 참여가 어렵다면 녹화본을 받을 수 있나요?',
@@ -198,7 +202,7 @@ export default function WebinarPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          _subject: '[웨비나 신청] 바이브코딩 무료 LIVE 특강',
+          _subject: '[웨비나 신청] 바이브코딩 특별 LIVE 특강',
           성함: form.name, 연락처: form.phone, 이메일: form.email,
           소속: form.affiliation || '미입력', _template: 'table',
         }),
@@ -222,13 +226,13 @@ export default function WebinarPage() {
           <h2 className="text-3xl font-bold text-white mb-3">신청 완료!</h2>
           <p className="text-slate-400 leading-relaxed mb-4">
             <strong className="text-white">{form.name}</strong>님, 웨비나 신청이 접수되었습니다.<br />
-            ZOOM 링크는 <strong className="text-purple-400">{form.email}</strong>과<br />
-            <strong className="text-purple-400">{form.phone}</strong>으로 발송됩니다.
+            입금 안내 메일을 <strong className="text-purple-400">{form.email}</strong>으로 보내드립니다.<br />
+            신청 완료 확인 후 ZOOM 링크를 이메일과 문자(<strong className="text-purple-400">{form.phone}</strong>)로 보내드립니다.
           </p>
           <div className="glass rounded-2xl border border-purple-500/20 p-5 mb-8 text-sm text-slate-400 text-left space-y-2">
             <p>📅 <strong className="text-white">일시</strong>: {WEBINAR_DATE}</p>
             <p>💻 <strong className="text-white">방식</strong>: ZOOM 실시간 온라인</p>
-            <p>📩 <strong className="text-white">확인 메일</strong>: 영업일 기준 24시간 이내 발송</p>
+            <p>💳 <strong className="text-white">참가비</strong>: 2만원 (입금 방법은 이메일로 안내)</p>
           </div>
           <button
             onClick={() => { window.location.hash = '' }}
@@ -258,10 +262,10 @@ export default function WebinarPage() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
             </span>
             <span className="text-red-400 text-xs font-bold uppercase tracking-widest">LIVE</span>
-            <span className="text-slate-500 text-xs hidden sm:inline">· 2026.09.30(수) 19:00~21:00</span>
+            <span className="text-slate-500 text-xs hidden sm:inline">· 2026.10.30(금) 19:00~21:00</span>
           </div>
           <button onClick={scrollToForm} className="px-4 py-1.5 text-xs font-bold rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:opacity-90 transition-opacity">
-            무료 신청
+            신청하기
           </button>
         </div>
       </nav>
@@ -282,7 +286,7 @@ export default function WebinarPage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500" />
             </span>
-            무료 LIVE 웨비나 · 2026.09.30
+            특별 LIVE 웨비나 · 2026.10.30
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
@@ -327,11 +331,11 @@ export default function WebinarPage() {
 
           <motion.button onClick={scrollToForm} initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: 0.4 }}
             className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-lg font-bold rounded-2xl shadow-2xl shadow-purple-900/50 hover:from-purple-500 hover:to-cyan-500 transition-all duration-200 hover:scale-105">
-            무료 웨비나 신청하기
+            특별 웨비나 신청하기
             <ArrowRight className="w-5 h-5" />
           </motion.button>
 
-          <p className="text-slate-600 text-xs mt-4">선착순 300명 · 비용 없음 · 언제든 취소 가능</p>
+          <p className="text-slate-600 text-xs mt-4">선착순 300명 · 참가비 2만원 · 언제든 취소 가능</p>
         </div>
       </section>
 
@@ -433,7 +437,7 @@ export default function WebinarPage() {
         <div className="max-w-xl mx-auto">
           <div className="text-center mb-10">
             <span className="text-cyan-400 text-xs font-bold uppercase tracking-widest block mb-3">REGISTER</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">지금 무료로 신청하세요</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">지금 신청하세요</h2>
             <p className="text-slate-400 text-sm">
               <strong className="text-white">{count}명</strong>이 이미 신청했습니다 · 선착순 300명
             </p>
@@ -451,7 +455,7 @@ export default function WebinarPage() {
               </div>
               <div className="flex items-center gap-2 text-slate-300 text-sm">
                 <Clock className="w-4 h-4 text-purple-400" />
-                ZOOM 실시간 온라인 · 참가비 <span className="text-emerald-400 font-bold ml-1">무료</span>
+                ZOOM 실시간 온라인 · 참가비 <span className="text-emerald-400 font-bold ml-1">2만원</span>
               </div>
             </div>
 
@@ -508,10 +512,10 @@ export default function WebinarPage() {
                 {loading ? (
                   <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> 신청 중...</>
                 ) : (
-                  <><Send className="w-4 h-4" /> 무료 웨비나 신청하기</>
+                  <><Send className="w-4 h-4" /> 특별 웨비나 신청하기</>
                 )}
               </button>
-              <p className="text-slate-600 text-xs text-center">신청 즉시 이메일 + 문자로 ZOOM 링크를 보내드립니다</p>
+              <p className="text-slate-600 text-xs text-center">신청 완료 확인 후 이메일과 문자로 ZOOM 링크를 보내드립니다 (입금 안내 메일 포함)</p>
             </form>
           </div>
         </div>
@@ -541,10 +545,10 @@ export default function WebinarPage() {
           <h2 className="text-3xl font-bold text-white mb-4">
             2시간이 당신의 커리어를<br />바꿀 수 있습니다
           </h2>
-          <p className="text-slate-400 mb-8">비용 없음 · ZOOM 실시간 · 당일 녹화본 제공</p>
+          <p className="text-slate-400 mb-8">참가비 2만원 · ZOOM 실시간 · 당일 녹화본 제공</p>
           <button onClick={scrollToForm}
             className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-lg font-bold rounded-2xl shadow-2xl shadow-purple-900/50 hover:from-purple-500 hover:to-cyan-500 transition-all hover:scale-105">
-            지금 무료 신청하기
+            지금 신청하기
             <ArrowRight className="w-5 h-5" />
           </button>
           <p className="text-slate-600 text-xs mt-4">
@@ -558,7 +562,7 @@ export default function WebinarPage() {
         <button onClick={scrollToForm}
           className="flex items-center justify-center gap-2 w-full py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold rounded-2xl shadow-2xl shadow-purple-900/50">
           <Users className="w-5 h-5" />
-          무료 웨비나 신청 ({count}명 신청 중)
+          특별 웨비나 신청 ({count}명 신청 중)
         </button>
       </div>
 

@@ -3,6 +3,10 @@
     "enrollments": {
       ".read": "auth != null",
       ".write": true
+    },
+    "webinar_registrations": {
+      ".read": "auth != null",
+      ".write": true
     }
   }
 }

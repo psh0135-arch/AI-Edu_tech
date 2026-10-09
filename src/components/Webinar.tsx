@@ -35,14 +35,14 @@ export default function Webinar() {
             </p>
 
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
-              AI 마케팅 무료 웨비나
+              AI 마케팅 특별 웨비나
               <br />
               지금 바로 체험하세요
             </h2>
 
             <p className="text-slate-400 text-base leading-relaxed mb-8">
               AI 바이브코딩이 궁금하신가요?<br />
-              9월 30일 무료 LIVE 특강으로 먼저 경험해보실 수 있습니다.
+              10월 30일 특별 LIVE 특강으로 먼저 경험해보실 수 있습니다.
             </p>
 
             <ul className="space-y-3.5">
@@ -76,7 +76,7 @@ export default function Webinar() {
                 </span>
                 <span className="text-red-400 text-xs font-bold uppercase tracking-widest">LIVE</span>
                 <span className="text-slate-400 text-xs">·</span>
-                <span className="text-amber-300 text-sm font-semibold">무료 웨비나</span>
+                <span className="text-amber-300 text-sm font-semibold">특별 웨비나</span>
               </div>
 
               {/* Card Body */}
@@ -93,7 +93,7 @@ export default function Webinar() {
                   <div className="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3">
                     <Calendar className="w-4 h-4 text-amber-400 flex-shrink-0" />
                     <div>
-                      <p className="text-white text-sm font-medium">2026.09.30(수) 19:00 ~ 21:00</p>
+                      <p className="text-white text-sm font-medium">2026.10.30(금) 19:00 ~ 21:00</p>
                       <p className="text-slate-500 text-xs mt-0.5">ZOOM 실시간 온라인 참여</p>
                     </div>
                   </div>
@@ -102,7 +102,7 @@ export default function Webinar() {
                     <div>
                       <p className="text-white text-sm font-medium">
                         교육비&nbsp;
-                        <span className="text-amber-400 font-bold">무료</span>
+                        <span className="text-amber-400 font-bold">2만원</span>
                       </p>
                       <p className="text-slate-500 text-xs mt-0.5">사전 신청 후 참여 가능</p>
                     </div>
@@ -119,7 +119,7 @@ export default function Webinar() {
                 </a>
 
                 <p className="text-slate-600 text-xs text-center mt-3">
-                  신청 기간: 2026.09.01 ~ 2026.09.30
+                  신청 기간: 2026.10.01 ~ 2026.10.30
                 </p>
               </div>
             </div>
