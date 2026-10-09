@@ -51,10 +51,16 @@ npm run build      # tsc 컴파일 → lib/
   → Firebase Realtime DB (asia-southeast1)
     ├── /enrollments/{id}         수강신청 (ApplyModal)
     └── /webinar_registrations/{id}  웨비나 신청 (WebinarPage)
-  → Cloud Function onEnrollmentCreated 트리거
-    ├── nodemailer + Gmail → 신청자 확인 이메일 + 관리자 알림 이메일
-    └── solapi (SMS) → 신청자 문자 + 관리자 문자
+  → Cloud Function 트리거 (각각 이메일 + SMS 자동 발송)
+    ├── onEnrollmentCreated (/enrollments)
+    │     nodemailer + Gmail → 신청자 확인 이메일 + 관리자 알림 이메일
+    │     solapi (SMS)       → 신청자 문자 + 관리자 문자
+    └── onWebinarRegistrationCreated (/webinar_registrations)
+          nodemailer + Gmail → 신청자 입금 안내 이메일 + 관리자 알림 이메일
+          solapi (SMS)       → 신청자 문자 + 관리자 문자
 ```
+
+웨비나는 유료(참가비 2만원)라 ZOOM 링크는 **자동 발송하지 않습니다.** 신청자는 입금 안내 메일을 받고, 입금 확인 후 관리자가 이메일·문자로 ZOOM 링크를 직접 보냅니다.
 
 ### Firebase 프로젝트
 - **ID**: `vibe-coding-backend-a96b0`
@@ -69,7 +75,8 @@ npm run build      # tsc 컴파일 → lib/
 | `src/components/ApplyModal.tsx` | 수강신청 모달 — Firebase 저장 + formsubmit 백업 알림 |
 | `src/pages/AdminPage.tsx` | CRM 대시보드 — 실시간 신청자 목록, 상태 관리, CSV 다운로드 |
 | `src/pages/WebinarPage.tsx` | 웨비나 랜딩페이지 — 카운트다운 타이머, 실시간 신청자 수, 신청폼 |
-| `functions/src/index.ts` | Cloud Function — enrollment 생성 시 이메일+SMS 자동 발송 |
+| `src/components/Webinar.tsx` | 메인 랜딩페이지의 웨비나 소개 섹션 (일정·교육비·신청기간) |
+| `functions/src/index.ts` | Cloud Function 2개 — `onEnrollmentCreated`(수강신청), `onWebinarRegistrationCreated`(웨비나 신청) 생성 시 이메일+SMS 자동 발송. 웨비나 일정·참가비는 파일 상단 `WEBINAR_SCHEDULE`/`WEBINAR_FEE` 상수 |
 
 ### 환경변수
 **프론트엔드** (`.env.local`, GitHub Secrets에도 등록):
@@ -78,6 +85,7 @@ npm run build      # tsc 컴파일 → lib/
 **Cloud Functions** (`functions/.env`, gitignore됨):
 - `GMAIL_USER` / `GMAIL_PASS` — Gmail App Password
 - `SOLAPI_API_KEY` / `SOLAPI_API_SECRET` / `SOLAPI_SENDER` — 솔라피 SMS
+- `WEBINAR_BANK_INFO` (선택) — 웨비나 입금 안내 메일에 표시할 계좌 (예: `OO은행 000-0000-0000 (예금주: 홍길동)`). 없으면 "담당자가 확인 후 별도로 안내드립니다."로 발송
 
 ### 빌드 특이사항
 - `vite.config.ts`의 `base: '/AI-Edu_tech/'` — GitHub Pages 서브패스 배포
@@ -91,3 +99,5 @@ npm run build      # tsc 컴파일 → lib/
 - RTDB 트리거 함수는 **반드시 DB와 같은 리전**(`asia-southeast1`)을 명시해야 함
 - `functions/.env`는 gitignore됨 — 로컬 배포 시 직접 파일 생성 필요
 - solapi v6 사용: `import { SolapiMessageService } from 'solapi'`, 메서드는 `send()` (sendOne 아님)
+- 웨비나 일정·참가비를 바꿀 때는 `Webinar.tsx`, `WebinarPage.tsx`(`WEBINAR_DATE`/`WEBINAR_DEADLINE` 포함), `functions/src/index.ts`(`WEBINAR_SCHEDULE`/`WEBINAR_FEE`와 SMS 문구)를 **함께** 수정하고 functions를 재배포해야 함
+- Firebase CLI는 전역 설치가 없으면 `npx firebase-tools deploy --only functions`로 실행 (사전에 `npx firebase-tools login` 필요)
