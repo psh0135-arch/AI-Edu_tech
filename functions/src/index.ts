@@ -37,7 +37,7 @@ function escapeHtml(value: string): string {
 
 // ── 웨비나 신청 생성 시 입금 안내 이메일 + SMS 자동발송 ─────────────────────────
 const WEBINAR_TITLE = 'AI 바이브코딩 특별 웨비나'
-const WEBINAR_SCHEDULE = '2026.10.30(금) 19:00 ~ 21:00 (ZOOM 실시간 온라인)'
+const WEBINAR_SCHEDULE = '2026.11.30(월) 19:00 ~ 21:00 (ZOOM 실시간 온라인)'
 const WEBINAR_FEE = '20,000원'
 
 export const onWebinarRegistrationCreated = onValueCreated(
@@ -147,7 +147,7 @@ export const onWebinarRegistrationCreated = onValueCreated(
     const applicantSms = {
       to: applicantPhone,
       from: senderPhone,
-      text: `[AI마케팅 교육팀]\n${data.name}님, 웨비나 신청이 접수되었습니다.\n\n일시: 2026.10.30(금) 19:00\n참가비: ${WEBINAR_FEE}\n\n입금 안내는 신청하신 이메일을 확인해 주세요. 입금 확인 후 ZOOM 링크를 보내드립니다.\n문의: psh0135@gmail.com`,
+      text: `[AI마케팅 교육팀]\n${data.name}님, 웨비나 신청이 접수되었습니다.\n\n일시: 2026.11.30(월) 19:00\n참가비: ${WEBINAR_FEE}\n\n입금 안내는 신청하신 이메일을 확인해 주세요. 입금 확인 후 ZOOM 링크를 보내드립니다.\n문의: psh0135@gmail.com`,
     }
 
     // ── 관리자에게 SMS ────────────────────────────────────────────────────────

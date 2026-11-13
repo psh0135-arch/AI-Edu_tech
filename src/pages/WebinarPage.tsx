@@ -8,8 +8,8 @@ import {
 import { saveWebinarRegistration, subscribeWebinarCount } from '../lib/firebase'
 
 // ── 상수 ─────────────────────────────────────────────────────────────────────
-const WEBINAR_DATE = '2026.10.30(금) 19:00 ~ 21:00'
-const WEBINAR_DEADLINE = new Date('2026-10-30T00:00:00+09:00')
+const WEBINAR_DATE = '2026.11.30(월) 19:00 ~ 21:00'
+const WEBINAR_DEADLINE = new Date('2026-11-30T00:00:00+09:00')
 // 심리적 사회적 증거 시드: 기준일부터 하루마다 10명씩 자동 증가
 const SEED_BASE = 110
 const SEED_START = new Date('2026-07-14T00:00:00+09:00')
@@ -262,7 +262,7 @@ export default function WebinarPage() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
             </span>
             <span className="text-red-400 text-xs font-bold uppercase tracking-widest">LIVE</span>
-            <span className="text-slate-500 text-xs hidden sm:inline">· 2026.10.30(금) 19:00~21:00</span>
+            <span className="text-slate-500 text-xs hidden sm:inline">· 2026.11.30(월) 19:00~21:00</span>
           </div>
           <button onClick={scrollToForm} className="px-4 py-1.5 text-xs font-bold rounded-lg bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:opacity-90 transition-opacity">
             신청하기
@@ -286,7 +286,7 @@ export default function WebinarPage() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500" />
             </span>
-            특별 LIVE 웨비나 · 2026.10.30
+            특별 LIVE 웨비나 · 2026.11.30
           </motion.div>
 
           <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
