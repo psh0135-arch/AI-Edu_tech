@@ -101,3 +101,5 @@ npm run build      # tsc 컴파일 → lib/
 - solapi v6 사용: `import { SolapiMessageService } from 'solapi'`, 메서드는 `send()` (sendOne 아님)
 - 웨비나 일정·참가비를 바꿀 때는 `Webinar.tsx`, `WebinarPage.tsx`(`WEBINAR_DATE`/`WEBINAR_DEADLINE` 포함), `functions/src/index.ts`(`WEBINAR_SCHEDULE`/`WEBINAR_FEE`와 SMS 문구)를 **함께** 수정하고 functions를 재배포해야 함
 - Firebase CLI는 전역 설치가 없으면 `npx firebase-tools deploy --only functions`로 실행 (사전에 `npx firebase-tools login` 필요)
+- 런타임은 **Node.js 22** (`firebase.json`의 `runtime` + `functions/package.json`의 `engines`). Node 20은 2026-10-30에 지원 종료되어 배포 거부됨
+- 배포 시 "User code failed to load … Timeout after 10000" 오류가 나면 OneDrive 폴더의 코드 발견 지연이 원인 — `FUNCTIONS_DISCOVERY_TIMEOUT=120000 firebase deploy --only functions`로 재시도
